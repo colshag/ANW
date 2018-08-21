@@ -1,0 +1,68 @@
+id,name,abr,costCR,costAL,costEC,costIA,techReq,description,maxAmmo,explosive,storage,engine,rotate,power,battery,repair,target,radar,genSP,maxSP,typeAP,maxAP,maxHP,mass,jamming
+1,Simple StarShip Engines,SSE,50,5,2,0,39,test,0,0,0,10,0,0,0,0,0,0,0,0,,0,50,1000,0
+2,Progressive StarShip Engines,PSE,100,10,5,0,139,test,0,0,0,16,0,0,0,0,0,0,0,0,,0,100,900,0
+3,Ultra StarShip Engines,USE,150,15,10,0,239,test,0,0,0,20,0,0,0,0,0,0,0,0,,0,200,800,0
+4,Simple Rotation Thrusters,SRT,50,5,2,0,40,test,0,0,0,0,8,0,0,0,0,0,0,0,,0,50,1000,0
+5,Progressive Rotation Thrusters,PRT,100,10,5,0,140,test,0,0,0,0,15,0,0,0,0,0,0,0,,0,100,900,0
+6,Ultra Rotation Thrusters,URT,150,15,10,0,240,test,0,0,0,0,25,0,0,0,0,0,0,0,,0,200,800,0
+7,Simple Power Plant,SPP,50,5,3,0,41,test,0,50,0,0,0,50,0,0,0,0,0,0,,0,50,1000,0
+8,Progressive Power Plant,PPP,100,10,5,0,141,test,0,100,0,0,0,100,0,0,0,0,0,0,,0,100,900,0
+9,Ultra Power Plant,UPP,150,15,10,0,241,test,0,200,0,0,0,200,0,0,0,0,0,0,,0,200,800,0
+10,Simple Energy Batteries,SEB,50,5,3,0,56,test,0,0,0,0,0,0,250,0,0,0,0,0,,0,50,1000,0
+11,Progressive Energy Batteries,PEB,100,10,5,0,156,test,0,0,0,0,0,0,500,0,0,0,0,0,,0,100,900,0
+12,Ultra Energy Batteries,UEB,150,15,10,0,256,test,0,0,0,0,0,0,1000,0,0,0,0,0,,0,200,800,0
+13,Simple Engineering Stations,SES,50,5,3,2,55,test,0,0,0,0,0,0,0,2,0,0,0,0,,0,50,1000,0
+14,Progressive Engineering Stations,PES,100,10,6,4,155,test,0,0,0,0,0,0,0,4,0,0,0,0,,0,100,900,0
+15,Ultra Engineering Stations,UES,150,15,9,6,255,test,0,0,0,0,0,0,0,8,0,0,0,0,,0,200,800,0
+16,Simple Targeting Computers,STC,50,2,2,2,71,test,0,0,0,0,0,0,0,0,5,0,0,0,,0,50,1000,0
+17,Progressive Targeting Computers,PTC,100,4,4,4,171,test,0,0,0,0,0,0,0,0,10,0,0,0,,0,100,900,0
+18,Ultra Targeting Computers,UTC,150,6,6,6,271,test,0,0,0,0,0,0,0,0,15,0,0,0,,0,200,800,0
+19,Simple Radar Scanners,SRS,50,2,2,1,42,test,0,0,0,0,0,0,0,0,0,1,0,0,,0,50,1000,0
+20,Progressive Radar Scanners,PRS,100,4,4,2,142,test,0,0,0,0,0,0,0,0,0,2,0,0,,0,100,900,0
+21,Ultra Radar Scanners,URS,150,6,6,3,242,test,0,0,0,0,0,0,0,0,0,3,0,0,,0,200,800,0
+22,Simple Marine Pods,SMP,50,5,0,2,22,test,0,0,1,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+23,Progressive Marine Pods,PMP,100,10,0,4,122,test,0,0,2,0,0,0,0,0,0,0,0,0,,0,100,900,0
+24,Ultra Marine Pods,UMP,150,15,0,6,222,test,0,0,5,0,0,0,0,0,0,0,0,0,,0,200,800,0
+25,Simple Shield Generators,SSG,50,2,3,0,70,test,0,0,0,0,0,0,0,0,0,0,1,100,,0,50,1000,0
+26,Progressive Shield Generators,PSG,100,4,5,0,170,test,0,0,0,0,0,0,0,0,0,0,2,200,,0,100,900,0
+27,Ultra Shield Generators,USG,150,6,10,0,270,test,0,0,0,0,0,0,0,0,0,0,3,300,,0,200,800,0
+28,Simple Reflective Armor,SRA,50,5,0,0,69,test,0,0,0,0,0,0,0,0,0,0,0,0,energy,200,50,1000,0
+29,Progressive Reflective Armor,PRA,100,10,0,0,169,test,0,0,0,0,0,0,0,0,0,0,0,0,energy,400,100,900,0
+30,Ultra Reflective Armor,URA,150,15,0,0,269,test,0,0,0,0,0,0,0,0,0,0,0,0,energy,600,200,800,0
+31,Simple Impact Armor,SIA,50,5,0,0,68,test,0,0,0,0,0,0,0,0,0,0,0,0,impact,200,50,1000,0
+32,Progressive Impact Armor,PIA,100,10,0,0,168,test,0,0,0,0,0,0,0,0,0,0,0,0,impact,400,100,900,0
+33,Ultra Impact Armor,UIA,150,15,0,0,268,test,0,0,0,0,0,0,0,0,0,0,0,0,impact,600,200,800,0
+34,Light Nuclear Torpedo Ammo,LNTA,20,2,1,1,37,test,96,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+35,Medium Nuclear Torpedo Ammo,MNTA,30,3,2,1,52,test,72,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+36,Heavy Nuclear Torpedo Ammo,HNTA,40,4,3,1,67,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+37,Light Fusion Torpedo Ammo,LFTA,20,2,1,1,137,test,96,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+38,Medium Fusion Torpedo Ammo,MFTA,30,3,2,1,152,test,72,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+39,Heavy Fusion Torpedo Ammo,HFTA,40,4,3,1,167,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+40,Light Plasma Torpedo Ammo,LPTA,20,2,1,1,237,test,96,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+41,Medium Plasma Torpedo Ammo,MPTA,30,3,2,1,252,test,72,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+42,Heavy Plasma Torpedo Ammo,HPTA,40,4,3,1,267,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+43,Light Graviton Gun Ammo,LGGA,20,2,1,0,34,test,64,0,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+44,Medium Graviton Gun Ammo,MGGA,30,3,1,0,49,test,40,0,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+45,Heavy Graviton Gun Ammo,HGGA,40,4,1,1,64,test,32,0,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+46,AMS Graviton Gun Ammo,AGGA,25,2,0,0,72,test,200,0,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+47,Light Auto Cannon Ammo,LACA,20,2,1,0,134,test,64,0,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+48,Medium Auto Cannon Ammo,MACA,30,3,1,0,149,test,40,0,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+49,Heavy Auto Cannon Ammo,HACA,40,4,1,1,164,test,32,0,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+50,AMS Auto Cannon Ammo,AACA,25,2,0,0,172,test,200,0,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+51,Light Rail Gun Ammo,LRGA,20,2,1,0,234,test,64,0,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+52,Medium Rail Gun Ammo,MRGA,30,3,1,0,249,test,40,0,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+53,Heavy Rail Gun Ammo,HRGA,40,4,1,1,264,test,32,0,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+54,AMS Rail Gun Ammo,ARGA,25,2,0,0,274,test,200,0,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+55,Light Nuclear Missile Ammo,LNMA,20,2,1,1,35,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+56,Medium Nuclear Missile Ammo,MNMA,30,3,1,1,50,test,36,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+57,Heavy Nuclear Missile Ammo,HNMA,40,4,1,1,65,test,24,1,0,0,0,0,0,0,0,0,0,0,,0,50,1000,0
+58,Light Fusion Missile Ammo,LFMA,20,2,1,1,135,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+59,Medium Fusion Missile Ammo,MFMA,30,3,1,1,150,test,36,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+60,Heavy Fusion Missile Ammo,HFMA,40,4,1,1,165,test,24,1,0,0,0,0,0,0,0,0,0,0,,0,100,900,0
+61,Light Plasma Missile Ammo,LPMA,20,2,1,1,235,test,48,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+62,Medium Plasma Missile Ammo,MPMA,30,3,1,1,250,test,36,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+63,Heavy Plasma Missile Ammo,HPMA,40,4,1,1,265,test,24,1,0,0,0,0,0,0,0,0,0,0,,0,200,800,0
+64,Weapon Component,WC,0,0,0,0,999,test,0,0,0,0,0,0,0,0,0,0,0,0,,0,0,1000,0
+65,Simple Jamming Dishes,SJD,100,5,2,4,76,test,0,0,0,0,0,0,0,0,0,0,0,0,,0,50,1000,1
+66,Progressive Jamming Dishes,PJD,200,10,4,8,176,test,0,0,0,0,0,0,0,0,0,0,0,0,,0,100,900,2
+67,Ultra Jamming Dishes,UJD,300,15,6,12,276,test,0,0,0,0,0,0,0,0,0,0,0,0,,0,200,800,3

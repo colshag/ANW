@@ -1,0 +1,7 @@
+>>> import anwp.func.datatype
+>>> d = {'id':'1', 'name':'factory', 'abr':'fac', 'costCR':1000}
+>>> indData = anwp.func.datatype.DataType(d)
+>>> indData.id
+'1'
+>>> indData.name
+'factory'

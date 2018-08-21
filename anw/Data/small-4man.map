@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Small-4man
+# Written by Shawn Thomas (Dec, 2011)
+# ---------------------------------------------------------------------------
+# Small map with limited resources - based on the Quickstart map, which was
+# determined to be too small during testing.
+# ---------------------------------------------------------------------------
+numEmpires = 5
+#Credits & Market settings from commonmap.data
+genSystemsLegend = {
+  'a': ('0', 10), # neutral player
+  'b': ('0', 15),
+  'c': ('0', 20),
+  'd': ('0', 30),
+  'e': ('0', 40),
+  'f': ('0', 50),
+  'A': ('1', 40), # player 1
+  'B': ('1', 30),
+  'C': ('1', 30),
+  'D': ('2', 40), # player 2
+  'E': ('2', 30),
+  'F': ('2', 30),
+  'G': ('3', 40), # player 3
+  'H': ('3', 30),
+  'I': ('3', 30),
+  'J': ('4', 40), # player 4
+  'K': ('4', 30),
+  'L': ('4', 30),
+  '.': (None, None),
+  }
+genSystemsData = [
+  '......B......',
+  '......A......',
+  '.....C.C.....',
+  '.....bab.....',
+  '....dc.cd....',
+  '..Lbc.e.cbF..',
+  'KJ.a.efe.a.DE',
+  '..Lbc.e.cbF..',
+  '....dc.cd....',
+  '.....bab.....',
+  '.....I.I.....',
+  '......G......',
+  '......H......',
+]
+defaultIndustry = {
+  '14':1, # advanced design center (1)
+ '11':1, # advanced simulation center (1)
+ '41':10,# advanced research center(10)
+ '32':3, # advanced shipyard (6)
+ '35':3, # advanced marine installation (6)
+ '2':15, # advanced alloy factory(15)
+ '26':1, # advanced fleet academy (1)
+ } #total (40/40)
+
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

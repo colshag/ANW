@@ -1,0 +1,5 @@
+>>> import anwp.war.component
+>>> d = {'id':'1','name':'ShieldA', 'weaponID':'2', 'currentHP':50, 'type':'23'}
+>>> obj = anwp.war.component.Component(d)
+>>> obj.currentHP
+50

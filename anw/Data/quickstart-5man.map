@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Quickstart-5man
+# Written by Shawn Thomas
+# Updated Jan 16, 2012 - added more 5s and added 30s behind the players.
+# ---------------------------------------------------------------------------
+# Very small map that forces expansion and limits the ability to blockade someone.
+#  The goal is to take over the highly defended core player.
+# ---------------------------------------------------------------------------
+numEmpires = 6
+#Credits & Market settings from commonmap.data
+
+genSystemsLegend = {
+    'z': ('0', 5),
+    'a': ('0', 10),
+    'b': ('0', 15),
+    'c': ('0', 20),
+    'd': ('0', 30),
+    'A': ('1', 30),
+    'D': ('1', 40),
+    'H': ('2', 30),
+    'I': ('2', 40),
+    'M': ('3', 30),
+    'N': ('3', 40),
+    'R': ('4', 30),
+    'S': ('4', 40),
+    'V': ('5', 30),
+    'W': ('5', 40),
+    '.': (None, None)
+    }
+genSystemsData = [
+     '....dId....',
+     '....HzH....',
+     '....aab....',
+     '...dbczd...',
+     'dVbzA.AbaMd',
+     'Wzac.D.cazN',
+     'dVabA.AzbMd',
+     '...dzcbd...',
+     '....baa....',
+     '....RzR....',
+     '....dSd....',
+     ]
+defaultIndustry = {'14':1,# advanced design center (1)
+      '11':1,# advanced simulation center (1)
+      '41':10,# advanced research center(10)
+      '32':3,# advanced shipyard (6)
+      '35':3,# advanced marine installation (6)
+      '2':15, #advanced alloy factory(15)
+      '26':1, #advanced fleet academy (1)
+      } #total (40/40)
+	  
+startingTech = []
+for i in range(170):    
+ startingTech.append(i)
+
+# Neutral ships
+## include commonmap.data

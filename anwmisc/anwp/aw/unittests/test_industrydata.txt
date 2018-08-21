@@ -1,0 +1,9 @@
+>>> import anwp.aw.industrydata
+>>> d = {'id':'1', 'name':'factory', 'abr':'fac', 'costCR':1000, 'cities':1, 'output':1}
+>>> indData = anwp.aw.industrydata.IndustryData(d)
+>>> indData.id
+'1'
+>>> indData.name
+'factory'
+>>> indData.cities
+1

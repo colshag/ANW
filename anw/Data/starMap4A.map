@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# StarMap4A
+# Written by Chris Lewis
+# ---------------------------------------------------------------------------
+# This represents the data for a galactic map layout, used to auto generate
+# a Galactic Map with the Admin program
+# ---------------------------------------------------------------------------
+numEmpires = 5
+maxPlayersToAlly = 2
+startingAllies = []
+
+startingCredits = 400000
+marketOrderVolume = 50000
+marketMinVolume = 100
+marketMaxVolume = 1000
+
+genSystemsLegend = {'a': ('0', 10),
+                    'b': ('0', 15),
+                    'A': ('0', 20),
+                    'B': ('0', 30),
+                    'X': ('0', 50),
+                    'c': ('1', 10),
+                    'd': ('1', 15),
+                    'C': ('1', 20),
+                    'D': ('1', 40),
+                    'e': ('2', 10),
+                    'f': ('2', 15),
+                    'E': ('2', 20),
+                    'F': ('2', 40),
+                    'g': ('3', 10),
+                    'h': ('3', 15),
+                    'G': ('3', 20),
+                    'H': ('3', 40),
+                    'i': ('4', 10),
+                    'j': ('4', 15),
+                    'I': ('4', 20),
+                    'J': ('4', 40),
+                    '.': (None, None)
+                    }
+
+genSystemsData =[
+    'acCcaaBaaeEea',
+    'adDda.A.afFfa',
+    'aa.a.b.b.a.aa',
+    'ABA.A.X.A.ABA',
+    'aa.a.b.b.a.aa',
+    'ajJja.A.ahHha',
+    'aiIiaaBaagGga'
+    ]
+
+defaultIndustry = {'13':1,# basic design center
+                   '10':1,# basic simulation center
+                   '40':20,# basic research center
+                   '31':3,# basic shipyard
+                   '34':3# basic marine installation
+                   }
+
+startingTech = [0,1,2,3,5,6,7,8,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,29,37,38,39,40,53,67]
+
+neutralShips = {
+  5:['1','2'],			# 100% HCO
+  10:['1','2'],		# 87.5% HCO, 12.5% Frigate
+  15:['1','2'],# 80% HCO, 10% Frigate, 10% Drone Carrier
+  20:['1','2'],	# 30% HCO, 40% FRG, 20% Drone Carrier, 10% Heavy Cruiser
+  25:['4','4','4','4','5','5','8','8','7','6'],		# HCO, FRG, Drone Carrier, Heavy Cruiser
+  30:['4','4','5','5','8','8','7','7','6','6'],		# 20% HCO, 20% Frigate, 20% Drone Carrier, 20% Heavy Cruiser, 20% Dreadnaught
+  40:['8','8','7','7','7','6','6','6','13','13'],	# 20% Drone Carrier, 30% Heavy Cruiser, 30% Dreadnaught, 20% Super Dreadnaught
+  50:['8','8','8','6','6','6','13','13','13','13'],	# 30% Drone Carrier, 30% Dreadnaught, 40% Super Dreadnaught
+  }

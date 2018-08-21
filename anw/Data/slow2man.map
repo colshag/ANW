@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# slow2man.map
+# Written by Shawn Thomas
+# Updated Jan 16, 2012 - changed odd-ball planes out for base-5
+# ---------------------------------------------------------------------------
+# Slow start with only basic tech, but the closest planets are ripe for the picking.
+# Decide to risk attacking stronger planets early, or take the easier route
+# along the outside
+# ---------------------------------------------------------------------------
+numEmpires = 3
+startingCredits = 200000
+#Credits & Market settings from commonmap.data
+
+genSystemsLegend = {
+  'a': ('0', 5), # neutral player
+  'b': ('0', 10),
+  'c': ('0', 10),
+  'g': ('0', 15),
+  'h': ('0', 20),
+  'i': ('0', 30),
+  'j': ('0', 40),
+  'k': ('0', 50),
+  'D': ('1', 40), # player 2
+  'E': ('1', 30),
+  'F': ('1', 20),
+  'J': ('2', 40), # player 4
+  'K': ('2', 30),
+  'L': ('2', 20),
+  '.': (None, None),
+  }
+genSystemsData = [
+   '....bbc.....cbb....',
+   '....a..g...g..a....',
+   '.hiLbb..hih..bbFih.',
+   'jKJaacghikihgcaaDEj',
+   '.hiLbb..hih..bbFih.',
+   '....a..g...g..a....',
+   '....bbc.....cbb....',
+   ]
+defaultIndustry = {
+ '13':1, # basic design center (1)
+ '10':1, # basic simulation center (1)
+ '40':15,# basic research center(15)
+ '31':3, # basic shipyard (6)
+ '34':3, # basic marine installation (6)
+ '1':10, # basic alloy factory(10)
+ '25':1, # basic fleet academy (1)
+ } #total (40/40)
+#Starting Tech:
+#  Basic = 73 
+#  Advanced = 171
+#  Intellegent = 274
+
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

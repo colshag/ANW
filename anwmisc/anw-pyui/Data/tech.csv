@@ -1,0 +1,236 @@
+gid|name|x|y|complete|preTechs|preTechNum|requiredPoints|currentPoints|techAge|description|160|2
+0|Nuclear Age of Technology|160|1600|0|['0']|1|300|0|1|Nuclear Age of Technology
+1|Fortresses|320|320|0|['0']|1|100|0|1|Fortresses
+2|Industry|320|800|0|['0']|1|100|0|1|Industry
+3|Starship Design|320|1120|0|['0']|1|100|0|1|Starship Design
+4|Radar|320|1440|0|['0']|1|100|0|1|Radar
+5|Simulation Centers|320|1600|0|['0']|1|100|0|1|Simulation Centers
+6|Simple Starship Components|320|1760|0|['0']|1|100|0|1|Starship Components
+7|Research Centers|320|2240|0|['0']|1|100|0|1|Research Centers
+8|Construction|320|3040|0|['0']|1|100|0|1|Construction
+9|Fleet Academy|480|160|0|['1']|1|100|0|1|Fleet Academy
+10|Marine Academy|480|480|0|['1']|1|100|0|1|Marine Academy
+11|Credit Centers|480|640|0|['2']|1|100|0|1|Credit Centers
+12|Alloy Factories|480|800|0|['2']|1|100|0|1|Alloy Factories
+13|Starship Hulls|480|1120|0|['3']|1|100|0|1|Starship Hulls
+14|Jamming|480|1440|0|['4']|1|100|0|1|Jamming
+15|Nuclear Starship Weapons|480|1600|0|['6']|1|100|0|1|Nuclear Starship Weapons
+16|Shipyards|480|2880|0|['8']|1|100|0|1|Shipyards
+17|Military Installations|480|3200|0|['8']|1|100|0|1|Military Installations
+18|Nuclear Star Marines|640|320|0|['10']|1|100|0|1|Nuclear Star Marines
+19|Crystal Mines|640|640|0|['11','12']|2|100|0|1|Crystal Mines
+20|Light Military Hulls|640|800|0|['13']|1|100|0|1|Light Military Hulls
+21|Platforms|640|960|0|['13']|1|100|0|1|Platforms
+22|TroopShips|640|1120|0|['13']|1|100|0|1|TroopShips
+23|Nuclear Drones|640|1280|0|['15']|1|100|0|1|Nuclear Drones
+24|Nuclear Impact Weapons|640|1600|0|['15']|1|100|0|1|Nuclear Impact Weapons
+25|Nuclear Energy Weapons|640|1920|0|['15']|1|100|0|1|Nuclear Energy Weapons
+26|Warp Gates|640|3040|0|['16','17']|2|100|0|1|Warp Gates
+27|Light Nuclear Infantry|800|160|0|['18']|1|100|0|1|Light Nuclear Infantry
+28|Light Nuclear Mechanized|800|320|0|['18']|1|100|0|1|Light Nuclear Mechanized
+29|Light Nuclear Artillery|800|480|0|['18']|1|100|0|1|Light Nuclear Artillery
+30|Synthetic Systems|800|640|0|['19']|1|100|0|1|Synthetic Systems
+31|Interceptors|800|800|0|['20']|1|100|0|1|Interceptors
+32|Nuclear Interceptor Drones|800|1280|0|['23']|1|100|0|1|Nuclear Interceptor Drones
+33|Nuclear Bomber Drones|800|1440|0|['23']|1|100|0|1|Nuclear Bomber Drones
+34|Graviton Gun|800|1600|0|['24']|1|100|0|1|Graviton Gun
+35|Nuclear Missiles|800|1760|0|['24']|1|100|0|1|Nuclear Missiles
+36|Phasor Gun|800|1920|0|['25']|1|100|0|1|Phasor Gun
+37|Nuclear Torpedoes|800|2080|0|['25']|1|100|0|1|Nuclear Torpedoes
+38|Simple Defensive Systems|800|2240|0|['6']|1|100|0|1|Simple Defensive Systems
+39|Simple Starship Engines|960|2880|0|['71']|1|100|0|1|Simple Starship Engines
+40|Simple Rotation Thrusters|800|2720|0|['6']|1|100|0|1|Simple Rotation Thrusters
+41|Simple Power Plants|960|2720|0|['40','56']|2|100|0|1|Simple Power Plants
+42|Simple Radar|800|3200|0|['6']|1|100|0|1|Simple Radar
+43|Medium Nuclear Infantry|960|160|0|['27']|1|100|0|1|Medium Nuclear Infantry
+44|Medium Nuclear Mechanized|960|320|0|['28']|1|100|0|1|Medium Nuclear Mechanized
+45|Medium Nuclear Artillery|960|480|0|['29']|1|100|0|1|Medium Nuclear Artillery
+46|Corvettes|960|800|0|['31']|1|200|0|1|Corvettes
+47|Medium Nuclear Interceptors|960|1280|0|['32']|1|100|0|1|Medium Nuclear Interceptors
+48|Medium Nuclear Bombers|960|1440|0|['33']|1|100|0|1|Medium Nuclear Bombers
+49|Medium Graviton Gun|960|1600|0|['34']|1|100|0|1|Medium Graviton Gun
+50|Medium Nuclear Missiles|960|1760|0|['35']|1|100|0|1|Medium Nuclear Missiles
+51|Medium Phasor Gun|960|1920|0|['36']|1|100|0|1|Medium Phasor Gun
+52|Medium Nuclear Torpedoes|960|2080|0|['37']|1|100|0|1|Medium Nuclear Torpedoes
+53|Simple StarShip Armor|960|2240|0|['38']|1|100|0|1|Simple StarShip Armor
+54|Simple Anti-Missile System|960|2400|0|['38']|1|100|0|1|Simple Anti-Missile System
+55|Simple Engineering Stations|960|3200|0|['42']|1|100|0|1|Simple Engineering Stations
+56|Simple Starship Batteries|800|2560|0|['6']|1|100|0|1|Simple Starship Batteries
+57|Heavy Nuclear Infantry|1120|160|0|['43']|1|100|0|1|Heavy Nuclear Infantry
+58|Heavy Nuclear Mechanized|1120|320|0|['44']|1|100|0|1|Heavy Nuclear Mechanized
+59|Heavy Nuclear Artillery|1120|480|0|['45']|1|100|0|1|Heavy Nuclear Artillery
+60|Heavy Corvettes|1120|640|0|['46']|1|200|0|1|Heavy Corvettes
+61|Escort Carriers|1120|960|0|['75']|1|300|0|1|Escort Carriers
+62|Heavy Nuclear Interceptors|1120|1280|0|['47']|1|100|0|1|Heavy Nuclear Interceptors
+63|Heavy Nuclear Bombers|1120|1440|0|['48']|1|100|0|1|Heavy Nuclear Bombers
+64|Heavy Graviton Gun|1120|1600|0|['49']|1|100|0|1|Heavy Graviton Gun
+65|Heavy Nuclear Missiles|1120|1760|0|['50']|1|100|0|1|Heavy Nuclear Missiles
+66|Heavy Phasor Gun|1120|1920|0|['51']|1|100|0|1|Heavy Phasor Gun
+67|Heavy Nuclear Torpedoes|1120|2080|0|['52']|1|100|0|1|Heavy Nuclear Torpedoes
+68|Simple Impact Armor|1120|2240|0|['53']|1|100|0|1|Simple Impact Armor
+69|Simple Reflective Armor|1120|2400|0|['53']|1|100|0|1|Simple Reflective Armor
+70|Simple Starship Shields|1120|2720|0|['54']|1|100|0|1|Simple Starship Shields
+71|Simple Targeting Computers|800|2880|0|['6']|1|100|0|1|Simple Targeting Computers
+72|AMS Graviton Gun|960|2560|0|['54','34']|2|100|0|1|AMS Graviton Gun
+73|AMS Phasor Gun|1120|2560|0|['54','36']|2|100|0|1|AMS Phasor Gun
+74|Carrier Tech|800|1120|0|['21','22','23']|3|100|0|1|First Stage in Carrier Technology
+75|Remote Tech|960|1120|0|['74']|1|200|0|1|Second Stage in Carrier Technology
+76|Simple Jamming|1120|3040|0|['41','39','55']|3|200|0|1|Simple Jamming
+77|Simple Logistics|480|1280|0|['4']|1|100|0|1|Simple Logistics
+
+
+100|Fusion Age of Technology|160|1600|0|['57','58','59','60','61','62','63','64','65','66','67','68','69','70','71']|8|600|0|2|Fusion Age of Technology
+101|Advanced Fortresses|320|320|0|['100']|1|200|0|2|Advanced Fortresses
+102|Advanced Industry|320|800|0|['100']|1|200|0|2|Advanced Industry
+103|Advanced Starship Design|320|1120|0|['100']|1|200|0|2|Advanced Starship Design
+104|Advanced Radar|320|1440|0|['100']|1|200|0|2|Advanced Radar
+105|Advanced Simulation Centers|320|1600|0|['100']|1|200|0|2|Advanced Simulation Centers
+106|Progressive Starship Components|320|1760|0|['100']|1|200|0|2|Progressive Starship Components
+107|Advanced Research Centers|320|2240|0|['100']|1|200|0|2|Advanced Research Centers
+108|Advanced Construction|320|3040|0|['100']|1|200|0|2|Advanced Construction
+109|Advanced Fleet Academy|480|160|0|['101']|1|200|0|2|Advanced Fleet Academy
+110|Advanced Marine Academy|480|480|0|['101']|1|200|0|2|Advanced Marine Academy
+111|Advanced Credit Centers|480|640|0|['102']|1|200|0|2|Advanced Credit Centers
+112|Advanced Alloy Factories|480|800|0|['102']|1|200|0|2|Advanced Alloy Factories
+113|Advanced Starship Hulls|480|1120|0|['103']|1|200|0|2|Advanced Starship Hulls
+114|Advanced Jamming|480|1440|0|['104']|1|200|0|2|Advanced Jamming
+115|Fusion Starship Weapons|480|1600|0|['106']|1|200|0|2|Fusion Starship Weapons
+116|Advanced Shipyards|480|2880|0|['108']|1|200|0|2|Advanced Shipyards
+117|Advanced Military Installations|480|3200|0|['108']|1|200|0|2|Advanced Military Installations
+118|Fusion Star Marines|640|320|0|['110']|1|200|0|2|Fusion Star Marines
+119|Advanced Crystal Mines|640|640|0|['111','112']|2|200|0|2|Advanced Crystal Mines
+120|Advanced Military Hulls|640|800|0|['113']|1|200|0|2|Advanced Military Hulls
+121|Advanced Platforms|640|960|0|['113']|1|200|0|2|Advanced Platforms
+122|Advanced TroopShips|640|1120|0|['113']|1|200|0|2|Advanced TroopShips
+123|Fusion Drones|640|1280|0|['115']|1|200|0|2|Fusion Drones
+124|Fusion Impact Weapons|640|1600|0|['115']|1|200|0|2|Fusion Impact Weapons
+125|Fusion Energy Weapons|640|1920|0|['115']|1|200|0|2|Fusion Energy Weapons
+126|Advanced Warp Gates|640|3040|0|['116','117']|2|200|0|2|Advanced Warp Gates
+127|Light Fusion Infantry|800|160|0|['118']|1|200|0|2|Light Fusion Infantry
+128|Light Fusion Mechanized|800|320|0|['118']|1|200|0|2|Light Fusion Mechanized
+129|Light Fusion Artillery|800|480|0|['118']|1|200|0|2|Light Fusion Artillery
+130|Advanced Synthetic Systems|800|640|0|['119']|1|200|0|2|Advanced Synthetic Systems
+131|Frigates|800|800|0|['120']|1|200|0|2|Frigates
+132|Fusion Interceptor Drones|800|1280|0|['123']|1|200|0|2|Fusion Interceptor Drones
+133|Fusion Bomber Drones|800|1440|0|['123']|1|200|0|2|Fusion Bomber Drones
+134|Auto Cannon|800|1600|0|['124']|1|200|0|2|Auto Cannon
+135|Fusion Missiles|800|1760|0|['124']|1|200|0|2|Fusion Missiles
+136|Fusion Cannon|800|1920|0|['125']|1|200|0|2|Fusion Cannon
+137|Fusion Torpedoes|800|2080|0|['125']|1|200|0|2|Fusion Torpedoes
+138|Progressive Defensive Systems|800|2240|0|['106']|1|200|0|2|Progressive Defensive Systems
+139|Progressive Starship Engines|960|2880|0|['171']|1|200|0|2|Progressive Starship Engines
+140|Progressive Rotation Thrusters|800|2720|0|['106']|1|200|0|2|Progressive Rotation Thrusters
+141|Progressive Power Plants|960|2720|0|['140','156']|2|200|0|2|Progressive Power Plants
+142|Progressive Radar|800|3200|0|['106']|1|200|0|2|Progressive Radar
+143|Medium Fusion Infantry|960|160|0|['127']|1|200|0|2|Medium Fusion Infantry
+144|Medium Fusion Mechanized|960|320|0|['128']|1|200|0|2|Medium Fusion Mechanized
+145|Medium Fusion Artillery|960|480|0|['129']|1|200|0|2|Medium Fusion Artillery
+146|Battle Frigates|960|800|0|['131']|1|400|0|2|Battle Frigates
+147|Medium Fusion Interceptors|960|1280|0|['132']|1|200|0|2|Medium Fusion Interceptors
+148|Medium Fusion Bombers|960|1440|0|['133']|1|200|0|2|Medium Fusion Bombers
+149|Medium Auto Cannon|960|1600|0|['134']|1|200|0|2|Medium Auto Cannon
+150|Medium Fusion Missiles|960|1760|0|['135']|1|200|0|2|Medium Fusion Missiles
+151|Medium Fusion Cannon|960|1920|0|['136']|1|200|0|2|Medium Fusion Cannon
+152|Medium Fusion Torpedoes|960|2080|0|['137']|1|200|0|2|Medium Fusion Torpedoes
+153|Progressive StarShip Armor|960|2240|0|['138']|1|200|0|2|Progressive StarShip Armor
+154|Progressive Anti-Missile System|960|2400|0|['138']|1|200|0|2|Progressive Anti-Missile System
+155|Progressive Engineering Stations|960|3200|0|['142']|1|200|0|2|Progressive Engineering Stations
+156|Progressive Starship Batteries|800|2560|0|['106']|1|200|0|2|Progressive Starship Batteries
+157|Heavy Fusion Infantry|1120|160|0|['143']|1|200|0|2|Heavy Fusion Infantry
+158|Heavy Fusion Mechanized|1120|320|0|['144']|1|200|0|2|Heavy Fusion Mechanized
+159|Heavy Fusion Artillery|1120|480|0|['145']|1|200|0|2|Heavy Fusion Artillery
+160|Destroyers|1120|640|0|['146']|1|400|0|2|Destroyers
+161|Battle Carriers|1120|960|0|['121','122','123']|3|600|0|2|Battle Carriers
+162|Heavy Fusion Interceptors|1120|1280|0|['147']|1|200|0|2|Heavy Fusion Interceptors
+163|Heavy Fusion Bombers|1120|1440|0|['148']|1|200|0|2|Heavy Fusion Bombers
+164|Heavy Auto Cannon|1120|1600|0|['149']|1|200|0|2|Heavy Auto Cannon
+165|Heavy Fusion Missiles|1120|1760|0|['150']|1|200|0|2|Heavy Fusion Missiles
+166|Heavy Fusion Cannon|1120|1920|0|['151']|1|200|0|2|Heavy Fusion Cannon
+167|Heavy Fusion Torpedoes|1120|2080|0|['152']|1|200|0|2|Heavy Fusion Torpedoes
+168|Progressive Impact Armor|1120|2240|0|['153']|1|200|0|2|Progressive Impact Armor
+169|Progressive Reflective Armor|1120|2400|0|['153']|1|200|0|2|Progressive Reflective Armor
+170|Progressive Starship Shields|1120|2720|0|['154']|1|200|0|2|Progressive Starship Shields
+171|Progressive Targeting Computers|800|2880|0|['106']|1|200|0|2|Progressive Targeting Computers
+172|AMS Auto Cannon|960|2560|0|['154','134']|2|200|0|2|AMS Auto Cannon
+173|AMS Fusion Cannon|1120|2560|0|['154','136']|2|200|0|2|AMS Fusion Cannon
+176|Progressive Jamming|1120|3040|0|['141','139','155']|3|400|0|2|Progressive Jamming
+177|Advanced Logistics|480|1280|0|['104']|1|200|0|2|Advanced Logistics
+
+200|Plasma Age of Technology|160|1600|0|['157','158','159','160','161','162','163','164','165','166','167','168','169','170','171']|8|1200|0|3|Plasma Age of Technology
+201|Intelligent Fortresses|320|320|0|['200']|1|400|0|3|Intelligent Fortresses
+202|Intelligent Industry|320|800|0|['200']|1|400|0|3|Intelligent Industry
+203|Intelligent Starship Design|320|1120|0|['200']|1|400|0|3|Intelligent Starship Design
+204|Intelligent Radar|320|1440|0|['200']|1|400|0|3|Intelligent Radar
+205|Intelligent Simulation Centers|320|1600|0|['200']|1|400|0|3|Intelligent Simulation Centers
+206|Ultra Starship Components|320|1760|0|['200']|1|400|0|3|Ultra Starship Components
+207|Intelligent Research Centers|320|2240|0|['200']|1|400|0|3|Intelligent Research Centers
+208|Intelligent Construction|320|3040|0|['200']|1|400|0|3|Intelligent Construction
+209|Intelligent Fleet Academy|480|160|0|['201']|1|400|0|3|Intelligent Fleet Academy
+210|Intelligent Marine Academy|480|480|0|['201']|1|400|0|3|Intelligent Marine Academy
+211|Intelligent Credit Centers|480|640|0|['202']|1|400|0|3|Intelligent Credit Centers
+212|Intelligent Alloy Factories|480|800|0|['202']|1|400|0|3|Intelligent Alloy Factories
+213|Intelligent Starship Hulls|480|1120|0|['203']|1|400|0|3|Intelligent Starship Hulls
+214|Intelligent Jamming|480|1440|0|['204']|1|400|0|3|Intelligent Jamming
+215|Plasma Starship Weapons|480|1600|0|['206']|1|400|0|3|Plasma Starship Weapons
+216|Intelligent Shipyards|480|2880|0|['208']|1|400|0|3|Intelligent Shipyards
+217|Intelligent Military Installations|480|3200|0|['208']|1|400|0|3|Intelligent Military Installations
+218|Plasma Star Marines|640|320|0|['210']|1|400|0|3|Plasma Star Marines
+219|Intelligent Crystal Mines|640|640|0|['211','212']|2|400|0|3|Intelligent Crystal Mines
+220|Intelligent Military Hulls|640|800|0|['213']|1|400|0|3|Intelligent Military Hulls
+221|Intelligent Platforms|640|960|0|['213']|1|400|0|3|Intelligent Platforms
+222|Intelligent TroopShips|640|1120|0|['213']|1|400|0|3|Intelligent TroopShips
+223|Plasma Drones|640|1280|0|['215']|1|400|0|3|Plasma Drones
+224|Plasma Impact Weapons|640|1600|0|['215']|1|400|0|3|Plasma Impact Weapons
+225|Plasma Energy Weapons|640|1920|0|['215']|1|400|0|3|Plasma Energy Weapons
+226|Intelligent Warp Gates|640|3040|0|['216','217']|2|400|0|3|Intelligent Warp Gates
+227|Light Plasma Infantry|800|160|0|['218']|1|400|0|3|Light Plasma Infantry
+228|Light Plasma Mechanized|800|320|0|['218']|1|400|0|3|Light Plasma Mechanized
+229|Light Plasma Artillery|800|480|0|['218']|1|400|0|3|Light Plasma Artillery
+230|Intelligent Synthetic Systems|800|640|0|['219']|1|400|0|3|Intelligent Synthetic Systems
+231|Cruisers|800|800|0|['220']|1|400|0|3|Cruisers
+232|Plasma Interceptor Drones|800|1280|0|['223']|1|400|0|3|Plasma Interceptor Drones
+233|Plasma Bomber Drones|800|1440|0|['223']|1|400|0|3|Plasma Bomber Drones
+234|Rail Gun|800|1600|0|['224']|1|400|0|3|Rail Gun
+235|Plasma Missiles|800|1760|0|['224']|1|400|0|3|Plasma Missiles
+236|Plasma Cannon|800|1920|0|['225']|1|400|0|3|Plasma Cannon
+237|Plasma Torpedoes|800|2080|0|['225']|1|400|0|3|Plasma Torpedoes
+238|Ultra Defensive Systems|800|2240|0|['206']|1|400|0|3|Ultra Defensive Systems
+239|Ultra Starship Engines|960|2880|0|['271']|1|400|0|3|Ultra Starship Engines
+240|Ultra Rotation Thrusters|800|2720|0|['206']|1|400|0|3|Ultra Rotation Thrusters
+241|Ultra Power Plants|960|2720|0|['240','256']|2|400|0|3|Ultra Power Plants
+242|Ultra Radar|800|3200|0|['206']|1|400|0|3|Ultra Radar
+243|Medium Plasma Infantry|960|160|0|['227']|1|400|0|3|Medium Plasma Infantry
+244|Medium Plasma Mechanized|960|320|0|['228']|1|400|0|3|Medium Plasma Mechanized
+245|Medium Plasma Artillery|960|480|0|['229']|1|400|0|3|Medium Plasma Artillery
+246|Battle Cruisers|960|800|0|['231']|1|800|0|3|Battle Cruisers
+247|Medium Plasma Interceptors|960|1280|0|['232']|1|400|0|3|Medium Plasma Interceptors
+248|Medium Plasma Bombers|960|1440|0|['233']|1|400|0|3|Medium Plasma Bombers
+249|Medium Rail Gun|960|1600|0|['234']|1|400|0|3|Medium Rail Gun
+250|Medium Plasma Missiles|960|1760|0|['235']|1|400|0|3|Medium Plasma Missiles
+251|Medium Plasma Cannon|960|1920|0|['236']|1|400|0|3|Medium Plasma Cannon
+252|Medium Plasma Torpedoes|960|2080|0|['237']|1|400|0|3|Medium Plasma Torpedoes
+253|Ultra StarShip Armor|960|2240|0|['238']|1|400|0|3|Ultra StarShip Armor
+254|Ultra Anti-Missile System|960|2400|0|['238']|1|400|0|3|Ultra Anti-Missile System
+255|Ultra Engineering Stations|960|3200|0|['242']|1|400|0|3|Ultra Engineering Stations
+256|Ultra Starship Batteries|800|2560|0|['206']|1|400|0|3|Ultra Starship Batteries
+257|Heavy Plasma Infantry|1120|160|0|['243']|1|400|0|3|Heavy Plasma Infantry
+258|Heavy Plasma Mechanized|1120|320|0|['244']|1|400|0|3|Heavy Plasma Mechanized
+259|Heavy Plasma Artillery|1120|480|0|['245']|1|400|0|3|Heavy Plasma Artillery
+260|Heavy Cruisers|960|640|0|['246']|1|800|0|3|Heavy Cruisers
+261|Heavy Carriers|800|1120|0|['221','222','223']|3|1200|0|3|Heavy Carriers
+262|Heavy Plasma Interceptors|1120|1280|0|['247']|1|400|0|3|Heavy Plasma Interceptors
+263|Heavy Plasma Bombers|1120|1440|0|['248']|1|400|0|3|Heavy Plasma Bombers
+264|Heavy Rail Gun|1120|1600|0|['249']|1|400|0|3|Heavy Rail Gun
+265|Heavy Plasma Missiles|1120|1760|0|['250']|1|400|0|3|Heavy Plasma Missiles
+266|Heavy Plasma Cannon|1120|1920|0|['251']|1|400|0|3|Heavy Plasma Cannon
+267|Heavy Plasma Torpedoes|1120|2080|0|['252']|1|400|0|3|Heavy Plasma Torpedoes
+268|Ultra Impact Armor|1120|2240|0|['253']|1|400|0|3|Ultra Impact Armor
+269|Ultra Reflective Armor|1120|2400|0|['253']|1|400|0|3|Ultra Reflective Armor
+270|Ultra Starship Shields|1120|2720|0|['254']|1|400|0|3|Ultra Starship Shields
+271|Ultra Targeting Computers|800|2880|0|['206']|1|400|0|3|Ultra Targeting Computers
+272|Dreadnoughts|1120|640|0|['260']|1|800|0|3|Dreadnoughts
+273|Super Dreadnoughts|1440|640|0|['272']|1|1600|0|3|Super Dreadnoughts
+274|AMS Rail Gun|960|2560|0|['254','234']|2|200|0|3|AMS Rail Gun
+275|AMS Plasma Cannon|1120|2560|0|['254','236']|2|200|0|3|AMS Plasma Cannon
+276|Ultra Jamming|1120|3040|0|['241','239','255']|3|600|0|3|Ultra Jamming
+277|Ultra Logistics|480|1280|0|['204']|1|400|0|3|Ultra Logistics

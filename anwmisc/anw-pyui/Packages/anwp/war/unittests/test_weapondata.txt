@@ -1,0 +1,7 @@
+>>> import anwp.war.weapondata
+>>> d = {'id':'1', 'name':'superlaser', 'abr':'SLAS', 'costCR':1000, 'range':1000, 'damage':100, 'maxLock':100, 'ammo':0, 'maxPower':200, 'maxCompHP':50, 'numComps':8, 'direct':'energy'}
+>>> weaponData = anwp.war.weapondata.WeaponData(d)
+>>> weaponData.id
+'1'
+>>> weaponData.direct
+'energy'

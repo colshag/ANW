@@ -1,0 +1,126 @@
+>>> import server
+>>> s = server.ANWServer(False)
+
+### Test _Log ###
+>>> key = {'galaxyName':'ANW1', 'galaxyPass':'p', 'empireID':'2', 'empirePass':'p', 'ip':'127.0.0.1'}
+>>> s._Log('test')
+test
+>>> s._Log('test2', key)
+test2: galaxy=ANW1, empireID=2, userIP=127.0.0.1
+
+### Test _LoadGalaxies ###
+>>> s._LoadGalaxies()
+Loading Galaxy:ANW1
+>>> galaxy = s.galaxies['ANW1']
+>>> galaxy.version
+'0.0.1'
+
+### Test _ValidateLogin ###
+>>> s._ValidateLogin(key)
+1
+>>> key['galaxyPass'] = 'non'
+>>> s._ValidateLogin(key)
+Invalid Login: galaxy password is incorrect: galaxy=ANW1, empireID=2, userIP=127.0.0.1
+0
+
+### Test getGalaxies ###
+>>> dict = s.xmlrpc_getGalaxies()
+getGalaxies Success
+>>> list = dict.keys()
+>>> list.sort()
+>>> list
+['ANW1']
+
+### Test xmlrpc_getEmpires ###
+>>> galaxy.name
+'ANW1'
+>>> galaxy.password
+'p'
+>>> s.xmlrpc_getEmpires('ANW1', 'wrongpass')
+galaxy password is incorrect
+'galaxy password is incorrect'
+>>> empireDict = s.xmlrpc_getEmpires('ANW1', 'p')
+getEmpires Success
+>>> list = empireDict.keys()
+>>> list.sort()
+>>> list
+['1', '10', '2', '3', '4', '5', '6', '7', '8', '9']
+>>> list = empireDict.values()
+>>> list.sort()
+>>> list
+['Cronus Alliance', 'Cruis Alliance', 'Gaean Empire', 'Hyperions', 'Iapetus Empire', 'Mnemosynes', 'Neutral', 'Phoebians', 'Rhean Federation', 'Themis Alliance']
+
+### Test _ValidateKey ###
+>>> g = s.galaxies['ANW1']
+>>> e = g.empires['1']
+>>> e.key
+''
+>>> e.ip
+''
+>>> e.key='12345'
+>>> e.ip='1.2.3.4'
+>>> key={'galaxyName':'ANW1', 'empireID':'1', 'key':'12345', 'ip':'1.2.3.4'}
+>>> s._ValidateKey(key)
+1
+
+### Test login ###
+>>> key = {'galaxyName':'ANW1', 'galaxyPass':'p', 'empireID':'1', 'empirePass':'wrong', 'ip':'127.0.0.1'}
+>>> s.xmlrpc_login(key)
+Invalid Login: empire password is incorrect: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+login Failure: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+'login Failure'
+>>> key['empirePass'] = 'p'
+>>> dict = s.xmlrpc_login(key)
+login Success: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+>>> allEmpireDict = dict['allEmpires']
+>>> allEmpireDict['1']['name']
+'Neutral'
+>>> allEmpireDict['1']['ip']
+'127.0.0.1'
+>>> len(allEmpireDict['1']['key']) == 20
+True
+>>> galaxyDict = dict['myGalaxy']
+>>> galaxyDict['name']
+'ANW1'
+>>> systemDict = dict['allSystems']
+>>> systemDict['4']['citiesUsed']
+0
+
+### Test logout, _SaveGalaxy ###
+#>>> s.galaxies['ANW1'].empires['1'].loggedIn
+#1
+#>>> s.galaxies['ANW1'].empires['1'].ip
+#'127.0.0.1'
+#>>> s.xmlrpc_logout(key)
+#1
+#>>> s.galaxies['ANW1'].empires['1'].loggedIn
+#0
+#>>> s.galaxies['ANW1'].empires['1'].ip
+#''
+#>>> s.galaxies['ANW1'].empires['1'].key
+#''
+
+### addIndustryOrder ###
+>>> generatedKey = dict['allEmpires']['1']['key']
+>>> clientKey = {'galaxyName':'ANW1', 'empireID':'1', 'key':generatedKey, 'ip':dict['allEmpires']['1']['ip']}
+>>> s._ValidateKey(clientKey)
+1
+>>> indOrderDict = {'type':'Add City', 'value':'CR', 'system':'4', 'round':1}
+>>> s.xmlrpc_addIndustryOrder(clientKey, indOrderDict)
+You Require: (CR:1000),(AL:100),(EC:10),(IA:0) to add City: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+'You Require: (CR:1000),(AL:100),(EC:10),(IA:0) to add City'
+>>> s.galaxies['ANW1'].empires['1'].CR = 1000
+>>> s.galaxies['ANW1'].systems['4'].AL = 100
+>>> s.galaxies['ANW1'].systems['4'].EC = 10
+>>> s.xmlrpc_addIndustryOrder(clientKey, indOrderDict)
+addIndustryOrder Success: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+1
+>>> s.galaxies['ANW1'].empires['1'].industryOrders['1'].type
+'Add City'
+>>> s.galaxies['ANW1'].empires['1'].industryOrders['1'].round
+1
+
+### getEmpireOrders ###
+>>> s.xmlrpc_getEmpireOrders(clientKey, 'industryOrders')
+getEmpireOrders:industryOrders Success: galaxy=ANW1, empireID=1, userIP=127.0.0.1
+{'1': {'system': '4', 'type': 'Add City', 'id': '1', 'value': 'CR', 'round': 1}}

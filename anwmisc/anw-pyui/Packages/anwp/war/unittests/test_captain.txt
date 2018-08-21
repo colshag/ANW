@@ -1,0 +1,6 @@
+>>> import anwp.war.captain
+>>> d = {'id':'1', 'name':'Johnny John', 'myShipID':'1', 'mySystemID':'none', 'experience':1123, 'rank':'lieutenant'}
+>>> obj = anwp.war.captain.Captain(d)
+>>> obj.experience
+1123
+

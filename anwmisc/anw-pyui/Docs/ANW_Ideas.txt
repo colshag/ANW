@@ -1,0 +1,23 @@
+ANW Ideas
+=========
+
+This document is meant as a placeholder for new ideas to implement in the game as development continues.  As Ideas become permanent they will
+be implemented into the DDD document.
+
+
+July 04-2005
+============
+- All Empires will be represented by 2 colors instead of just one, this opens up a large number of extra empires
+- There is a much higher limit to the number of Empires in the game.  Although more then 8 human players would slow down the game, there is
+no reason that ANW couldn't have many more empires filled in by AI players.
+- There would be a set number of colors to choose an Empire from, colors range from say 1 to 16.  so there could be around 16x16 Empires (256).
+- AI players will not auto-align with each other.  Each one acts independantly of each other and treats humans/AI the same
+- There will be less Neutral Planets, every Neutral Planet is instead an AI Empire with potentially only 1 planet to start with.
+- Planets might be better thought of as solar systems, or simply systems.  They can be represented by something other then a sphere, like a
+diamond or something that can show the 2 color scheme of ownership easier.  A system represents all the planets and productivity of a solar system.
+- All Ship/Marine 3D Models will be designed in grey-scale, with 3 main textures.  Textures that are colored by a choosable color, textures that
+are colored by the second color, and textures that are not affected by the colors at all.  This must be tested with the OGRE system.  (Think
+Homeworld).
+- Since there is a much larger potential for Empires, the Player will only be able to contact Empires that have been scouted.  The Galactic Map
+will also only reveal planets that have been scouted.  However, the overall Map layout will be revealed, just not the Empire Ownership.
+

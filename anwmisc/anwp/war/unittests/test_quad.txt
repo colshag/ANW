@@ -1,0 +1,20 @@
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+>>> myFleet = myGalaxy.fleets['1']
+>>> myFleet.setCurrentTarget()
+>>> myShip = myFleet.ships['1']
+
+### regenShields ###
+>>> myQuad = myShip.quads['fore']
+>>> (myQuad.genSP, myQuad.currentSP, myQuad.maxSP)
+(1, 100, 100)
+>>> myQuad.currentSP = 0
+>>> myQuad.regenShields()
+>>> (myQuad.genSP, myQuad.currentSP, myQuad.maxSP)
+(1, 1, 100)
+>>> myQuad.currentSP = 100
+>>> myQuad.regenShields()
+>>> (myQuad.genSP, myQuad.currentSP, myQuad.maxSP)
+(1, 100, 100)
+

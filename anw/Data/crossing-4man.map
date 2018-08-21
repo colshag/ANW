@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Crossing-4man
+# Written by Shawn Thomas (Nov, 2011)
+# ---------------------------------------------------------------------------
+# Medium map which should allow for fairly quick expansion early on, then limit
+# players as they face stronger NPC opposition. A second choke-point allows
+# players to fortify and defend, but watch your flanks for possible treachery!
+# ---------------------------------------------------------------------------
+numEmpires = 5
+startingCredits = 200000
+#Market settings from commonmap.data
+
+genSystemsLegend = {
+     'a': ('0', 10),
+     'b': ('0', 15),
+     'c': ('0', 20),
+     'd': ('0', 30),
+     'e': ('0', 40),
+     'A': ('1', 20),
+     'B': ('1', 20),
+     'C': ('1', 30),
+     'D': ('1', 40),
+     'F': ('2', 20),
+     'G': ('2', 20),
+     'H': ('2', 30),
+     'I': ('2', 40),
+     'K': ('3', 20),
+     'L': ('3', 20),
+     'M': ('3', 30),
+     'N': ('3', 40),
+     'P': ('4', 20),
+     'Q': ('4', 20),
+     'R': ('4', 30),
+     'S': ('4', 40),
+     '.': (None, None)
+     }
+genSystemsData = [
+      '........BDB........',
+      '........ACA........',
+      '........a.a........',
+      '........bcb........',
+      '.......c.b.c.......',
+      '......d.a.a.d......',
+      '.....d..a.a..d.....',
+      '....c....d....c....',
+      'GFab.aa.cbc.aa.baKL',
+      'IH.cb..dbebd..bc.MN',
+      'GFab.aa.cbc.aa.baKL',
+      '....c....d....c....',
+      '.....d..a.a..d.....',
+      '......d.a.a.d......',
+      '.......c.b.c.......',
+      '........bcb........',
+      '........a.a........',
+      '........PRP........',
+      '........QSQ........',
+      ]
+defaultIndustry = {'14':1,# advanced design center (1)
+       '11':1,# advanced simulation center (1)
+       '41':10,# advanced research center(10)
+       '32':3,# advanced shipyard (6)
+       '35':3,# advanced marine installation (6)
+       '2':15, #advanced alloy factory(15)
+       } #total (40/40)
+	  
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

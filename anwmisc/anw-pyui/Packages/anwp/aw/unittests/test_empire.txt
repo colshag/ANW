@@ -1,0 +1,163 @@
+>>> import anwp.aw.empire
+>>> d = {'id':'1','name':'Kurita','password':'test'}
+>>> obj = anwp.aw.empire.Empire(d)
+>>> obj.id
+'1'
+>>> obj.name
+'Kurita'
+>>> obj.AL
+0.0
+
+### getOtherEmpireInfo ###
+>>> dict = obj.getOtherEmpireInfo()
+>>> dict
+{'color1': '', 'imageFile': '', 'color2': '', 'id': '1', 'name': 'Kurita'}
+
+### getImageFileName ###
+>>> d_empire = {'id':'1', 'name':'test', 'color1':'red', 'color2':'blue'}
+>>> empire_obj = anwp.aw.empire.Empire(d_empire)
+>>> empire_obj.color1
+'red'
+>>> empire_obj.getImageFileName(1)
+>>> empire_obj.imageFile
+'emp_1_red_blue'
+
+### genMail ###
+>>> dMail = {'fromEmpire':'2', 'round':1, 'body':'test body', 'subject':'testsubject'}
+>>> empire_obj.genMail(dMail)
+1
+>>> myMail = empire_obj.mailBox['1']
+>>> myMail.body
+'test body'
+>>> myMail.round
+1
+
+### getMyDictInfo ###
+>>> import anwp.aw.tech
+>>> d = {'id':'1','name':'PhotoCannons','x':100,'y':200, 'requiredPoints':200, 'currentPoints':55}
+>>> techobj = anwp.aw.tech.Tech(d)
+>>> obj.techTree['1'] = techobj
+>>> d = obj.getMyDictInfo('techTree')
+>>> d
+{'1': {'description': '', 'name': 'PhotoCannons', 'imageFile': '', 'requiredPoints': 200, 'currentPoints': 55, 'techAge': 0, 'y': 200, 'x': 100, 'preTechNum': 0, 'id': '1', 'preTechs': [], 'complete': 0}}
+
+### getMyResearchedIndustry ###
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+
+>>> myEmpire = myGalaxy.empires['1']
+>>> list = myEmpire.getMyResearchedIndustry()
+>>> list
+['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45']
+
+### genIndustryOrder, payForIndustryOrder, validateGenIndustryORder###
+>>> myGalaxy.currentRound = 1
+>>> round = myGalaxy.currentRound
+>>> dOrder = {'system':'4', 'round':round, 'type':'Upgrade Industry', 'value':'20'}
+>>> myEmpire.genIndustryOrder(dOrder)
+'system->validateUpgradeIndustry error'
+>>> dOrder = {'system':'4', 'round':round, 'type':'Add City', 'value':'CR'}
+>>> myEmpire.genIndustryOrder(dOrder)
+'You Require: (CR:1000),(AL:100),(EC:10),(IA:0) to add City'
+>>> myEmpire.CR = 1000
+>>> myEmpire.myGalaxy.systems['4'].AL = 100
+>>> myEmpire.myGalaxy.systems['4'].EC = 10
+>>> myEmpire.genIndustryOrder(dOrder)
+1
+>>> myOrder = myEmpire.industryOrders['1']
+>>> myOrder.type
+'Add City'
+>>> myOrder.system
+'4'
+
+### getMyOrdersByRound ###
+>>> myEmpire.getMyOrdersByRound('industryOrders')
+{'1': {'system': '4', 'type': 'Add City', 'id': '1', 'value': 'CR', 'round': 1}}
+
+### cancelIndustryOrder ###
+>>> myEmpire.CR
+0
+>>> myEmpire.cancelIndustryOrder('1')
+1
+>>> myEmpire.CR
+1000
+>>> myEmpire.industryOrders
+{}
+
+### genTechOrder, validateTechOrder, payForTechOrder ###
+### refundTechOrder, cancelTechOrder ###
+>>> dOrder = {'type': '1', 'round': round, 'value': 45}
+>>> myEmpire.techOrders
+{}
+>>> myEmpire.genTechOrder(dOrder)
+'You have already researched this technology'
+>>> myEmpire.techTree['1'].complete = 0
+>>> myEmpire.genTechOrder(dOrder)
+'You do not have enough research points left: Req=45, Avail=0'
+>>> myEmpire.rpAvail = 50
+>>> myEmpire.genTechOrder(dOrder)
+'You are placing too much research on this technology'
+>>> myEmpire.techTree['1'].currentPoints = 0
+>>> myEmpire.rpAvail
+50
+>>> myEmpire.genTechOrder(dOrder)
+1
+>>> myEmpire.rpAvail
+5
+>>> myEmpire.rpUsed
+45
+>>> myEmpire.techOrders.keys()
+['1-1']
+>>> myEmpire.cancelTechOrder('1-1')
+1
+>>> myEmpire.techOrders
+{}
+>>> myEmpire.rpAvail
+50
+>>> myEmpire.rpUsed
+0
+
+### buildIndustry ###
+>>> myEmpire.buildIndustry()
+'[]'
+
+### calcResearch ###
+>>> myEmpire.calcResearch([23, 24, 25, 25, 68, 89, 32])
+'[]'
+
+### getMyEmpireInfo ###
+>>> dict = myEmpire.getMyEmpireInfo()
+>>> dict['name']
+'Neutral'
+
+### processSystems ###
+>>> results = myEmpire.processSystems()
+
+### validateShipDesign, genShipDesign ###
+>>> len(myEmpire.shipDesigns.keys())
+4
+>>> compDict = {'fore':['31','31','31','31'],'port':['31','1','7','34'],'star':['31','1','4','34'],'aft':['WN1','WN1','WN1','WN1']}
+>>> weapDict = {'aft-1':{'id':'1', 'type':'13', 'facing':0}}
+>>> myEmpire.genShipDesign('Photon', '1', compDict, weapDict)
+'You do not have enough Design Centers to build another Ship Design this Round'
+>>> myEmpire.designsLeft = 1
+>>> myEmpire.genShipDesign('Photon', '1', compDict, weapDict)
+'You do not have the technology to use this weapon:Light Nuclear Torpedo'
+>>> myEmpire.techTree[myEmpire.myGalaxy.weapondata['13'].techReq].complete = 1
+>>> myEmpire.genShipDesign('Photon', '1', compDict, weapDict)
+1
+>>> len(myEmpire.shipDesigns.keys())
+5
+>>> myEmpire.shipDesigns['5'].name
+'SCT5-Photon'
+
+### getCaptainNames ###
+>>> myEmpire.currentCaptainName
+0
+>>> myEmpire.getCaptainName()
+'Nif Ccana'
+>>> myEmpire.currentCaptainName
+2
+
+

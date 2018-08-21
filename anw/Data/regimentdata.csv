@@ -1,0 +1,31 @@
+id,name,abr,costCR,costAL,costEC,costIA,techReq,description,power,L,I,M,A
+1,Nuclear Militia,NML,0,0,0,0,1,Nuclear Militia,150,0,0,0,0
+2,Light Nuclear Infantry,LNI,1800,0,0,48,26,Light Nuclear Infantry,100,25,0,50,0
+3,Medium Nuclear Infantry,MNI,2400,0,0,72,41,Medium Nuclear Infantry,200,25,0,50,0
+4,Heavy Nuclear Infantry,HNI,3000,0,0,96,54,Heavy Nuclear Infantry,300,25,0,50,0
+5,Light Nuclear Mechanized,LNM,1800,180,0,0,27,Light Nuclear Mechanized,100,0,0,0,100
+6,Medium Nuclear Mechanized,MNM,2400,240,0,0,42,Medium Nuclear Mechanized,200,0,0,0,100
+7,Heavy Nuclear Mechanized,HNM,3000,300,0,0,55,Heavy Nuclear Mechanized,300,0,0,0,100
+8,Light Nuclear Artillery,LNA,1800,0,96,0,28,Light Nuclear Artillery,100,50,50,0,0
+9,Medium Nuclear Artillery,MNA,2400,0,144,0,43,Medium Nuclear Artillery,200,50,50,0,0
+10,Heavy Nuclear Artillery,HNA,3000,0,192,0,56,Heavy Nuclear Artillery,300,50,50,0,0
+11,Fusion Militia,FML,0,0,0,0,101,Fusion Militia,400,0,0,0,0
+12,Light Fusion Infantry,LFI,1800,0,0,48,126,Light Fusion Infantry,300,25,0,50,0
+13,Medium Fusion Infantry,MFI,2400,0,0,72,141,Medium Fusion Infantry,600,25,0,50,0
+14,Heavy Fusion Infantry,HFI,3000,0,0,96,154,Heavy Fusion Infantry,900,25,0,50,0
+15,Light Fusion Mechanized,LFM,1800,180,0,0,127,Light Fusion Mechanized,300,0,0,0,100
+16,Medium Fusion Mechanized,MFM,2400,240,0,0,142,Medium Fusion Mechanized,600,0,0,0,100
+17,Heavy Fusion Mechanized,HFM,3000,300,0,0,155,Heavy Fusion Mechanized,900,0,0,0,100
+18,Light Fusion Artillery,LFA,1800,0,96,0,128,Light Fusion Artillery,300,50,50,0,0
+19,Medium Fusion Artillery,MFA,2400,0,144,0,143,Medium Fusion Artillery,600,50,50,0,0
+20,Heavy Fusion Artillery,HFA,3000,0,192,0,156,Heavy Fusion Artillery,900,50,50,0,0
+21,Plasma Militia,PML,0,0,0,0,201,Plasma Militia,1000,0,0,0,0
+22,Light Plasma Infantry,LPI,1800,0,0,48,226,Light Plasma Infantry,900,25,0,50,0
+23,Medium Plasma Infantry,MPI,2400,0,0,72,241,Medium Plasma Infantry,1200,25,0,50,0
+24,Heavy Plasma Infantry,HPI,3000,0,0,96,254,Heavy Plasma Infantry,1500,25,0,50,0
+25,Light Plasma Mechanized,LPM,1800,180,0,0,227,Light Plasma Mechanized,900,0,0,0,100
+26,Medium Plasma Mechanized,MPM,2400,240,0,0,242,Medium Plasma Mechanized,1200,0,0,0,100
+27,Heavy Plasma Mechanized,HPM,3000,300,0,0,255,Heavy Plasma Mechanized,1500,0,0,0,100
+28,Light Plasma Artillery,LPA,1800,0,96,0,228,Light Plasma Artillery,900,50,50,0,0
+29,Medium Plasma Artillery,MPA,2400,0,144,0,243,Medium Plasma Artillery,1200,50,50,0,0
+30,Heavy Plasma Artillery,HPA,3000,0,192,0,256,Heavy Plasma Artillery,1500,50,50,0,0

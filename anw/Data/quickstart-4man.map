@@ -1,0 +1,50 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Quickstart-4man
+# Written by Shawn Thomas (Nov, 2011)
+# ---------------------------------------------------------------------------
+# Very small map that forces expansion and limits the ability to blockade someone.
+#  The goal is to take over the highly defended core.
+# ---------------------------------------------------------------------------
+numEmpires = 5
+#Credits & Market settings from commonmap.data
+genSystemsLegend = {'a': ('0', 10),
+     'b': ('0', 15),
+     'A': ('0', 20),
+     'B': ('0', 30),
+     'X': ('0', 40),
+     'c': ('1', 40),
+     'C': ('1', 30),
+     'd': ('2', 40),
+     'D': ('2', 30),
+     'e': ('3', 40),
+     'E': ('3', 30),
+     'f': ('4', 40),
+     'F': ('4', 30),
+     '.': (None, None)
+     }
+genSystemsData = ['....c....',
+      '...C.C...',
+      '...bab...',
+      '.FbB.BbE.',
+      'f.a.X.a.e',
+      '.FbB.BbE.',
+      '...bab...',
+      '...D.D...',
+      '....d....',
+      ]
+defaultIndustry = {'14':1,# advanced design center (1)
+       '11':1,# advanced simulation center (1)
+       '41':10,# advanced research center(10)
+       '32':3,# advanced shipyard (6)
+       '35':3,# advanced marine installation (6)
+       '2':15, #advanced alloy factory(15)
+       '26':1, #advanced fleet academy (1)
+       } #total (40/40)
+	  
+startingTech = []
+for i in range(170):    
+ startingTech.append(i)
+
+# Neutral ships
+## include commonmap.data

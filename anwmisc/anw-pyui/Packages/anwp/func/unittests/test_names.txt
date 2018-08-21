@@ -1,0 +1,36 @@
+>>> import anwp.func.names
+>>> n = anwp.func.names.NameGenerator(5)
+>>> n.inputFile('system_names.txt')
+>>> for i in range(0,30):
+... 	print 'name:', n.makeName()
+... 	
+name: Agulesc
+name: Ndraco
+name: Ntaid
+name: Avo
+name: Vustan
+name: Ulatriuc
+name: Yon
+name: Rsalisce
+name: Gastrini
+name: Yranuseust
+name: Idaliopu
+name: Erak
+name: Tesc
+name: Sces
+name: Inustri
+name: Izari
+name: Boli
+name: Seuseuse
+name: Rocyona
+name: Rsalhau
+name: Imalischus
+name: Kairg
+name: Ootelgenu
+name: Icorvus
+name: Yonarisc
+name: Alisce
+name: Medances
+name: Oma
+name: Ygnus
+name: Entaba

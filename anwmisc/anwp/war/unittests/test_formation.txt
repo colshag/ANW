@@ -1,0 +1,11 @@
+>>> import anwp.war.formation
+>>> d = {'id':'1','name':'box', 'seperation':50, 'maxUnits':9, 'matrix':'[[0,0],[0,1],[1,0],[-1,0],[0,-1],[-1,1],[1,1],[-1,-1],[1,-1]]'}
+>>> obj = anwp.war.formation.Formation(d)
+>>> obj.id
+'1'
+
+### getMatrix ###
+>>> list = obj.getMatrix()
+>>> list
+[[0, 0], [0, 50], [50, 0], [-50, 0], [0, -50], [-50, 50], [50, 50], [-50, -50], [50, -50]]
+

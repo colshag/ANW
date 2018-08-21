@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="cc.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+   inkscape:export-xdpi="51.163048"
+   inkscape:export-ydpi="51.163048">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="276.91732"
+     inkscape:cy="445.91232"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="1068"
+     inkscape:window-x="127"
+     inkscape:window-y="103" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:13.48354149000000035;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:21.57366577000000163;stroke-opacity:1"
+       id="rect2383"
+       width="436.84146"
+       height="199.45558"
+       x="146.24434"
+       y="547.05811"
+       ry="37.086983"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <path
+       sodipodi:type="star"
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:13.48354149000000035;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:32.00000014999999820;stroke-opacity:1"
+       id="path3175"
+       sodipodi:sides="3"
+       sodipodi:cx="218.19295"
+       sodipodi:cy="487.68692"
+       sodipodi:r1="62.400944"
+       sodipodi:r2="30.855885"
+       sodipodi:arg1="0.5070985"
+       sodipodi:arg2="1.5542961"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 272.74119,517.9915 L 218.70205,518.5386 L 164.67429,519.77479 L 191.22005,472.70198 L 217.16336,425.29447 L 244.65674,471.82018 L 272.74119,517.9915 z"
+       transform="matrix(-0.4379949,0.7055375,-0.8387557,-0.4205498,719.11307,572.21091)"
+       inkscape:transform-center-x="42.894288"
+       inkscape:transform-center-y="-4.2327336e-05"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <path
+       sodipodi:type="star"
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:13.48354149000000035;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:32.00000014999999820;stroke-opacity:1"
+       id="path3183"
+       sodipodi:sides="3"
+       sodipodi:cx="218.19295"
+       sodipodi:cy="487.68692"
+       sodipodi:r1="62.400944"
+       sodipodi:r2="30.855885"
+       sodipodi:arg1="0.5070985"
+       sodipodi:arg2="1.5542961"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 272.74119,517.9915 L 218.70205,518.5386 L 164.67429,519.77479 L 191.22005,472.70198 L 217.16336,425.29447 L 244.65674,471.82018 L 272.74119,517.9915 z"
+       transform="matrix(-0.4379949,0.7055375,-0.8387557,-0.4205498,816.02838,571.79965)"
+       inkscape:transform-center-x="42.894288"
+       inkscape:transform-center-y="-4.2327336e-05"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <path
+       sodipodi:type="star"
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:13.48354149000000035;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:32.00000014999999820;stroke-opacity:1"
+       id="path3185"
+       sodipodi:sides="3"
+       sodipodi:cx="218.19295"
+       sodipodi:cy="487.68692"
+       sodipodi:r1="62.400944"
+       sodipodi:r2="30.855885"
+       sodipodi:arg1="0.5070985"
+       sodipodi:arg2="1.5542961"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 272.74119,517.9915 L 218.70205,518.5386 L 164.67429,519.77479 L 191.22005,472.70198 L 217.16336,425.29447 L 244.65674,471.82018 L 272.74119,517.9915 z"
+       transform="matrix(-0.4379949,0.7055375,-0.8387557,-0.4205498,913.00302,571.79965)"
+       inkscape:transform-center-x="42.894288"
+       inkscape:transform-center-y="-4.2327336e-05"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <rect
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:14.37522030000000051;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:32.00000014999999820;stroke-opacity:1"
+       id="rect3187"
+       width="42.54488"
+       height="198.10837"
+       x="462.08554"
+       y="347.72153"
+       ry="25.203135"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <rect
+       style="opacity:0.72690759000000005;fill:#000000;fill-opacity:0.39215686999999999;stroke:#000000;stroke-width:14.37522030000000051;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:32.00000014999999820;stroke-opacity:1"
+       id="rect3189"
+       width="42.54488"
+       height="198.10837"
+       x="530.27087"
+       y="348.22662"
+       ry="25.203135"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048" />
+    <text
+       xml:space="preserve"
+       style="font-size:137.72277832px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="158.2769"
+       y="740.03217"
+       id="text4725"
+       transform="scale(1.039393,0.9621)"
+       inkscape:export-filename="/home/chris/development/ANW/Graphics/2D/buttons/cc.png"
+       inkscape:export-xdpi="51.163048"
+       inkscape:export-ydpi="51.163048"><tspan
+         sodipodi:role="line"
+         id="tspan4727"
+         x="158.2769"
+         y="740.03217"
+         style="font-size:192.81188965px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sui Generis;-inkscape-font-specification:Sui Generis Bold Italic">CR</tspan></text>
+  </g>
+</svg>

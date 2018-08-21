@@ -1,0 +1,113 @@
+<Comment> {
+  "egg-texture-cards -o sendcredit_A_maps.egg -p 96,100 sendcredit_A_ready.png sendcredit_A_click.png sendcredit_A_rollover.png sendcredit_A_disabled.png"
+}
+<Texture> sendcredit_A_rollover {
+  sendcredit_A_rollover.png
+}
+<Texture> sendcredit_A_ready {
+  sendcredit_A_ready.png
+}
+<Texture> sendcredit_A_disabled {
+  sendcredit_A_disabled.png
+}
+<Texture> sendcredit_A_click {
+  sendcredit_A_click.png
+}
+<Group> {
+  <Switch> { 1 }
+  <Scalar> fps { 2 }
+  <VertexPool> vpool {
+    <Vertex> 0 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 1 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 2 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 3 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 4 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 5 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 6 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 7 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 8 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 9 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 10 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 11 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 12 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 13 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 14 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 15 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+  }
+  <Group> sendcredit_A_ready {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { sendcredit_A_ready }
+      <VertexRef> { 0 1 2 3 <Ref> { vpool } }
+    }
+  }
+  <Group> sendcredit_A_click {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { sendcredit_A_click }
+      <VertexRef> { 4 5 6 7 <Ref> { vpool } }
+    }
+  }
+  <Group> sendcredit_A_rollover {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { sendcredit_A_rollover }
+      <VertexRef> { 8 9 10 11 <Ref> { vpool } }
+    }
+  }
+  <Group> sendcredit_A_disabled {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { sendcredit_A_disabled }
+      <VertexRef> { 12 13 14 15 <Ref> { vpool } }
+    }
+  }
+}

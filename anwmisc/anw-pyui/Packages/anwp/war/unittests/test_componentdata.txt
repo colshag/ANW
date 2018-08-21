@@ -1,0 +1,7 @@
+>>> import anwp.war.componentdata
+>>> d = {'id':'1', 'name':'miniEngines', 'abr':'MENG', 'costCR':1000, 'engine':500, 'maxHP':50}
+>>> componentData = anwp.war.componentdata.ComponentData(d)
+>>> componentData.id
+'1'
+>>> componentData.maxHP
+50

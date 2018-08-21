@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# PigMiddle-4man
+# Written by Shawn Thomas (Nov, 2011)
+# ---------------------------------------------------------------------------
+# Pig in the middle.  The idea is the center player is the "pig", he can build
+# fortify, but not explore.  The first player from the edge to wipe him out wins
+# NOTE: is it intended to play this map more as a 3-man, with the center player
+#  being more of a NPC objective.  Alliances should be forbidden.
+#  All tech is provided.
+# ---------------------------------------------------------------------------
+numEmpires = 5
+startingCredits = 200000
+#Market settings from commonmap.data
+
+genSystemsLegend = {'a': ('0', 10),
+     'b': ('0', 10),
+     'A': ('0', 15),
+     'c': ('1', 40),
+     'C': ('1', 20),
+     'd': ('2', 40),
+     'D': ('2', 20),
+     'e': ('3', 40),
+     'E': ('3', 20),
+     'f': ('4', 40),
+     'F': ('4', 30),
+     '.': (None, None)
+     }
+genSystemsData = ['.....c.....',
+      '....C.C....',
+      '....aCa....',
+      '.....b.....',
+      '....AAA....',
+      '.....F.....',
+      '.....f.....',
+      '...AF.FA...',
+      '...AA.AA...',
+      'Dab.....baE',
+      '.Da.....aE.',
+      'd.D.....E.e',
+      ]
+defaultIndustry = {'15':1,# intelligent design center (1)
+       '12':1,# intelligent simulation center (1)
+       '18':1,# intelligent radar station (1)
+       '33':3,# intelligent shipyard (6)
+       '36':3,# intelligent marine installation (6)
+       '6':5, #intelligent crystal factory(5)
+       '9':10, #intelligent synthetic factory(10)
+       '24':3, #intelligent marine installation(6)
+       } #total (36/40)
+
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

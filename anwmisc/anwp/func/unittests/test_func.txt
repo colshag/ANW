@@ -1,0 +1,167 @@
+### sortDictValues ###
+>>> import anwp.func.funcs
+>>> dict = {2:'two', 3:'three', 17:'seventeen'}
+>>> list = anwp.func.funcs.sortDictValues(dict)
+>>> list
+['two', 'three', 'seventeen']
+>>> dict = {'6':6,'7':7,'1':1,'3':3,'10':10,'4':4}
+>>> list = anwp.func.funcs.sortDictValues(dict)
+>>> list
+[1, 3, 4, 6, 7, 10]
+
+### returnDictFromString ###
+>>> anwp.func.funcs.returnDictFromString('aaaaaabbbbbb', 5)
+{1: 'aaaaa', 2: 'abbbb', 3: 'bb'}
+
+### sortStringList ###
+>>> list = ['1', '108', '11']
+>>> list.sort()
+>>> list
+['1', '108', '11']
+>>> list = anwp.func.funcs.sortStringList(list)
+>>> list
+['1', '11', '108']
+>>> list = ['1-1', '10-10', '2-2']
+>>> list = anwp.func.funcs.sortStringList(list)
+>>> list
+['1-1', '10-10', '2-2']
+
+### getRelativeAngle ###
+>>> anwp.func.funcs.getRelativeAngle(400,400,400,600)
+90.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,200,600)
+135.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,200,400)
+180.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,200,200)
+225.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,400,200)
+270.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,600,200)
+315.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,600,400)
+0.0
+>>> anwp.func.funcs.getRelativeAngle(400,400,600,600)
+45.0
+
+### getXYfromAngle###
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,0)
+(200.0, 100.0)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,45)
+(170.71067811865476, 170.71067811865476)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,90)
+(100.0, 200.0)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,135)
+(29.289321881345259, 170.71067811865476)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,180)
+(0.0, 100.00000000000001)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,225)
+(29.289321881345231, 29.289321881345259)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,270)
+(99.999999999999986, 0.0)
+>>> anwp.func.funcs.getXYfromAngle(100,100,100,315)
+(170.71067811865476, 29.289321881345231)
+
+### getOffsetPoint ###
+>>> anwp.func.funcs.getOffsetPoint(400,400,400,600,10)
+(410, 500)
+>>> anwp.func.funcs.getOffsetPoint(400,400,200,600,10)
+(310, 510)
+>>> anwp.func.funcs.getOffsetPoint(400,400,200,400,10)
+(300, 410)
+>>> anwp.func.funcs.getOffsetPoint(400,400,200,200,10)
+(290, 310)
+>>> anwp.func.funcs.getOffsetPoint(400,400,400,200,10)
+(390, 300)
+>>> anwp.func.funcs.getOffsetPoint(400,400,600,200,10)
+(490, 290)
+>>> anwp.func.funcs.getOffsetPoint(400,400,600,400,10)
+(500, 390)
+>>> anwp.func.funcs.getOffsetPoint(400,400,600,600,10)
+(510, 490)
+
+### sortDictByValue ###
+>>> d = {1:1000, 2:500, 3:100, 4:30000}
+>>> anwp.func.funcs.sortDictByValue(d)
+[3, 2, 1, 4]
+
+### sortDictByChildDictValue ###
+>>> import anwp.func.root
+>>> child1 = anwp.func.root.Root({'id':'1', 'myInteger':1000, 'myString':'AL'})
+>>> child3 = anwp.func.root.Root({'id':'3', 'myInteger':1001, 'myString':'AL'})
+>>> child4 = anwp.func.root.Root({'id':'4', 'myInteger':1002, 'myString':'AL'})
+>>> child10 = anwp.func.root.Root({'id':'10', 'myInteger':1003, 'myString':'EC'})
+>>> child2 = anwp.func.root.Root({'id':'2', 'myInteger':1004, 'myString':'EC'})
+>>> parentDict = {'1':child1, '2':child2, '3':child3, '4':child4, '10':child10}
+>>> parentList = anwp.func.funcs.sortDictByChildObjValue(parentDict, 'myInteger', False, {})
+>>> (parentList[0].myInteger,parentList[1].myInteger,parentList[2].myInteger,parentList[3].myInteger,parentList[4].myInteger)
+(1000, 1001, 1002, 1003, 1004)
+>>> parentList = anwp.func.funcs.sortDictByChildObjValue(parentDict, 'myInteger', True, {})
+>>> (parentList[0].myInteger,parentList[1].myInteger,parentList[2].myInteger,parentList[3].myInteger,parentList[4].myInteger)
+(1004, 1003, 1002, 1001, 1000)
+>>> parentList = anwp.func.funcs.sortDictByChildObjValue(parentDict, 'myInteger', True, {'myString':'AL'})
+>>> (parentList[0].myInteger,parentList[1].myInteger,parentList[2].myInteger)
+(1002, 1001, 1000)
+
+### getTargetRange ###
+>>> anwp.func.funcs.getTargetRange(10,10, 100, 100)
+127.27922061357856
+
+### getAngleOffset ###
+>>> anwp.func.funcs.getAngleOffset(30, 300)
+90
+>>> anwp.func.funcs.getAngleOffset(30, 170)
+140
+>>> anwp.func.funcs.getAngleOffset(30, 20)
+10
+>>> anwp.func.funcs.getAngleOffset(300, 30)
+90
+>>> anwp.func.funcs.getAngleOffset(215, 200)
+15
+>>> anwp.func.funcs.getAngleOffset(215, 300)
+85
+>>> anwp.func.funcs.getAngleOffset(180, 30)
+150
+>>> anwp.func.funcs.getAngleOffset(180, 300)
+120
+>>> anwp.func.funcs.getAngleOffset(350, 10)
+20
+
+### getHitPosition ###
+>>> anwp.func.funcs.getHitPosition(600,100,100,100,0)
+'fore'
+>>> anwp.func.funcs.getHitPosition(600,100,100,100,90)
+'star'
+>>> anwp.func.funcs.getHitPosition(600,100,100,100,180)
+'aft'
+>>> anwp.func.funcs.getHitPosition(600,100,100,100,270)
+'port'
+>>> anwp.func.funcs.getHitPosition(100,100,600,100,0)
+'aft'
+>>> anwp.func.funcs.getHitPosition(100,100,600,100,90)
+'port'
+>>> anwp.func.funcs.getHitPosition(100,100,600,100,180)
+'fore'
+>>> anwp.func.funcs.getHitPosition(100,100,600,100,270)
+'star'
+
+### getDamageColor ###
+>>> anwp.func.funcs.getDamageColor(100,100)
+(254, 246, 248, 255)
+>>> anwp.func.funcs.getDamageColor(60,100)
+(252, 224, 0, 255)
+>>> anwp.func.funcs.getDamageColor(20,100)
+(238, 21, 21, 255)
+>>> anwp.func.funcs.getDamageColor(0,1)
+(238, 21, 21, 255)
+
+### targetInRangeArc ###
+>>> anwp.func.funcs.targetInRangeArc(45,0,0,100,100,300,20)
+141.42135623730951
+>>> anwp.func.funcs.targetInRangeArcOrig(45,0,0,100,100,300,20)
+141.42135623730951
+>>> anwp.func.funcs.targetInRangeArc(45,0,0,-100,-100,300,20)
+0
+>>> anwp.func.funcs.targetInRangeArcOrig(45,0,0,-100,-100,300,20)
+0
+

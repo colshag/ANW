@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Quickstart-2man
+# Written by Shawn Thomas (Dec, 2011)
+# ---------------------------------------------------------------------------
+# Very small map with full industry, and very difficult NPCs (requires new shipDesign.py)
+# ---------------------------------------------------------------------------
+numEmpires = 3
+startingCredits = 200000
+#Credits & Market settings from commonmap.data
+
+genSystemsLegend = {
+  'a': ('0', 10),
+  'b': ('0', 15),
+  'c': ('0', 20),
+  'd': ('0', 30),
+  'e': ('0', 50),
+  'A': ('1', 20),
+  'B': ('1', 30),
+  'C': ('1', 30),
+  'D': ('1', 40),
+  'F': ('2', 20),
+  'G': ('2', 30),
+  'H': ('2', 30),
+  'I': ('2', 40),
+  '.': (None, None)
+  }
+genSystemsData = [
+   '....d....',
+   '...c.c...',
+   '..b.a.b..',
+   'BAa...aFG',
+   'DC.ded.HI',
+   'BAa...aFG',
+   '..b.a.b..',
+   '...c.c...',
+   '....d....',
+   ]
+defaultIndustry = {
+    '3':15,# intellegent alloy factory(15)
+    '12':2,# intellegent simulation center (2)
+    '15':2,# intellegent design center (2)
+    '27':1,# intellegent Fleet academy (1)
+    '30':1,# intellegent Marine academy (1)
+    '33':4,# intellegent shipyard (8)
+    '36':4,# intellegent marine installation (8)
+    '39':3,# intellegent warp gate (3)
+    } #total (40/40)
+    
+startingTech = []
+for i in range(170):    
+ startingTech.append(i)
+
+# Neutral ships
+## include commonmap.data

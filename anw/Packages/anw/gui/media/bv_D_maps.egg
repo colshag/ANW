@@ -1,0 +1,113 @@
+<Comment> {
+  "egg-texture-cards -o bv_D_maps.egg -p 96,100 bv_D_ready.png bv_D_click.png bv_D_rollover.png bv_D_disabled.png"
+}
+<Texture> bv_D_rollover {
+  bv_D_rollover.png
+}
+<Texture> bv_D_ready {
+  bv_D_ready.png
+}
+<Texture> bv_D_disabled {
+  bv_D_disabled.png
+}
+<Texture> bv_D_click {
+  bv_D_click.png
+}
+<Group> {
+  <Switch> { 1 }
+  <Scalar> fps { 2 }
+  <VertexPool> vpool {
+    <Vertex> 0 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 1 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 2 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 3 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 4 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 5 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 6 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 7 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 8 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 9 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 10 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 11 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 12 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 13 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 14 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 15 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+  }
+  <Group> bv_D_ready {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { bv_D_ready }
+      <VertexRef> { 0 1 2 3 <Ref> { vpool } }
+    }
+  }
+  <Group> bv_D_click {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { bv_D_click }
+      <VertexRef> { 4 5 6 7 <Ref> { vpool } }
+    }
+  }
+  <Group> bv_D_rollover {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { bv_D_rollover }
+      <VertexRef> { 8 9 10 11 <Ref> { vpool } }
+    }
+  }
+  <Group> bv_D_disabled {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { bv_D_disabled }
+      <VertexRef> { 12 13 14 15 <Ref> { vpool } }
+    }
+  }
+}

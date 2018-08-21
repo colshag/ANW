@@ -1,0 +1,89 @@
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+>>> myFleet = myGalaxy.fleets['1']
+>>> myFleet.setCurrentTarget()
+>>> myShip = myFleet.ships['1']
+>>> myShip.name
+'scout1-1'
+
+### Setup Ship ###
+>>> myShip.facing = 0
+>>> myShip.posX = 100.0
+>>> myShip.posY = 100.0
+>>> myShip.myFleet.currentTarget.posX = 600.0
+>>> myShip.myFleet.currentTarget.posY = 100.0
+
+### getDxDyTarget ###
+>>> (myShip.posX, myShip.posY, myFleet.currentTarget.posX, myFleet.currentTarget.posY, myFleet.range)
+(100.0, 100.0, 600.0, 100.0, 0)
+>>> myShip.getDxDyTarget(myFleet.currentTarget.posX, myFleet.currentTarget.posY, myFleet.range)
+(0.0079679999999999994, 0.0)
+
+### getDxDyBorders ###
+>>> myShip.getDxDyBorders()
+(0.19600000000000004, 0.19599999999999998)
+
+### rotateToTarget ###
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+0
+>>> myShip.myFleet.currentTarget.posX = 500.0
+>>> myShip.myFleet.currentTarget.posY = 500.0
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+1
+>>> myShip.myFleet.currentTarget.posX = 50.0
+>>> myShip.myFleet.currentTarget.posY = 500.0
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+1
+>>> myShip.myFleet.currentTarget.posX = 50.0
+>>> myShip.myFleet.currentTarget.posY = 100.0
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+1
+>>> myShip.myFleet.currentTarget.posX = 50.0
+>>> myShip.myFleet.currentTarget.posY = 50.0
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+-1
+>>> myShip.myFleet.currentTarget.posX = 500.0
+>>> myShip.myFleet.currentTarget.posY = 50.0
+>>> myShip.rotateToTarget()
+>>> myShip.dRotation
+-1
+
+### powerWeapons ###
+>>> (myShip.quads['star'].weapons['1'].currentPower, myShip.quads['port'].weapons['1'].currentPower)
+(0, 0)
+>>> (myShip.currentPower, myShip.currentBattery, myShip.maxBattery)
+(1.0, 0, 50.0)
+>>> myShip.powerWeapons()
+>>> (myShip.quads['star'].weapons['1'].currentPower, myShip.quads['port'].weapons['1'].currentPower)
+(1, 1)
+>>> (myShip.currentPower, myShip.currentBattery, myShip.maxBattery)
+(1.0, 0, 50.0)
+>>> myShip.currentPower = 820.0
+>>> myShip.powerWeapons()
+>>> (myShip.quads['star'].weapons['1'].currentPower, myShip.quads['port'].weapons['1'].currentPower)
+(400, 400)
+>>> (myShip.quads['star'].weapons['1'].myWeaponData.maxPower, myShip.quads['port'].weapons['1'].myWeaponData.maxPower)
+(400, 400)
+>>> (myShip.currentPower, myShip.currentBattery, myShip.maxBattery)
+(820.0, 22.0, 50.0)
+
+### findOffset ###
+>>> myShip.posX = 500
+>>> myShip.posY = 500
+>>> myShip.findOffset(0, 10)
+(510.0, 500.0)
+>>> myShip.findOffset(90,10)
+(500.0, 510.0)
+>>> myShip.findOffset(180,10)
+(490.0, 500.0)
+>>> myShip.findOffset(270,10)
+(500.0, 490.0)
+
+
+

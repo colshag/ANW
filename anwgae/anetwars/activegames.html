@@ -1,0 +1,34 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+
+{% for ugilist in games %}
+<table class="pretty-table" summary="asdf">
+	<tr>
+		<tr>
+			<th scope="col"><b>Empire</b></th>
+			<th scope="col"><b>Turn Complete</b></th>
+			<th scope="col"><b>Surrender</b></th>
+		</tr>
+		{% for userGameInfo in ugilist %}
+		<caption>{{ userGameInfo.0.game.name }} - round {{ userGameInfo.1 }}</caption>
+		<tr>
+		
+		<td><img src=images/empire{{ userGameInfo.0.empireId }}.png></td>
+		{% if not userGameInfo.2 %}
+		<td class="alt">
+		{% else %}
+		<td>
+		{% endif %}
+		{{ userGameInfo.2 }}</td>
+		<td>{{ userGameInfo.0.surrender }}</td>
+		</tr>
+		{% endfor %}
+	</tr>
+	</tr>
+</table>
+{% endfor %}	
+</body>
+</html>

@@ -1,0 +1,7 @@
+>>> import anwp.war.shipdesign
+>>> d = {'id':'1', 'name':'ColinBuner3', 'abr':'CB3', 'costCR':1500, 'techReq':'31', 'shipHullID':'3', 'maxBattery':100, 'maxPower':300, 'thrust':200, 'rotation':50}
+>>> obj = anwp.war.shipdesign.ShipDesign(d)
+>>> obj.name
+'ColinBuner3'
+>>> obj.maxPower
+300

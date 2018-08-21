@@ -1,0 +1,113 @@
+<Comment> {
+  "egg-texture-cards -o industry_test1_maps.egg -p 800,100 industry_test1_ready.png industry_test1_click.png industry_test1_rollover.png industry_test1_disabled.png"
+}
+<Texture> industry_test1_rollover {
+  industry_test1_rollover.png
+}
+<Texture> industry_test1_ready {
+  industry_test1_ready.png
+}
+<Texture> industry_test1_disabled {
+  industry_test1_disabled.png
+}
+<Texture> industry_test1_click {
+  industry_test1_click.png
+}
+<Group> {
+  <Switch> { 1 }
+  <Scalar> fps { 2 }
+  <VertexPool> vpool {
+    <Vertex> 0 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 1 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 2 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 3 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 4 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 5 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 6 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 7 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 8 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 9 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 10 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 11 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+    <Vertex> 12 {
+      -0.5 0.5 0
+      <UV> { 0 1 }
+    }
+    <Vertex> 13 {
+      -0.5 -0.5 0
+      <UV> { 0 0 }
+    }
+    <Vertex> 14 {
+      0.5 -0.5 0
+      <UV> { 1 0 }
+    }
+    <Vertex> 15 {
+      0.5 0.5 0
+      <UV> { 1 1 }
+    }
+  }
+  <Group> industry_test1_ready {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { industry_test1_ready }
+      <VertexRef> { 0 1 2 3 <Ref> { vpool } }
+    }
+  }
+  <Group> industry_test1_click {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { industry_test1_click }
+      <VertexRef> { 4 5 6 7 <Ref> { vpool } }
+    }
+  }
+  <Group> industry_test1_rollover {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { industry_test1_rollover }
+      <VertexRef> { 8 9 10 11 <Ref> { vpool } }
+    }
+  }
+  <Group> industry_test1_disabled {
+    <Polygon> {
+      <RGBA> { 1 1 1 1 }
+      <TRef> { industry_test1_disabled }
+      <VertexRef> { 12 13 14 15 <Ref> { vpool } }
+    }
+  }
+}

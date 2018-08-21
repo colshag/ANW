@@ -1,0 +1,76 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# 8man-2v2v2v2
+# Written by Shawn Thomas (Jan 6, 2011)
+# ---------------------------------------------------------------------------
+
+#Credits & Market settings from commonmap.data
+
+numEmpires = 9
+maxPlayersToAlly = 2
+startingAllies = [
+  ['1','2'],
+  ['3','4'],
+  ['5','6'],
+  ['7','8'],
+  ]
+genSystemsLegend = {
+  'a': ('0', 10), # neutral player
+  'b': ('0', 15),
+  'c': ('0', 20),
+  'd': ('0', 30),
+  'e': ('0', 40),
+  'f': ('0', 50),
+  'A': ('1', 40), # player 1
+  'B': ('1', 30),
+  'C': ('2', 40), # player 2
+  'D': ('2', 30),
+  'E': ('3', 40), # player 3
+  'F': ('3', 30),
+  'G': ('4', 40), # player 4
+  'H': ('4', 30),
+  'I': ('5', 40), # player 5
+  'J': ('5', 30),
+  'K': ('6', 40), # player 6
+  'L': ('6', 30),
+  'M': ('7', 40), # player 7
+  'N': ('7', 30),
+  'O': ('8', 40), # player 8
+  'P': ('8', 30),
+  '.': (None, None),
+  }
+genSystemsData = [
+   '.......e...e.......',
+   '......dBcecDd......',
+   '......dAdbdCd......',
+   '......BaB.DaD......',
+   '......bab.bab......',
+   '.......acbca.......',
+   '.ddPb...cec...bFdd.',
+   'ePOaaa.dd.dd.aaaEFe',
+   '.cdPbccde.edccbFdc.',
+   '.eb..be..f..eb..be.',
+   '.ddNb...cec...bHdd.',
+   'eNMaaa.dd.dd.aaaGHe',
+   '.cdNbccde.edccbHdc.',
+   '.......acbca.......',
+   '......bab.bab......',
+   '......LaL.JaJ......',
+   '......dKdbdId......',
+   '......dLcecJd......',
+   '.......e...e.......',
+   ]
+defaultIndustry = {
+ '14':1, # advanced design center (1)
+ '11':1, # advanced simulation center (1)
+ '41':10,# advanced research center(10)
+ '32':3, # advanced shipyard (6)
+ '35':3, # advanced marine installation (6)
+ '2':15, # advanced alloy factory(15)
+ '26':1, # advanced fleet academy (1)
+ } #total (40/40)
+	  
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

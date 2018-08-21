@@ -1,0 +1,5 @@
+>>> import anwp.aw.industry
+>>> d = {'id':'1','industrytype':'10', 'state':1}
+>>> obj = anwp.aw.industry.Industry(d)
+>>> obj.id
+'1'

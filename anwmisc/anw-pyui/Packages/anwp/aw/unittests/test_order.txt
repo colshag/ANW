@@ -1,0 +1,17 @@
+>>> import anwp.aw.order
+>>> d = {'id':'1','type':'Add','value':'4','round':1}
+>>> obj = anwp.aw.order.Order(d)
+>>> obj.type
+'Add'
+
+### Industry Order ###
+>>> d = {'id':'2', 'type':'Remove', 'value':'3', 'round':2, 'system':21}
+>>> indOrder = anwp.aw.order.IndustryOrder(d)
+>>> indOrder.system
+'21'
+
+### Market Order ###
+>>> d = {'id':'3', 'type':'buy', 'value':'AL', 'round':2, 'system':21, 'max':100.0, 'amount':10.0}
+>>> marketOrder = anwp.aw.order.MarketOrder(d)
+>>> marketOrder.max
+100.0

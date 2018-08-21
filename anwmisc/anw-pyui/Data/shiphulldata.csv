@@ -1,0 +1,22 @@
+id,name,abr,costCR,costAL,costEC,costIA,techReq,description,function,size,componentNum,maxISP,mass
+1,Scout,SCT,1200,120,60,30,20,test,warship,small,4,400,4000
+2,Interceptor,INT,1800,180,90,45,31,test,warship,small,6,600,6000
+3,Corvette,COR,2400,240,120,60,46,test,warship,small,8,800,8000
+4,Heavy Corvette,HCO,3000,300,150,75,60,test,warship,small,10,1000,10000
+5,Frigate,FRG,3600,360,180,90,131,test,warship,large,12,2400,10800
+6,Battle Frigate,BFR,4200,420,210,105,146,test,warship,large,14,2800,12600
+7,Destroyer,DST,4800,480,240,120,160,test,warship,large,16,3200,14400
+8,Cruiser,CRU,5400,540,270,135,231,test,warship,large,18,3600,14400
+9,Battle Cruiser,BCU,6000,600,300,150,246,test,warship,large,20,8000,16000
+10,Heavy Cruiser,HCU,6600,660,330,165,260,test,warship,large,22,8800,17600
+11,Dreadnought,DRN,7200,720,360,180,272,test,warship,large,24,9600,19200
+12,Super Dreadnought,SDN,8400,840,420,210,273,test,warship,large,28,14000,19600
+13,Escort Carrier,ECA,3600,360,180,90,61,test,carrier,large,12,1200,12000
+14,Battle Carrier,BCA,4800,480,240,120,161,test,carrier,large,16,3200,14400
+15,Heavy Carrier,HCA,6000,600,300,150,261,test,carrier,large,20,8000,16000
+16,Light Troop Transport,LTT,3600,360,180,90,22,test,troopship,large,12,1200,12000
+17,Battle Troop Transport,BTT,4800,480,240,120,122,test,troopship,large,16,3200,14400
+18,Heavy Troop Transport,HTT,6000,600,300,150,222,test,troopship,large,20,8000,16000
+19,Light Weapons Platform,LWP,3000,300,150,75,21,test,platform,large,20,2000,20000
+20,Battle Weapons Platform,BWP,4200,420,210,105,121,test,platform,large,28,5600,25200
+21,Heavy Weapons Platform,HWP,5400,540,270,135,221,test,platform,large,36,14400,28800

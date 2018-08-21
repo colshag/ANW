@@ -1,0 +1,12 @@
+>>> import anwp.aw.marketstat
+>>> d = {'id':'1','avgSoldAL':100}
+>>> obj = anwp.aw.marketstat.MarketStat(d)
+>>> obj.id
+'1'
+
+### getMyInfoAsDict ###
+>>> dict = obj.getMyInfoAsDict()
+>>> dict['id']
+'1'
+>>> dict['avgSoldAL']
+100.0

@@ -1,0 +1,18 @@
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+>>> myFleet = myGalaxy.fleets['1']
+>>> myFleet.setCurrentTarget()
+>>> myShip = myFleet.ships['1']
+>>> myShip.name
+'scout1-1'
+
+### Setup Ship ###
+>>> myShip.facing = 0
+>>> myShip.posX = 100.0
+>>> myShip.posY = 100.0
+>>> myShip.myFleet.currentTarget.posX = 600.0
+>>> myShip.myFleet.currentTarget.posY = 100.0
+
+
+

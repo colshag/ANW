@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# triangle-3man
+# Written by Shawn Thomas (Jan 3, 2011)
+#   * changed defaultIndustry to include more simulations and be 40/40 rather than 36/40
+# ---------------------------------------------------------------------------
+# Based on the Pig-in-the-middle map, three players start that the outer edges
+# and race to the center where a strong NPC defends.
+# ---------------------------------------------------------------------------
+numEmpires = 4
+startingCredits = 200000
+#Market settings from commonmap.data
+
+genSystemsLegend = {
+     'a': ('0', 10), # neutral
+     'b': ('0', 15),
+     'A': ('0', 20),
+     'F': ('0', 30),
+     'f': ('0', 40),
+     'c': ('1', 40), #player 1
+     'C': ('1', 20),
+     'd': ('2', 40), #player 2
+     'D': ('2', 20),
+     'e': ('3', 40), #player 3
+     'E': ('3', 20),
+     '.': (None, None)
+     }
+genSystemsData = [
+     '.....CcC.....',
+     '......C......',
+     '.....a.a.....',
+     '......b......',
+     '.....AAA.....',
+     '......F......',
+     '......f......',
+     '....AF.FA....',
+     'D.a.AA.AA.a.E',
+     'dD.b.....b.Ee',
+     'D.a.......a.E',
+      ]
+defaultIndustry = {
+       '14':2, #advanced design center (2)
+       '11':4, #advanced simulation center (4)
+       '17':1, #advanced radar station (1)
+       '32':3, #advanced shipyard (6)
+       '35':3, #advanced marine installation (6)
+      #'5':5,  #advanced crystal factory(5)
+      #'8':10, #advanced synthetic factory(10)
+       '41':15, #advanced research center (15)
+       '23':3, #advanced marine installation(6)
+       } #total (40/40)
+	  
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

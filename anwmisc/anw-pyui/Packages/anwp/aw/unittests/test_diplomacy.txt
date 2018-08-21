@@ -1,0 +1,5 @@
+>>> import anwp.aw.diplomacy
+>>> d = {'id':'1','name':'Mutual Trading Partnership', 'bordertrade':1, 'fulltrade':1}
+>>> obj = anwp.aw.diplomacy.Diplomacy(d)
+>>> obj.id
+'1'

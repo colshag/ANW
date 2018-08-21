@@ -1,0 +1,36 @@
+Getting everything setup.
+
+First time:
+
+go into /anwlaunch/launcher
+run ./testmode.sh
+(this creates a /home/username/.anw directory for you)
+
+goto /home/username/.anw/
+create server.config
+
+put the following in there:
+
+[ArmadaNetWarsServer]
+serveruser = user1
+serverpass = pass1
+
+
+start in anwgae
+
+./startDevl.sh &
+python client.py  # gets all users setup
+
+switch to anw/Server
+
+./localWizard.sh
+./testserver.sh
+
+switch to anwlaunch/launcher
+./testmode.sh
+login as user1/pass1
+launch a game of ANW4  
+You should now be logged into the game!
+
+
+

@@ -1,0 +1,1 @@
+PYTHONPATH=../Packages/ python mainAdmin.py

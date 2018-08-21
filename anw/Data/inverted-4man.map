@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# Inverted-4man
+# Written by Shawn Thomas (Dec, 2011)
+# ---------------------------------------------------------------------------
+# Inside out with the home-worlds almost touching
+# ---------------------------------------------------------------------------
+numEmpires = 5
+startingCredits = 500000
+#Market settings from commonmap.data
+
+genSystemsLegend = {
+  'z': ('0', 5), # neutral planets
+  'a': ('0', 10),
+  'b': ('0', 15),
+  'c': ('0', 20),
+  'd': ('0', 30),
+  'e': ('0', 40),
+  'f': ('0', 50),
+  'A': ('1', 20), # Player 1
+  'B': ('1', 30),
+  'C': ('1', 40),
+  'D': ('2', 20), # Player 2
+  'E': ('2', 30),
+  'F': ('2', 40),
+  'G': ('3', 20), # Player 3
+  'H': ('3', 30),
+  'I': ('3', 40),
+  'J': ('4', 20), # Player 4
+  'K': ('4', 30),
+  'L': ('4', 40),
+  '.': (None, None)
+  }
+genSystemsData = [
+  'f..bcb..f',
+  'ddcazacdd',
+  '.d.ABA.d.',
+  '.c..C..c.',
+  'baJ...Dab',
+  'czKL.FEzc',
+  'baJ...Dab',
+  '.c..I..c.',
+  '.d.GHG.d.',
+  'ddcazacdd',
+  'f..bcb..f',
+   ]
+defaultIndustry = {
+  '14':1, # advanced design center (1)
+ '11':1, # advanced simulation center (1)
+ '41':10,# advanced research center(10)
+ '32':3, # advanced shipyard (6)
+ '35':3, # advanced marine installation (6)
+ '2':15, # advanced alloy factory(15)
+ '26':1, # advanced fleet academy (1)
+ } #total (40/40)
+	  
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

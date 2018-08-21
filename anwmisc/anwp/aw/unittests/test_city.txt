@@ -1,0 +1,10 @@
+>>> import anwp.aw.city
+>>> d = {'id':'1','name':'City1', 'resourceFocus':'AL', 'state':1}
+>>> obj = anwp.aw.city.City(d)
+>>> obj.id
+'1'
+
+### getMyCityInfo ###
+>>> dict = obj.getMyInfoAsDict()
+>>> dict['name']
+'City1'

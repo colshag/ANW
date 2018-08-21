@@ -1,0 +1,5 @@
+Armada Net Wars Version 0.0.4.07 Release Notes
+=============================================
+- Multi Fleet Battle Bug Fixed
+- Auto Copy of Ship Designs (click ship info from battle view screen)
+- Regiments build max increased

@@ -1,0 +1,10 @@
+>>> import anwp.aw.mail
+>>> d = {'id':'1'}
+>>> obj = anwp.aw.mail.Mail(d)
+>>> obj.id
+'1'
+
+### getMyInfoAsDict ###
+>>> dict = obj.getMyInfoAsDict()
+>>> dict['id']
+'1'

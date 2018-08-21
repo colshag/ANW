@@ -1,0 +1,9 @@
+>>> import anwp.aw.traderoute
+>>> d = {'id':'1','fromSystem':'1', 'toSystem':'2', 'AL':100.0}
+>>> obj = anwp.aw.traderoute.TradeRoute(d)
+>>> obj.id
+'1'
+
+### getImageFileName ###
+>>> obj.imageFile
+'traderoute_blue'

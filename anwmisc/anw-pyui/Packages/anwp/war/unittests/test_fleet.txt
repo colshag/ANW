@@ -1,0 +1,10 @@
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+>>> myFleet = myGalaxy.fleets['1']
+
+### setCurrentTarget ###
+>>> myFleet.setCurrentTarget()
+>>> (myFleet.currentTarget.myFleet.id, myFleet.currentTarget.id)
+('3', '8')
+

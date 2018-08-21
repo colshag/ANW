@@ -1,0 +1,244 @@
+>>> import anwp.aw.system
+>>> d = {'id':'1000','name':'Colin','x':100,'y':200,'cities':10}
+>>> obj = anwp.aw.system.System(d)
+>>> obj.id
+'1000'
+>>> obj.SYCapacity
+0
+
+### getMySystemInfo ###
+
+>>> dict = obj.getMySystemInfo()
+>>> dict['name']
+'Colin'
+>>> dict['WGCapacity']
+0
+
+### getOtherSystemInfo ###
+>>> dict = obj.getOtherSystemInfo()
+>>> dict['x']
+100
+>>> dict['WGCapacity']
+Traceback (most recent call last):
+  File "<string>", line 1, in <string>
+KeyError: 'WGCapacity'
+
+### getImageFileName ###
+>>> import anwp.aw.empire
+>>> d_empire = {'id':'1', 'name':'test', 'color1':'red', 'color2':'blue'}
+>>> empire_obj = anwp.aw.empire.Empire(d_empire)
+>>> empire_obj.color1
+'red'
+>>> d_system = {'id':'1', 'name':'coloin', 'cities':12}
+>>> system_obj = anwp.aw.system.System(d_system)
+>>> system_obj.myEmpire = empire_obj
+>>> system_obj.getImageFileName()
+>>> system_obj.imageFile
+'sys_6_red_blue'
+>>> system_obj.cities = 20
+>>> system_obj.getImageFileName()
+>>> system_obj.imageFile
+'sys_8_red_blue'
+
+### addIndustry, upgradeIndustry, returnIndustryOutput ###
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> galaxy = anwp.func.storedata.loadFromFile(path)
+>>> system = galaxy.systems['4']
+>>> system.addIndustry(2, '1')
+'ADDED 2 Basic Credit Center ON:Ianustrima'
+>>> system.addIndustry(1, '45')
+'ADDED 1 Intelligent Research Center ON:Ianustrima'
+>>> system.myIndustry['1'].industrytype
+'1'
+>>> system.myIndustry['2'].industrytype
+'1'
+>>> system.myIndustry['3'].industrytype
+'45'
+>>> myEmpire = system.myEmpire
+>>> myEmpire.rpAvail
+0
+>>> (amount, message) = system.returnIndustryOutput('Research', 'Center')
+>>> message
+'System:Ianustrima Has Produced->40 Research'
+>>> myEmpire.rpAvail += amount
+>>> myEmpire.rpAvail
+40
+>>> system.upgradeIndustry('1')
+'UPGRADED 1 Basic Credit Center TO:Advanced Credit Center ON:Ianustrima'
+>>> system.myEmpire.techTree['111'].name
+'Advanced Credit Centers'
+>>> system.myEmpire.techTree['111'].complete
+1
+>>> system.myIndustry['1'].industrytype
+'2'
+>>> system.myIndustry['1'].state
+1
+>>> system.citiesUsed
+0
+
+### modifyResource ###
+>>> system.AL
+0.0
+>>> system.myEmpire.AL
+0.0
+>>> system.modifyResource('AL', 100)
+>>> system.AL
+100.0
+>>> system.myEmpire.AL
+100.0
+
+### validateUpgradeIndustry, payForUpgradeIndustry, refundUpgradeIndustry ###
+>>> system.validateUpgradeIndustry('2')
+'You Require: (CR:2000),(AL:200),(EC:100),(IA:50) Resources'
+>>> system.AL=200.0
+>>> system.EC=100.0
+>>> system.IA=50.0
+>>> system.validateUpgradeIndustry('2')
+1
+>>> system.validateUpgradeIndustry('3')
+'Industry cannot be upgraded any further'
+>>> system.payForUpgradeIndustry('2')
+1
+>>> (system.AL,system.EC)
+(0.0, 0.0)
+>>> system.refundUpgradeIndustry('2')
+1
+>>> (system.AL,system.EC)
+(200.0, 100.0)
+>>> system.AL=0.0
+>>> system.EC=0.0
+>>> system.IA=0.0
+
+### validateAddIndustry ###
+>>> system.citiesUsed
+0
+>>> system.validateAddIndustry(6, '1')
+'Not enough Cities to build Basic Credit Center on Ianustrima'
+>>> system.validateAddIndustry(1, '1')
+'You Require: (CR:1000),(AL:100),(EC:0),(IA:0) Resources'
+>>> system.AL=100.0
+>>> system.validateAddIndustry(1, '1')
+1
+>>> system.AL=0.0
+
+### payForAddIndustry ###
+>>> system.AL=100.0
+>>> system.payForAddIndustry(1, '1')
+1
+>>> system.AL
+0.0
+>>> system.citiesUsed
+1
+>>> system.refundAddIndustry(1, '1')
+1
+>>> system.AL
+100.0
+>>> system.citiesUsed
+0
+>>> system.AL=0.0
+
+### removeIndustry ###
+>>> system.removeIndustry('3')
+'REMOVED 1 Intelligent Research Center ON:Ianustrima'
+>>> system.removeIndustry('2')
+'REMOVED 1 Basic Credit Center ON:Ianustrima'
+>>> system.myIndustry['1'].industrytype
+'2'
+
+### updateCityResource ###
+>>> myCity = system.myCities['5']
+>>> myCity.state
+1
+>>> system.updateCityResource('5', 'AL')
+'CHANGED City-5 RESOURCE TO:AL ON:Ianustrima'
+>>> myCity.resourceFocus
+'AL'
+>>> myCity.state
+1
+
+### validateUpdateCity, payForUpdateCity, refundUpdateCity ###
+>>> system.validateUpdateCity('5-AL')
+'You are trying to update City to its current Resource:AL'
+>>> system.validateUpdateCity('5-EC')
+1
+>>> system.myEmpire.CR
+10000.0
+>>> galaxy = system.myGalaxy
+>>> galaxy.currentRound = 2
+>>> system.payForUpdateCity()
+1
+>>> system.myEmpire.CR
+9500.0
+>>> system.refundUpdateCity()
+1
+>>> system.myEmpire.CR
+10000.0
+
+### checkResources ###
+>>> myEmpire = system.myEmpire
+>>> myEmpire.CR
+10000.0
+>>> (system.AL, system.EC, system.IA)
+(0.0, 0.0, 0.0)
+>>> system.checkResources(100,0,0,0)
+1
+>>> system.checkResources(100,10,10,0)
+'You Require: (CR:100),(AL:10),(EC:10),(IA:0) Resources'
+
+### genWealth ###
+>>> len(system.myCities)
+5
+>>> system.myEmpire.CR
+10000.0
+>>> len(system.myCities)
+5
+>>> for id, city in system.myCities.iteritems():
+...     city.resourceFocus = 'CR'
+>>> system.genWealth()
+'System:Ianustrima Has Produced->(CR=1200, AL=0, EC=0, IA=0) Resources'
+>>> system.myEmpire.CR
+11200.0
+
+### payResources ###
+>>> myEmpire = system.myEmpire
+>>> system.AL = 10
+>>> system.EC = 10
+>>> system.IA = 10
+>>> myEmpire.CR
+11200.0
+>>> system.payResources(10,10,10,10)
+1
+>>> (myEmpire.CR,system.AL,system.EC,system.IA)
+(11190.0, 0, 0, 0)
+
+### genMyCities ###
+>>> len(system.myCities)
+5
+>>> system.genMyCities()
+>>> len(system.myCities)
+10
+
+### addCity, validateAddCity, payForAddCity, refundAddCity ###
+>>> system.validateAddCity()
+'You Require: (CR:1000),(AL:100),(EC:10),(IA:0) to add City'
+>>> system.AL=100.0
+>>> system.EC=10.0
+>>> system.validateAddCity()
+1
+>>> system.payForAddCity()
+1
+>>> (system.AL, system.EC)
+(0.0, 0.0)
+>>> system.refundAddCity()
+1
+>>> (system.AL, system.EC)
+(100.0, 10.0)
+>>> system.AL=0.0
+>>> system.EC=0.0
+>>> len(system.myCities)
+10
+>>> system.addCity('CR')
+'ADD 1 CITY TO:Ianustrima'
+>>> len(system.myCities)
+11

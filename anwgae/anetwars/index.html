@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <table class="pretty-table" summary="This Ladder summarizes all players status currently in Armada Net Wars">
+    <caption>Armada Net Wars - Player Ladder</caption>
+  <tr>
+      <tr><th scope="col"><b>Player</b></th>
+<!-- 	  <th scope="col"><b>Level</b></th>
+	  <th scope="col"><b>Rank</b></th>
+	  <th scope="col"><b>Total Wins</b></th>
+	  <th scope="col"><b>Games Played</b></th>
+	  <th scope="col"><b>Experience</b></th>
+	  <th scope="col"><b>Average Delay %</b></th>
+	  <th scope="col"><b>Active Games</b></th>
+	  -->
+      </tr>
+      {% for player in players %}
+       {% if player.key.name %}
+	<tr><th scope="row"><a href=?user={{ player.key.name }}>{{ player.key.name }}</a></th>
+	  <!-- <td>{{ player.level }}</td>
+	  <td>{{ player.rank }}</td>
+	  <td>{{ player.wins }}</th>
+	  <td>{{ player.playedGames }}</td>
+	  <td>{{ player.experience }}</td>
+	  <td>{{ player.averageDelay }}</td>
+	  <td>{{ player.myGames }}</td>
+	  -->
+	</tr>
+      {% endif %}
+    {% endfor %}
+      </table>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# diamond4man.map
+# Written by Shawn Thomas (Dec 30, 2011)
+# ---------------------------------------------------------------------------
+# Slow start with only basic tech, but the closest planets are ripe for the picking.
+# Decide to risk attacking stronger planets early, or take the easier route
+# along the outside
+# ---------------------------------------------------------------------------
+startingCredits = 200000
+#Market settings from commonmap.data
+
+numEmpires = 5
+genSystemsLegend = {
+    'b': ('0', 5), # neutral player
+    'e': ('0', 10), #stardock planets
+    'f': ('0', 15),
+    'g': ('0', 20),
+    'h': ('0', 25),
+    'i': ('0', 30),
+    'j': ('0', 40),
+    'k': ('0', 50),
+    'A': ('1', 40), # player 1
+    'B': ('1', 30),
+    'C': ('1', 20),
+    'D': ('2', 40), # player 2
+    'E': ('2', 30),
+    'F': ('2', 20),
+    'G': ('3', 40), # player 3
+    'H': ('3', 30),
+    'I': ('3', 20),
+    'J': ('4', 40), # player 4
+    'K': ('4', 30),
+    'L': ('4', 20),
+    '.': (None, None),
+    }
+genSystemsData = [
+    '.........H.........',
+    '.........G.........',
+    '........IbI........',
+    '.......bbbbb.......',
+    '......ebebebe......',
+    '.....ee..e..ee.....',
+    '....eef..e..fee....',
+    '...bb..g.h.g..bb...',
+    '..Lbe...hih...ebF..',
+    'KJbbbeehikiheebbbeE',
+    '..Lbe...hih...ebF..',
+    '...bb..g.h.g..bb...',
+    '....eef..e..fee....',
+    '.....ee..e..ee.....',
+    '......ebebebe......',
+    '.......bbbbb.......',
+    '........bbb........',
+    '.........b.........',
+    '.........B.........',
+    ]
+defaultIndustry = {
+    '13':1, # basic design center (1)
+    '10':1, # basic simulation center (1)
+    '40':10,# basic research center(10)
+    '31':3, # basic shipyard (6)
+    '34':3, # basic marine installation (6)
+    '1':15, # basic alloy factory(15)
+    '25':1, # basic fleet academy (1)
+    } #total (40/40)
+
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

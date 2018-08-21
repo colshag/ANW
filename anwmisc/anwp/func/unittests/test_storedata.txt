@@ -1,0 +1,24 @@
+>>> import anwp.func.storedata
+>>> import anwp.func.root
+>>> obj = anwp.func.root.Root({})
+>>> obj.id = '1'
+
+### loadFromFile, saveToFile ###
+>>> anwp.func.storedata.saveToFile(obj, 'test_storedata.bin')
+1
+>>> anwp.func.storedata.loadFromFile('dummyfile.bin')
+exceptions.IOError: [Errno 2] No such file or directory: 'dummyfile.bin'
+>>> obj2 = anwp.func.storedata.loadFromFile('test_storedata.bin')
+>>> obj2.id
+'1'
+
+### loadFromString, saveToString ###
+>>> d = {1:1, 2:2, 3:3}
+>>> s = anwp.func.storedata.saveToString(d)
+>>> s
+'(dp1\nI1\nI1\nsI2\nI2\nsI3\nI3\ns.'
+>>> d2 = anwp.func.storedata.loadFromString(s)
+>>> d2
+{1: 1, 2: 2, 3: 3}
+
+

@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# triangle-1man
+# Written by Shawn Thomas (Dec, 2011)
+# ---------------------------------------------------------------------------
+# Based on the Pig-in-the-middle map, solo map to testing.
+# ---------------------------------------------------------------------------
+numEmpires = 2
+#Credits & Market settings from commonmap.data
+
+genSystemsLegend = {
+    'a': ('0', 10),
+    'b': ('0', 15),
+    'c': ('0', 20),
+    'd': ('0', 40),
+    'F': ('1', 30),
+    'f': ('1', 40),
+     '.': (None, None)
+     }
+genSystemsData = [
+     '.....d.....',
+     '....c.c....',
+     '....aca....',
+     '.....b.....',
+     '....ccc....',
+     '.....F.....',
+     '.....f.....',
+     '...cF.Fc...',
+     '...cc.cc...',
+     'cab.....bac',
+     '.ca.....ac.',
+     'd.c.....c.d',
+      ]
+defaultIndustry = {
+       '14':1,# advanced design center (1)
+       '11':1,# advanced simulation center (1)
+       '41':10,# advanced research center(10)
+       '32':3,# advanced shipyard (6)
+       '35':3,# advanced marine installation (6)
+       '2':15, #advanced alloy factory(15)
+       '26':1, #advanced fleet academy (1)
+       } #total (40/40)
+
+#startingTech - include commonmap.data
+
+# Neutral ships
+## include commonmap.data

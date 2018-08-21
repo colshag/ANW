@@ -1,0 +1,5 @@
+*.pyc
+nohup.out
+.project
+.pydevproject
+*~

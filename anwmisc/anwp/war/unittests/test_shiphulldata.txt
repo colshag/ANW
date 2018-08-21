@@ -1,0 +1,7 @@
+>>> import anwp.war.shiphulldata
+>>> d = {'id':'1', 'name':'scout', 'abr':'SCT', 'costCR':1000, 'function':'military', 'thrustFactor':100, 'rotationFactor':50, 'componentNum':4, 'maxISP':100}
+>>> hullData = anwp.war.shiphulldata.ShipHullData(d)
+>>> hullData.id
+'1'
+>>> hullData.abr
+'SCT'

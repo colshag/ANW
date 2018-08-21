@@ -1,0 +1,89 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# commonmap.data
+# Written by Chris Lewis
+# ---------------------------------------------------------------------------
+# This represents the common data that all maps share
+# maps can override this data by having the same attributes with
+# different values.
+# ---------------------------------------------------------------------------
+numEmpires = 7
+maxPlayersToAlly = 2
+startingAllies = []
+
+startingCredits = 400000
+marketOrderVolume = 2000
+marketMinVolume = 10
+marketMaxVolume = 20
+
+genSystemsLegend = {'a': ('0', 10),
+                    'b': ('0', 15),
+                    'A': ('0', 20),
+                    'B': ('0', 30),
+                    'X': ('0', 50),
+                    'c': ('1', 10),
+                    'd': ('1', 15),
+                    'C': ('1', 20),
+                    'D': ('1', 40),
+                    'e': ('2', 10),
+                    'f': ('2', 15),
+                    'E': ('2', 20),
+                    'F': ('2', 40),
+                    'g': ('3', 10),
+                    'h': ('3', 15),
+                    'G': ('3', 20),
+                    'H': ('3', 40),
+                    'i': ('4', 10),
+                    'j': ('4', 15),
+                    'I': ('4', 20),
+                    'J': ('4', 40),
+                    'k': ('5', 10),
+                    'l': ('5', 15),
+                    'K': ('5', 20),
+                    'L': ('5', 40),
+                    'm': ('6', 10),
+                    'n': ('6', 15),
+                    'M': ('6', 20),
+                    'N': ('6', 40),
+                    '.': (None, None)
+                    }
+
+genSystemsData = ['.....acCca.....',
+                  '.....adDda.....',
+                  'aa...aa.aa...aa',
+                  'mna..b.b.b..aji',
+                  'MNaab.bBb.baaJI',
+                  'mna..b.b.b..aji',
+                  'aa..Aa.a.aA..aa',
+                  '...ABAaXaABA...',
+                  'aa..Aa.a.aA..aa',
+                  'kla..b.b.b..ahg',
+                  'KLaab.bBb.baaHG',
+                  'kla..b.b.b..ahg',
+                  'aa...aa.aa...aa',
+                  '.....afFfa.....',
+                  '.....aeEea.....'
+                  ]
+
+defaultIndustry = {'13':1,# basic design center
+                   '10':1,# basic simulation center
+                   '40':20,# basic research center
+                   '31':3,# basic shipyard
+                   '34':3# basic marine installation
+                   }
+
+startingTech = []
+for i in range(72):    
+ startingTech.append(i)
+
+ 
+neutralShips = {
+  5:['9','9','9','10','10','10','11','11'],	        # 100% HCO
+  10:['9','9','10','10','11','11','11','11'],		# 100% HCO
+  15:['9','9','10','10','11','11','11'],                # 100% HCO
+  20:['9','9','10','10','11','11','11','11','8','15'],	# 80% HCO, 10% Carrier, 10% Assault Ship
+  25:['9','9','10','10','11','11','11','11','8','15'],	# 80% HCO, 10% Carrier, 10% Assault Ship
+  30:['9','9','10','10','11','8','7','7','15','15'],	# 20% HCO, 20% Frigate, 20% Drone Carrier, 20% Heavy Cruiser, 20% Dreadnaught
+  40:['8','8','7','7','15','15','6','6','13','13'],	# 20% Drone Carrier, 30% Heavy Cruiser, 30% Dreadnaught, 20% Super Dreadnaught
+  50:['8','8','8','6','15','15','13','13','13','13'],	# 30% Drone Carrier, 30% Dreadnaught, 40% Super Dreadnaught
+  }

@@ -1,0 +1,165 @@
+>>> import anwp.func.storedata
+>>> path = '..\\..\\..\\Database\\ANW1.anw'
+>>> myGalaxy = anwp.func.storedata.loadFromFile(path)
+
+### getMyInfoAsDict ###
+>>> d = myGalaxy.getMyInfoAsDict()
+>>> d['version']
+'0.0.1'
+
+### getAllEmpireInfo ###
+>>> d = myGalaxy.getAllEmpireInfo('1')
+>>> d['10']['id']
+'10'
+
+### getAllSystemInfo ###
+>>> d = myGalaxy.getAllSystemInfo('1')
+>>> dSystem = d['1']
+>>> dSystem['cities']
+20
+
+### genTradeRoute, validateTradeRoute, mailTradeInfo, getMyTradeRouteInfo ###
+>>> d = {'fromSystem':'1', 'toSystem':'2', 'AL':0.0, 'EC':0.0, 'IA':0.0}
+>>> myGalaxy.genTradeRoute(d)
+'no resources are being sent, trade route invalid'
+>>> d = {'fromSystem':'1', 'toSystem':'2', 'AL':100.0, 'EC':0.0, 'IA':0.0}
+>>> myGalaxy.genTradeRoute(d)
+'Rpici does not have enough resources to setup this trade route'
+>>> myGalaxy.systems['1'].AL = 100.0
+>>> myGalaxy.genTradeRoute(d)
+1
+>>> myEmpire = myGalaxy.systems['1'].myEmpire
+>>> myEmpire.mailBox['1'].body
+"['TRADE DETAILS:', '=============', 'From System: Rpici', 'To System: Dracorr', '', 'Alloys(AL) Sent:100', 'Energy(EC) Sent:0', 'Arrays(IA) Sent:0']"
+>>> myGalaxy.getMyTradeRouteInfo('2')
+{'1-2': {'toSystem': '2', 'fromSystem': '1', 'AL': 100.0, 'EC': 0.0, 'imageFile': 'traderoute_blue', 'cancel': 0, 'IA': 0.0, 'id': '1-2'}}
+>>> myGalaxy.getMyTradeRouteInfo('1')
+{}
+>>> myGalaxy.genTradeRoute(d)
+'You have already setup a trade route FROM:Rpici TO:Dracorr'
+>>> d = {'fromSystem':'1', 'toSystem':'20', 'AL':100.0}
+>>> myGalaxy.genTradeRoute(d)
+'Systems are not adjacent'
+>>> d = {'fromSystem':'3', 'toSystem':'4', 'AL':100.0}
+>>> myGalaxy.genTradeRoute(d)
+'System Owners are not the same, or no Trade Pact in Effect'
+>>> myGalaxy.cancelTradeRoute('1-2', myGalaxy.currentRound)
+1
+>>> myGalaxy.tradeRoutes
+{}
+
+### processTradeRoutes ###
+>>> d = {'fromSystem':'1', 'toSystem':'2', 'AL':100.0, 'EC':0.0, 'IA':0.0}
+>>> myGalaxy.genTradeRoute(d)
+1
+>>> myGalaxy.processTradeRoutes()
+"['Trade from System:1 to System:2 complete']"
+>>> myGalaxy.systems['1'].AL
+0.0
+>>> myGalaxy.systems['2'].AL
+100.0
+>>> myGalaxy.systems['1'].myEmpire.mailBox['3'].subject
+'Trade Route FROM:Rpici  TO:Dracorr  <has been CREATED>'
+>>> myGalaxy.systems['1'].myEmpire.mailBox['4'].subject
+'Trade Route FROM:Rpici  TO:Dracorr  <has COMPLETED>'
+
+>>> d = {'fromSystem':'2', 'toSystem':'1', 'AL':100.0, 'EC':0.0, 'IA':0.0}
+>>> myGalaxy.systems['2'].AL = 100.0
+>>> myGalaxy.genTradeRoute(d)
+1
+>>> myGalaxy.processTradeRoutes()
+"['Trade from System:2 to System:1 complete', 'Trade from System:1 to System:2 complete']"
+>>> myGalaxy.systems['2'].AL
+100.0
+>>> myGalaxy.systems['1'].AL
+0.0
+>>> myGalaxy.systems['1'].myEmpire.mailBox['5'].subject
+'Trade Route FROM:Dracorr  TO:Rpici  <has been CREATED>'
+>>> myGalaxy.systems['1'].myEmpire.mailBox['6'].subject
+'Trade Route FROM:Dracorr  TO:Rpici  <has COMPLETED>'
+
+### genMarketOrder, payForMarketOrder, validateMarketOrder, getMyMarketOrders, cancelMarketOrder, refundMarketOrder ###
+>>> myEmpire.CR
+10000.0
+>>> myGalaxy.systems['1'].AL
+0.0
+>>> myGalaxy.marketOrders
+{}
+>>> d = {'type':'sell', 'value':'AL', 'min':100.0, 'max':0.0, 'amount':50.0, 'system':'1'}
+>>> myGalaxy.genMarketOrder(d)
+'You do not have enough AL to place this SELL order on the market'
+>>> d['min'] = 0.0
+>>> myGalaxy.genMarketOrder(d)
+'You must place an order with a min/max and amount > 0'
+>>> d = {'type':'sell', 'value':'AL', 'min':100.0, 'max':0.0, 'amount':50.0, 'system':'1'}
+>>> myGalaxy.systems['1'].AL = 50.0
+>>> myGalaxy.genMarketOrder(d)
+1
+>>> myGalaxy.systems['1'].AL
+0.0
+>>> myGalaxy.getMyMarketOrders(myGalaxy.systems['1'].myEmpireID)
+{'1': {'min': 100.0, 'max': 0.0, 'system': '1', 'value': 'AL', 'round': 1, 'amount': 50.0, 'amountUsed': 0.0, 'type': 'sell', 'id': '1'}}
+>>> myGalaxy.systems['1'].EC = 50.0
+>>> d['value'] = 'EC'
+>>> myGalaxy.genMarketOrder(d)
+1
+>>> myGalaxy.systems['1'].EC
+0.0
+>>> myGalaxy.getMyMarketOrders(myGalaxy.systems['1'].myEmpireID)
+{'1': {'min': 100.0, 'max': 0.0, 'system': '1', 'value': 'AL', 'round': 1, 'amount': 50.0, 'amountUsed': 0.0, 'type': 'sell', 'id': '1'}, '2': {'min': 100.0, 'max': 0.0, 'system': '1', 'value': 'EC', 'round': 1, 'amount': 50.0, 'amountUsed': 0.0, 'type': 'sell', 'id': '2'}}
+>>> myGalaxy.cancelMarketOrder('2')
+1
+>>> myGalaxy.getMyMarketOrders(myGalaxy.systems['1'].myEmpireID)
+{'1': {'min': 100.0, 'max': 0.0, 'system': '1', 'value': 'AL', 'round': 1, 'amount': 50.0, 'amountUsed': 0.0, 'type': 'sell', 'id': '1'}}
+>>> myGalaxy.systems['1'].EC
+50.0
+
+### processMarketOrders, processMarketTransaction ###
+>>> myGalaxy.marketOrders = {}
+>>> myGalaxy.systems['4'].myEmpire.CR = 100000
+>>> myGalaxy.systems['4'].IA = 100
+>>> myGalaxy.systems['4'].name = 'system4'
+>>> d1 = {'type':'sell', 'value':'IA', 'min':10, 'max':0, 'amount':10, 'system':'4'}
+>>> myGalaxy.genMarketOrder(d1)
+1
+>>> myGalaxy.systems['5'].IA = 100
+>>> myGalaxy.systems['5'].name = 'system5'
+>>> d2 = {'type':'sell', 'value':'IA', 'min':15, 'max':0, 'amount':15, 'system':'5'}
+>>> myGalaxy.genMarketOrder(d2)
+1
+>>> myGalaxy.systems['6'].IA = 100
+>>> myGalaxy.systems['6'].name = 'system6'
+>>> d3 = {'type':'sell', 'value':'IA', 'min':20, 'max':0, 'amount':20, 'system':'6'}
+>>> myGalaxy.genMarketOrder(d3)
+1
+>>> myGalaxy.systems['13'].IA = 100
+>>> myGalaxy.systems['13'].name = 'system13'
+>>> d4 = {'type':'sell', 'value':'IA', 'min':25, 'max':0, 'amount':30, 'system':'13'}
+>>> myGalaxy.genMarketOrder(d4)
+1
+>>> myGalaxy.systems['14'].name = 'system14'
+>>> d5 = {'type':'buy-any', 'value':'IA', 'max':40, 'min':0, 'amount':20, 'system':'14'}
+>>> myGalaxy.genMarketOrder(d5)
+1
+>>> myGalaxy.systems['15'].name = 'system15'
+>>> d6 = {'type':'buy-any', 'value':'IA', 'max':35, 'min':0, 'amount':20, 'system':'15'}
+>>> myGalaxy.genMarketOrder(d6)
+1
+>>> myGalaxy.systems['16'].name = 'system16'
+>>> d7 = {'type':'buy-any', 'value':'IA', 'max':30, 'min':0, 'amount':20, 'system':'16'}
+>>> myGalaxy.genMarketOrder(d7)
+1
+>>> myGalaxy.systems['17'].name = 'system17'
+>>> d8 = {'type':'buy-any', 'value':'IA', 'max':25, 'min':0, 'amount':20, 'system':'17'}
+>>> myGalaxy.genMarketOrder(d8)
+1
+>>> myGalaxy.processMarketOrders()
+"['transaction completed: system4 SOLD 10 IA to system14 for 36 price', '(IA)seller:1 out of Resources', '(IA)seller:1 out of Resources', '(IA)seller:1 out of Resources', 'transaction completed: system5 SOLD 10 IA to system14 for 36 price', 'transaction completed: system5 SOLD 5 IA to system15 for 31 price', '(IA)seller:2 out of Resources', '(IA)seller:2 out of Resources', '(IA)buyer:5 Already has completed transaction', 'transaction completed: system6 SOLD 15 IA to system15 for 31 price', 'transaction completed: system6 SOLD 5 IA to system16 for 26 price', '(IA)seller:3 out of Resources', '(IA)buyer:5 Already has completed transaction', '(IA)buyer:6 Already has completed transaction', 'transaction completed: system13 SOLD 15 IA to system16 for 26 price', 'transaction completed: system13 SOLD 15 IA to system17 for 25 price', 'cancel market Order=1', 'cancel market Order=3', 'cancel market Order=2', 'cancel market Order=5', 'cancel market Order=4', 'cancel market Order=7', 'cancel market Order=6']"
+>>> myGalaxy.marketStats[str(myGalaxy.currentRound)].getMyInfoAsDict()
+{'sumSoldEC': 0.0, 'volSoldIA': 75.0, 'volSoldEC': 0.0, 'avgSoldEC': 0.0, 'sumSoldAL': 0.0, 'volSoldAL': 0.0, 'sumSoldIA': 2235.0, 'avgSoldIA': 29.800000000000001, 'avgSoldAL': 0.0, 'id': '1'}
+
+
+
+
+
+

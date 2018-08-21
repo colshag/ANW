@@ -1,0 +1,17 @@
+>>> import anwp.aw.tech
+>>> d = {'id':'1','name':'PhotoCannons','x':100,'y':200, 'requiredPoints':200, 'currentPoints':55}
+>>> obj = anwp.aw.tech.Tech(d)
+>>> obj.id
+'1'
+
+### getMyInfoAsDict ###
+>>> dict = obj.getMyInfoAsDict()
+>>> dict['name']
+'PhotoCannons'
+
+### getImageFileName ###
+>>> obj.imageFile
+''
+>>> obj.getImageFileName()
+>>> obj.imageFile
+'tech_yellow'

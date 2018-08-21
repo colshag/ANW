@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# StarMap2A
+# Written by Chris Lewis
+# ---------------------------------------------------------------------------
+# This represents the data for a galactic map layout, used to auto generate
+# a Galactic Map with the Admin program
+# ---------------------------------------------------------------------------
+numEmpires = 3
+#Credits & Market settings from commonmap.data
+genSystemsLegend = {'a': ('0', 10),
+                    'b': ('0', 15),
+                    'A': ('0', 20),
+                    'B': ('0', 30),
+                    'X': ('0', 50),
+                    'c': ('1', 10),
+                    'd': ('1', 15),
+                    'C': ('1', 20),
+                    'D': ('1', 40),
+                    'e': ('2', 10),
+                    'f': ('2', 15),
+                    'E': ('2', 20),
+                    'F': ('2', 40),
+                    '.': (None, None)
+                    }
+
+genSystemsData =[
+    'Aaaaa.affeEeA',
+    'AaBaa.bfafFfA',
+    '.a.a.b.ffffff',
+    'aAccA.X.A.fff',
+    '.a.ccc.b.f.f.',
+    'AdDdccb.aaBaA',
+    'AcCccca.aaaaA'
+    ]

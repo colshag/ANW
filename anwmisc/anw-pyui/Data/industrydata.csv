@@ -1,0 +1,46 @@
+id,name,abr,costCR,costAL,costEC,costIA,techReq,description,cities,output
+1,Basic Credit Center,BCC,1000,100,0,0,11,Adds 10% to total Planet Credit Production,1,0.1
+2,Advanced Credit Center,ACC,2000,200,0,0,111,Adds 20% to total Planet Credit Production,1,0.2
+3,Intelligent Credit Center,ICC,3000,300,0,0,211,Adds 30% to total Planet Credit Production,1,0.3
+4,Basic Alloy Factory,BAF,1000,100,0,0,12,Adds 10% to total Planet Alloy Production,1,0.1
+5,Advanced Alloy Factory,AAF,2000,200,0,0,112,Adds 20% to total Planet Alloy Production,1,0.2
+6,Intelligent Alloy Factory,IAF,3000,300,0,0,212,Adds 30% to total Planet Alloy Production,1,0.3
+7,Basic Crystal Mine,BCM,1000,100,0,0,19,Adds 10% to total Planet Energy Crystal Production,1,0.1
+8,Advanced Crystal Mine,ACM,2000,200,0,0,119,Adds 20% to total Planet Energy Crystal Production,1,0.2
+9,Intelligent Crystal Mine,ICM,3000,300,0,0,219,Adds 30% to total Planet Energy Crystal Production,1,0.3
+10,Basic Synthetic System,BSS,1000,100,0,0,30,Adds 10% to total Planet Intelligent Array Production,1,0.1
+11,Advanced Synthetic System,ASS,2000,200,0,0,130,Adds 20% to total Planet Intelligent Array Production,1,0.2
+12,Intelligent Synthetic System,ISS,3000,300,0,0,230,Adds 30% to total Planet Intelligent Array Production,1,0.3
+13,Basic Simulation Center,BSC,1000,100,0,0,5,Allows 2 simulations to be run per round per center,1,2
+14,Advanced Simulation Center,ASC,2000,200,0,0,105,Allows 4 simulations to be run per round per center,1,4
+15,Intelligent Simulation Center,ISC,3000,300,0,0,205,Allows 8 simulations to be run per round per center,1,8
+16,Basic Design Center,BDC,1000,100,0,0,3,Allows 1 starship design per round per center,1,1
+17,Advanced Design Center,ADC,2000,200,0,0,103,Allows 2 starship design per round per center,1,2
+18,Intelligent Design Center,IDC,3000,300,0,0,203,Allows 4 starship design per round per center,1,4
+19,Basic Radar Station,BRS,1000,100,0,0,4,Scans 10 Radar points to adjacent Systems,1,10
+20,Advanced Radar Station,ARS,2000,200,0,0,104,Scans 20 Radar points to adjacent Systems,1,20
+21,Intelligent Radar Station,IRS,3000,300,0,0,204,Scans 30 Radar points to adjacent Systems,1,30
+22,Basic Jamming Station,BJS,1000,100,0,0,14,Jams 10 Radar points,1,10
+23,Advanced Jamming Station,AJS,2000,200,0,0,114,Jams 20 Radar points,1,20
+24,Intelligent Jamming Station,IJS,3000,300,0,0,214,Jams 30 Radar points,1,30
+25,Basic Militia Fortress,BMF,2000,200,0,0,1,Provides 2 Nuclear Militia Regiments in defence,2,2
+26,Advanced Militia Fortress,AMF,3000,300,0,0,101,Provides 4 Fusion Militia Regiments in defence,2,4
+27,Intelligent Militia Fortress,IMF,4000,400,0,0,201,Provides 6 Plasma Militia Regiments in defence,2,6
+28,Basic Fleet Academy,BFA,1000,100,0,0,9,Trains 1 Starship Cadet per round,1,1
+29,Advanced Fleet Academy,AFA,2000,200,0,0,109,Trains 2 Starship Cadets per round,1,2
+30,Intelligent Fleet Academy,IFA,3000,300,0,0,209,Trains 3 Starship Cadets per round,1,3
+31,Basic Marine Academy,BMA,1000,100,0,0,10,Trains up to 2 Marine Regiments per round,1,2
+32,Advanced Marine Academy,AMA,2000,200,0,0,110,Trains up to 4 Marine Regiments per round,1,4
+33,Intelligent Marine Academy,IMA,3000,300,0,0,210,Trains up to 6 Marine Regiments per round,1,6
+34,Basic Shipyard,BSY,4000,400,200,100,16,Allows for 192 slots worth of Starships to be constructed/repaired/upgraded,2,192
+35,Advanced Shipyard,ASY,8000,800,400,200,116,Allows for 384 slots worth of Starships to be constructed/repaired/upgraded,2,384
+36,Intelligent Shipyard,ISY,12000,1200,600,300,216,Allows for 768 slots worth of Starships to be constructed/repaired/upgraded,2,768
+37,Basic Military Installation,BMI,4000,400,200,100,17,Allows for 200 Marine Points per round,2,200
+38,Advanced Military Installation,AMI,8000,800,400,200,117,Allows for 400 Marine Points per round,2,400
+39,Intelligent Military Installation,IMI,12000,1200,600,300,217,Allows for 600 Marine Points per round,2,600
+40,Basic Warp Gate,BWG,1000,100,50,25,26,Allows for 5 ships/trade routes to travel though gate per round,1,5
+41,Advanced Warp Gate,AWG,2000,200,100,50,126,Allows for 10 ships/trade routes to travel though gate per round,1,10
+42,Intelligent Warp Gate,IWG,3000,300,150,75,226,Allows for 20 ships/trade routes to travel though gate per round,1,20
+43,Basic Research Center,BRC,1000,100,0,0,7,Allows for 15 points of research per round,1,15
+44,Advanced Research Center,ARC,2000,200,0,0,107,Allows for 20 points of research per round,1,20
+45,Intelligent Research Center,IRC,3000,300,0,0,207,Allows for 30 points of research per round,1,30

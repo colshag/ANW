@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------------
+# Armada Net Wars (ANW)
+# TestA - solo
+# Written by Shawn Thomas (May, 2012)
+# ---------------------------------------------------------------------------
+# Trial map to determine how skilled a player is.
+# Only one planet of each type surrounds a single player homeworld.
+# Race to capture the 50 planet.
+# ---------------------------------------------------------------------------
+numEmpires = 2
+startingCredits = 600000
+#Market settings from commonmap.data
+
+genSystemsLegend = {
+  'a': ('1', 5), # neutral player
+  'b': ('1', 10),
+  'c': ('1', 15),
+  'd': ('1', 20),
+  'e': ('1', 25),
+  'f': ('0', 30),
+  'g': ('0', 40),
+  'h': ('0', 50),
+  'A': ('1', 40), # player 1
+  '.': (None, None),
+  }
+genSystemsData = [
+  'ahd',
+  'eAf',
+  'cgb',
+]
+defaultIndustry = {
+ '15':1, # intelligent design center (1)
+ '12':1, # intelligent simulation center (1)
+ '42':10,# intelligent research center(10)
+ '33':3, # intelligent shipyard (6)
+ '36':3, # intelligent marine installation (6)
+ '3':15, # intelligent alloy factory(15)
+ '27':1, # intelligent fleet academy (1)
+ } #total (40/40)
+ 
+# startingTech - normally all of one teir is used, the for loop populates the array.
+# You can customize the tech supplied but using the array offset (zero-based)
+# Basic: 73
+# Advanced: 172
+# Intelligent: 274
+startingTech = []
+for i in range(274):    
+ startingTech.append(i)
+
+# Neutral ships
+## include commonmap.data

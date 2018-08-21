@@ -1,0 +1,66 @@
+>>> import anwp.func.root
+>>> d = {'id':'1001', 'myString':'test2', 'myInteger':'12345'}
+>>> d2 = {'id':1002, 'myString':'test3', 'myInteger':3333}
+>>> obj1 = anwp.func.root.Root({})
+>>> obj1.myString
+''
+>>> obj1 = anwp.func.root.Root(d)
+>>> obj1.myString
+'test2'
+>>> obj1.myInteger
+12345
+>>> obj2 = anwp.func.root.Root(d2)
+>>> obj2.myString
+'test3'
+>>> obj2.myInteger
+3333
+
+### clearAttribute ###
+>>> obj1.myFloat = 0.0001
+>>> obj1.myFloat
+0.0001
+>>> obj1.clearAttribute('myFloat')
+>>> obj1.myFloat
+0.0
+
+### setAttributes ###
+>>> obj2.setAttributes({'myInteger':'4444'})
+>>> obj2.myInteger
+4444
+>>> obj2.setAttributes({'myList':'[1,2,3,4]'})
+>>> obj2.myList
+[1, 2, 3, 4]
+
+### getAttributes ###
+>>> obj1.getAttributes()
+['1001', 12345, 'test2', []]
+>>> obj1.getAttributes(True)
+['1001', '12345', 'test2', '[]']
+>>> obj2.getAttributes(True)
+['1002', '4444', 'test3', '[1, 2, 3, 4]']
+
+### getSelectedAttr ###
+>>> d = {'id':'1001', 'myString':'test2', 'myInteger':'12345'}
+>>> obj = anwp.func.root.Root(d)
+>>> list = ['id', 'myString']
+>>> dict = obj.getSelectedAttr(list)
+>>> dict
+{'myString': 'test2', 'id': '1001'}
+
+### getNextID ###
+>>> obj = anwp.func.root.Root({})
+>>> obj.myDict = {'1':'asdf', '108':'afdfd', '11':'fff'}
+>>> obj.getNextID(obj.myDict)
+'2'
+
+### getMyDictInfo, getMyInfoAsDict, setMyDictInfo###
+>>> obj2 = anwp.func.root.Root(d)
+>>> obj.myDict = {'1':obj2}
+>>> obj.getMyDictInfo('myDict')
+{'1': {'myString': 'test2', 'myList': [], 'id': '1001', 'myInteger': 12345}}
+>>> obj.setMyDictInfo({'myString':'test3', 'myList':[1,2,3], 'id': '1003', 'myInteger':11111, 'myDict':{'1':{'id':'1111', 'myString':'te12', 'myInteger':'111'}}})
+>>> obj.getMyInfoAsDict()
+{'myString': 'test3', 'myList': [1, 2, 3], 'id': '1003', 'myInteger': 11111}
+>>> obj.myDict['1'].getMyInfoAsDict()
+{'myString': 'te12', 'myList': [], 'id': '1111', 'myInteger': '111'}
+

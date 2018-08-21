@@ -1,0 +1,10 @@
+id,name,abr,costCR,costAL,costEC,costIA,techReq,description,function,size,componentNum,maxISP,mass
+101,Light Nuclear Drone,LND,800,40,20,20,20,test,warship,small,8,1000,2000
+102,Medium Nuclear Drone,MND,1000,50,25,25,31,test,warship,small,10,1250,2500
+103,Heavy Nuclear Drone,HND,1200,60,30,30,46,test,warship,small,12,1500,3000
+104,Light Fusion Drone,LFD,1000,50,25,25,60,test,warship,small,10,1250,2500
+105,Medium Fusion Drone,MFD,1200,60,30,30,131,test,warship,small,12,1500,3000
+106,Heavy Fusion Drone,HFD,1400,70,35,35,146,test,warship,small,14,1750,3500
+107,Light Plasma Drone,LPD,1200,60,30,30,160,test,warship,small,12,1500,3000
+108,Medium Plasma Drone,MPD,1400,70,35,35,231,test,warship,small,14,1750,3500
+109,Heavy Plasma Drone,HPD,1600,80,40,40,246,test,warship,small,16,2000,4000

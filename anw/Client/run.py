@@ -65,6 +65,7 @@ class ANWRunner(object):
 
     def start(self):
         if self.serverPort is None:
+            # singlePlayer
             process, serverCommQueue = self.performSinglePlayerSetup()
             try:
                     self.__runANW()
@@ -72,6 +73,8 @@ class ANWRunner(object):
                 logging.info("Sending shutdown signal to server")
                 self.cleanupSinglePlayer(process, serverCommQueue)
         else:
+            # multiplayer
+            self.generateMultiplayer()
             serverMain(None, self.singlePlayer, database=self.galaxy, port=self.serverPort )
 
     def generateSinglePlayer(self):
@@ -82,6 +85,30 @@ class ANWRunner(object):
         os.makedirs(os.path.join("..", "Database", self.galaxy))
         generateGalaxy = generate.GenerateGalaxy()
         generateGalaxy.genGalaxy(dataPath = absDataPath + "/", starMapFile=self.mapfile, playerList = ['singleplayer'], doAI = 1, galaxyName = self.galaxy)
+        workingGalaxy = generateGalaxy.getGalaxy()
+
+        storedata.saveToFile(workingGalaxy, os.path.join("..", "Database", self.galaxy, self.galaxy + ".anw"))
+
+        return self.galaxy
+
+    def generateMultiplayer(self):
+        logging.info("Running in multiplayer mode. Generate map if required.")
+        absDataPath = os.path.abspath(os.path.join(os.path.join("..", "Data")))
+        if os.path.isdir(os.path.join("..", "Database", self.galaxy)):
+            logging.info("Database directory already exists")
+            return
+        if self.mapfile == "":
+            logging.info("No mapfile provided in arguments")
+            return
+        setupFile = "%s-setup.txt" % self.galaxy
+        if os.path.isdir(setupFile):
+            logging.info("Please create a player list to create game: %s" % setupFile)
+            return        
+        myPlayerList = [line.rstrip('\n') for line in open(setupFile)]
+        logging.info("Generate new Galaxy instance since none detected.")
+        os.makedirs(os.path.join("..", "Database", self.galaxy))
+        generateGalaxy = generate.GenerateGalaxy()
+        generateGalaxy.genGalaxy(dataPath = absDataPath + "/", starMapFile=self.mapfile, playerList = myPlayerList, doAI = 1, galaxyName = self.galaxy)
         workingGalaxy = generateGalaxy.getGalaxy()
 
         storedata.saveToFile(workingGalaxy, os.path.join("..", "Database", self.galaxy, self.galaxy + ".anw"))
@@ -160,7 +187,7 @@ if __name__ == '__main__':
     parser.add_argument('--map', '-m', metavar="MAPFILE", type=str, default="testai2man.map", choices=getMapList(), help="MAPFILE can be one of {}".format(getMapList()))
     args = parser.parse_args()
 
-    runner = ANWRunner(singlePlayer=not args.server, startSinglePlayerServer=not args.clientonly, remoteServer=args.remoteserver, galaxy=args.galaxy, empire=args.empireid, password=args.empirepass, sound=not args.disableSound,fullscreen=args.fullscreen, resolution=args.resolution, serverPort=args.server)
+    runner = ANWRunner(singlePlayer=not args.server, startSinglePlayerServer=not args.clientonly, remoteServer=args.remoteserver, galaxy=args.galaxy, empire=args.empireid, password=args.empirepass, sound=not args.disableSound,fullscreen=args.fullscreen, resolution=args.resolution, serverPort=args.server, mapfile=args.map)
     runner.start()
 
 

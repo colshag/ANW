@@ -101,11 +101,13 @@ class GenerateGalaxy(object):
             myEmpire.setAIinControl()
             myEmpire.player = '%s%s' % (myEmpire.myAIPlayer.name, myEmpire.myAIPlayer.id)
             myEmpire.password = 'ai4thewin'
-        else:
-            chars = string.ascii_uppercase + string.digits
+        elif myEmpire.name != 'Neutral':
+            chars = string.ascii_lowercase + string.digits
             pw = ''.join( random.choice(chars) for _ in range(8) )
             myEmpire.password = pw
-            print "Empire%s pw=%s" % pw
+            empireFile = open('%s.players' % self.galaxyName, 'a')
+            empireFile.write("%s: EmpireID %s: %s : %s\n" % (myEmpire.name, myEmpire.id, player, pw))
+            empireFile.close()
     
     def genAIPlayer(self, myEmpire):
         """Create an AI Player in a galaxy, assign it to a random Empire"""

@@ -1471,7 +1471,7 @@ class ANWServer(xmlrpc.XMLRPC):
             
             # verify empire password
             if self.singleplayer == 0:
-                if self._isGAEPassValid(galaxyName, empireID, empirePass) == 0:
+                if empirePass != galaxy.empires[empireID].password:
                     return 'Invalid Login: empire password is incorrect'
             
             # verify galaxy not in end round state
@@ -1484,10 +1484,6 @@ class ANWServer(xmlrpc.XMLRPC):
            
         except:
             return 'Invalid Login: general error',  sys.exc_info()
-    
-    def _isGAEPassValid(self, galaxyName, empireID, empirePass):
-        """Check with GAE if players password is valid"""
-        return True
 
 def endRound(server, galaxyName):
     """End the round of galaxy given"""

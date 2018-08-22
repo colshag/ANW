@@ -1,6 +1,6 @@
 import xmlrpclib
 import time
-from anw.gae.access import GAE, LocalGAE
+#from anw.gae.access import GAE, LocalGAE
 from anw.util.Injection import Services
 from anw.admin import generate
 from anw.func import storedata, globals

@@ -73,8 +73,7 @@ class GenerateGalaxy(object):
     def genEmpires(self, playerList=[]):
         if len(playerList) < self.myGalaxy.numEmpires:
             playerList = self.insertAIPlayers(playerList)
-        #random.shuffle(playerList)
-        # don't shuffle player list since I want the order to match how it was inserted via gae
+        random.shuffle(playerList)
         self.genEmpire(0)
         for i in range(1,self.myGalaxy.numEmpires):
             self.genEmpire(i, playerList.pop(0))
@@ -100,7 +99,13 @@ class GenerateGalaxy(object):
         self.genAIPlayer(myEmpire)
         if player == 'ai':
             myEmpire.setAIinControl()
-            myEmpire.player = '%s%s' % (myEmpire.myAIPlayer.name, myEmpire.myAIPlayer.id)          
+            myEmpire.player = '%s%s' % (myEmpire.myAIPlayer.name, myEmpire.myAIPlayer.id)
+            myEmpire.password = 'ai4thewin'
+        else:
+            chars = string.ascii_uppercase + string.digits
+            pw = ''.join( random.choice(chars) for _ in range(8) )
+            myEmpire.password = pw
+            print "Empire%s pw=%s" % pw
     
     def genAIPlayer(self, myEmpire):
         """Create an AI Player in a galaxy, assign it to a random Empire"""

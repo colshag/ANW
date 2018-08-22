@@ -52,13 +52,14 @@ class Empire(root.Root):
         self.ip = str() # current ip address of player
         self.key = str() # authentication key of player
         self.imageFile = str() # image file of empire
+        self.password = str() # empire password
         self.help = list() # list of help areas eg: ['Map','Tech','Diplomacy','Design','EndTurn']
         self.defaultAttributes = ('id', 'level', 'experience', 'delay', 'name', 'player', 'emailAddress',
                                   'viewIndustry', 'viewMilitary', 'viewResources', 'viewTradeRoutes',
                                   'color1', 'color2', 'ai', 'CR', 'AL', 'EC', 'IA',
                                   'totalProdCR','totalProdAL','totalProdEC','totalProdIA',
                                   'alive', 'roundComplete', 'loggedIn', 'cities', 'simulationsLeft', 
-                                  'designsLeft', 'rpAvail', 'rpUsed', 'ip', 'key', 'imageFile', 'help')
+                                  'designsLeft', 'rpAvail', 'rpUsed', 'ip', 'key', 'imageFile', 'password', 'help')
         self.setAttributes(args)
         
         self.setDefaults()

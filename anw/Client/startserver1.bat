@@ -1,0 +1,1 @@
+python run.py --galaxy ANW5 --map quickstart-2man.map --server 8989

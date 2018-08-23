@@ -1503,40 +1503,38 @@ def endRound(server, galaxyName):
                 server.endRoundGalaxyFlag.append(galaxyName)
             result = myGalaxy.endRound()
             if result == 1:
-                # now save the galaxy again
-                result = saveGalaxy(server, galaxyName)
-                if result == 1:
-                    server._Log('EndRound of Galaxy:%s success' % galaxyName)
-                    #if server.singleplayer == 0:
-                        #if Services.inject(GAE).endRound(galaxyName, myGalaxy.currentRound):
-                            #logging.info("Successfully ended round in GAE system")
-                    
-                    # notify all players of new round
-                    for empireID, myEmpire in myGalaxy.empires.iteritems():
-                        if myEmpire.alive == 1:
-                            # build empire message
-                            body = 'NEW ROUND OF PLAY, BELOW IS YOUR END ROUND MESSAGES:\n'
+                server._Log('EndRound of Galaxy:%s success' % galaxyName)
+                #if server.singleplayer == 0:
+                    #if Services.inject(GAE).endRound(galaxyName, myGalaxy.currentRound):
+                        #logging.info("Successfully ended round in GAE system")
+                
+                # notify all players of new round
+                for empireID, myEmpire in myGalaxy.empires.iteritems():
+                    if myEmpire.alive == 1:
+                        # build empire message
+                        body = 'NEW ROUND OF PLAY, BELOW IS YOUR END ROUND MESSAGES:\n'
 
-                            for key, mail in myEmpire.mailBox.iteritems():
-                                if mail.round == myGalaxy.currentRound:
-                                    # split out mail body (setup as string(list)
-                                    mailBody = ''
-                                    list = eval(mail.body)
-                                    for item in list:
-                                        if type(item) == types.StringType:
-                                            mailBody = mailBody + item + '\n'
-                                        elif type(item) == types.ListType:
-                                            for item2 in item:
-                                                mailBody = mailBody + item2 + '\n'
-                                    body = body + '=========================================================\n%s\n' % mailBody
-                                    
-                            server.sendSMTPMail(galaxyName, myEmpire.player,
-                                          '%s: New Round:%d' % (galaxyName, myGalaxy.currentRound),
-                                          body)
-                            
-                    server.endRoundGalaxyFlag.remove(galaxyName)
-                    server.writeGameStatus()
-                    return 1
+                        for key, mail in myEmpire.mailBox.iteritems():
+                            if mail.round == myGalaxy.currentRound:
+                                # split out mail body (setup as string(list)
+                                mailBody = ''
+                                list = eval(mail.body)
+                                for item in list:
+                                    if type(item) == types.StringType:
+                                        mailBody = mailBody + item + '\n'
+                                    elif type(item) == types.ListType:
+                                        for item2 in item:
+                                            mailBody = mailBody + item2 + '\n'
+                                body = body + '=========================================================\n%s\n' % mailBody
+                                
+                        server.sendSMTPMail(galaxyName, myEmpire.player,
+                                      '%s: New Round:%d' % (galaxyName, myGalaxy.currentRound),
+                                      body)
+                        
+                server.endRoundGalaxyFlag.remove(galaxyName)
+                result = saveGalaxy(server, galaxyName)                
+                server.writeGameStatus()
+                return 1
     server.endRoundGalaxyFlag.remove(galaxyName)
     return 'endRound did not work, reason:%s' % result
 

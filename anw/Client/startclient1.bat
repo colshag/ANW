@@ -1,0 +1,1 @@
+python run.py --galaxy ANW5 --empireid 1 --empirepass rs3qrdc6 --remoteserver http://localhost:8989 --clientonly

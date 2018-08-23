@@ -1,1 +1,0 @@
-python run.py --galaxy ANW2 --map small-6man.map --server 8989

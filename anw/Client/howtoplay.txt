@@ -1,0 +1,56 @@
+welcome to ArmadaNetWars
+
+Over the years this game has tried different methods (some better than others) to allow for a turn based, indie, multiplayer, 4x type game.
+Our last iteration was using Google App Engine and an online website (www.armadanetwars.com) to play, and it worked well.
+Currently the website and GAE are both down, so I have reverted it to a simplier version for now:
+
+First:
+======================================================================================================================================
+Note: Before you can play you need to install a few things (one time) you can get them from ANW Dependency Setup.exe, essentially they are:
+Panda3d (this is a python game engine run by a university)
+Twisted and Zope (these help with communication between client and server)
+
+To Play as a Player:
+======================================================================================================================================
+edit startclient.bat and run it. You need:
+
+a server to connect to (remoteserver), this is an ip address of where the server is including the port. Make sure your router allows that port through your firewall!
+a Galaxy Name (ANW1, ANW2, ANW3, etc)
+an Empire ID (1,2,3,4, etc)
+a password (when the game is created by your administrator a password will be randomly generated for you, your administrator will give you this password)
+
+In future games I will setup the email system and you can be emailed this information when the game starts.
+
+The administrator of your game will tell you these things, and once you setup your bat file you can play the game. 
+
+From then on you can play the game using that bat file. To play in multiple games make multiple bat files with the appropriate information in each one.
+
+To Host a Game for your Friends:
+======================================================================================================================================
+First make sure you have the appropriate network permissions to host a server, and that your port is available. You can choose any port you like, but make sure the port
+is communicated to your players. If you are hosting ideally your ip address is static, there are services to do this, google it!
+
+Run the same dependency exe's
+
+make sure playerlist.txt has all the emails of the players that might play your game, or multiple games if you are running multiple servers at once
+make another txt file called GALAXYNAME-setup.txt where GALAXYNAME is ANW2, ANW3, ANW4, etc... make sure that you have a unique galaxy name for each game running if you are running more than one server at a time.
+edit startserver.bat to run your game. The first time you run it the galaxy will be generated for you, after that it will just load the galaxy file that it finds under /Database
+there are different maps you can use, and you can feel free to make your own maps, they are all in the /Data folder.
+
+If you choose a map that has more starting players then real players specified in your GALAXYNAME-setup.txt file the other players will be AI controlled.
+Currently the AI is very limited, it really just researchs and hangs out, I have to work on this to make it into a true player.
+
+Once your game is generated for the first time the server will make a txt file called GALAXYNAME.players.
+For now (until i turn on emailing again) you will have to go into this file and email/text your players their information (empire ID and password) so they can log in, don't forget to
+give them your server ip:port as well!
+
+Backups of your galaxy database are made every round and right before a round ends. rename a backup file to the GALAXYNAME.anw file in order to revert a round due to an error, or to send that file to me for debugging.
+
+==================================================================
+any issues/bugs can be sent to me Chris Lewis at colshag@gmail.com
+==================================================================
+
+
+
+
+Have fun!

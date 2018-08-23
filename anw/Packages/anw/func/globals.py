@@ -9,7 +9,7 @@ try:
     from pandac.PandaModules import Vec4
 except:
     pass
-currentVersion = '0.13.0'
+currentVersion = '0.14.0'
 currentVersionShort = 'master'
 currentVersionTag = '_BUILD_ID'
 serverMode = 0

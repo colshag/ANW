@@ -9,7 +9,7 @@
 # XML for the client.
 # ---------------------------------------------------------------------------
 from anw.func import storedata, globals, funcs
-from anw.gae.access import GAE, LocalGAE
+#from anw.gae.access import GAE, LocalGAE
 from anw.mail.sending import NullEmail, SmtpEmail, Email
 from anw.server import anwserver
 from anw.util.Injection import Services
@@ -68,23 +68,23 @@ def writeLocalAuthFile(port, database):
     f.write("pid=" + str(os.getpid()) + "\n")
     f.close()
     
-def setupDepenencyInjection(localgae=0, serveruser="required", serverpass="required", email={}):
-    """ Register all object implementations up front """
-    if localgae:
-        Services.register(GAE, LocalGAE)
-    else:
-        Services.register(GAE)
-    Services.inject(GAE).username = serveruser
-    Services.inject(GAE).password = serverpass 
+#def setupDepenencyInjection(localgae=0, serveruser="required", serverpass="required", email={}):
+    #""" Register all object implementations up front """
+    #if localgae:
+        #Services.register(GAE, LocalGAE)
+    #else:
+        #Services.register(GAE)
+    #Services.inject(GAE).username = serveruser
+    #Services.inject(GAE).password = serverpass 
 
-    if email == {}:
-        Services.register(Email, NullEmail)
-    else:
-        Services.register(Email, SmtpEmail)
-    Services.inject(Email).configure(email)
+    #if email == {}:
+        #Services.register(Email, NullEmail)
+    #else:
+        #Services.register(Email, SmtpEmail)
+    #Services.inject(Email).configure(email)
 
-def testUserForGAEAccess():
-    return Services.inject(GAE).isServerUserValid()
+#def testUserForGAEAccess():
+    #return Services.inject(GAE).isServerUserValid()
 
 def setupLogging():
     logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
@@ -167,14 +167,13 @@ if __name__ == '__main__':
     parser = OptionParser(option_list=[Option("-p", dest="psyco", default=0),
                                        Option("-d", dest="database", default=None),
                                        Option("-o", dest="port", default=8000),
-                                       Option("-l", dest="localgae", default=0),
                                        Option("-e", dest="testemail", default=1),
                                        Option("-s", dest="singleplayer", default=0),
                                        Option("-c", dest="config", default="server")
                                        ])
     (options, args) = parser.parse_args()
     
-    print"opts:", options.psyco, options.database, options.port, options.localgae, options.testemail, options.singleplayer
+    print"opts:", options.psyco, options.database, options.port, options.testemail, options.singleplayer
 
     psyco = int(options.psyco)
     database = options.database
@@ -199,21 +198,21 @@ if __name__ == '__main__':
     if singleplayer == 1:
         logging.info("Singleplayer mode activated")
         testemail = 0
-    else:
-        setupDepenencyInjection(localgae=int(options.localgae), serveruser=config['serveruser'], serverpass=config['serverpass'], email=config['email'])
+    #else:
+        #setupDepenencyInjection(localgae=int(options.localgae), serveruser=config['serveruser'], serverpass=config['serverpass'], email=config['email'])
         
-        gaeResult = testUserForGAEAccess()
+        #gaeResult = testUserForGAEAccess()
     
-        if gaeResult == False:
-            logging.error("The configured server username does not have the permissions to administer a server")
-            logHelp()
-            sys.exit(0)
-        elif gaeResult == None:
-            logging.error("Could not contact Google App Engine")
-            sys.exit(0)
-        else:
-            # ok to start server, but we aren't guaranteed to have permission to administer this specific game we are playing
-            logging.info("GAE credentials OK to start server")
+        #if gaeResult == False:
+            #logging.error("The configured server username does not have the permissions to administer a server")
+            #logHelp()
+            #sys.exit(0)
+        #elif gaeResult == None:
+            #logging.error("Could not contact Google App Engine")
+            #sys.exit(0)
+        #else:
+            ## ok to start server, but we aren't guaranteed to have permission to administer this specific game we are playing
+            #logging.info("GAE credentials OK to start server")
 
     app = anwserver.ANWServer()
     app.runServer(port, database, singleplayer)

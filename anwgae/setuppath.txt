@@ -1,3 +1,0 @@
-sudo gedit ~/.bashrc
-PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/usr/games:$HOME/development/google_appengine
-

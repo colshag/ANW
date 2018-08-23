@@ -1,5 +1,8 @@
 Here's a quick how-to about creating a new game:
 
+#NOTE: this does not work as we have disabled the GAE (Google App Engine) features.
+
+
 LOCAL TESTING
 cd ~/development/anwgae
 1. git pull the latest anwgae

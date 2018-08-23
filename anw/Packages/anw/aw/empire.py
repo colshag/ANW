@@ -21,7 +21,7 @@ class Empire(root.Root):
         # Attributes
         self.id = str() # Unique Game Object ID
         self.name = str() # Name of Empire
-        self.player = str() # Players unique name in GAE
+        self.player = str() # Players unique name
         self.emailAddress = str() # Email Address of Empire Player
         self.viewIndustry = int() # default map view choices
         self.viewMilitary = int() # default map view choices

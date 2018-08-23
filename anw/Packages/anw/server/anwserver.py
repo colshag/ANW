@@ -15,7 +15,7 @@ from anw.func import storedata, globals, funcs
 
 from twisted.internet import reactor
 from twisted.web import xmlrpc
-from anw.gae.access import GAE
+#from anw.gae.access import GAE
 import sys
 from anw.util.Injection import Services
 from anw.mail.sending import Email
@@ -1170,17 +1170,18 @@ class ANWServer(xmlrpc.XMLRPC):
                 self._Log(s, clientKey)
                 return s
     
-    def sendGAEMail(self, galaxy, sourceEmpire, toEmpire, subject, message):
-        if self.singleplayer == 0:
-            try:
-                Services.inject(GAE).sendMail(galaxy, sourceEmpire, toEmpire, subject, message)
-            except:
-                logging.error("Could not send mail: " + str(sys.exc_info()[0]) )
+    #def sendGAEMail(self, galaxy, sourceEmpire, toEmpire, subject, message):
+        #if self.singleplayer == 0:
+            #try:
+                #Services.inject(GAE).sendMail(galaxy, sourceEmpire, toEmpire, subject, message)
+            #except:
+                #logging.error("Could not send mail: " + str(sys.exc_info()[0]) )
 
     def sendSMTPMail(self, galaxy, toEmpireName, subject, message):
         if self.singleplayer == 0:
             try:
-                addresses = Services.inject(GAE).getEmailAddressesForUsersInGalaxy(galaxy)
+                #TODO enable email
+                #addresses = Services.inject(GAE).getEmailAddressesForUsersInGalaxy(galaxy)
                 if addresses:
                     email = Services.inject(Email)
                     email.send(addresses[toEmpireName], subject, message)
@@ -1506,9 +1507,9 @@ def endRound(server, galaxyName):
                 result = saveGalaxy(server, galaxyName)
                 if result == 1:
                     server._Log('EndRound of Galaxy:%s success' % galaxyName)
-                    if server.singleplayer == 0:
-                        if Services.inject(GAE).endRound(galaxyName, myGalaxy.currentRound):
-                            logging.info("Successfully ended round in GAE system")
+                    #if server.singleplayer == 0:
+                        #if Services.inject(GAE).endRound(galaxyName, myGalaxy.currentRound):
+                            #logging.info("Successfully ended round in GAE system")
                     
                     # notify all players of new round
                     for empireID, myEmpire in myGalaxy.empires.iteritems():

@@ -9,7 +9,7 @@
 # XML for the client.
 # ---------------------------------------------------------------------------
 from anw.func import storedata, globals, funcs
-from anw.gae.access import GAE, LocalGAE
+#from anw.gae.access import GAE, LocalGAE
 from anw.mail.sending import NullEmail, SmtpEmail, Email
 from anw.server import anwserver
 from anw.util.Injection import Services

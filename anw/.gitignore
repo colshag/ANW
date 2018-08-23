@@ -5,3 +5,5 @@
 .pydevproject
 anw.wpr
 Database/*.anw
+Database/*.*
+Database/*

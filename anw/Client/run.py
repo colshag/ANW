@@ -74,8 +74,9 @@ class ANWRunner(object):
                 self.cleanupSinglePlayer(process, serverCommQueue)
         else:
             # multiplayer
-            self.generateMultiplayer()
-            serverMain(None, self.singlePlayer, database=self.galaxy, port=self.serverPort )
+            galaxy = 0
+            galaxy = self.generateMultiplayer()
+            serverMain(None, self.singlePlayer, database=self.galaxy, port=self.serverPort, firsttime=galaxy )
 
     def generateSinglePlayer(self):
         absDataPath = os.path.abspath(os.path.join(os.path.join("..", "Data")))

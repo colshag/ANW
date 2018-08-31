@@ -10,7 +10,7 @@
 # ---------------------------------------------------------------------------
 from anw.func import storedata, globals, funcs
 #from anw.gae.access import GAE, LocalGAE
-from anw.mail.sending import NullEmail, SmtpEmail, Email
+from anw.mail.sending import SmtpEmail, Email #,NullEmail
 from anw.server import anwserver
 from anw.util.Injection import Services
 from threading import Thread
@@ -81,7 +81,7 @@ def writeLocalAuthFile(port, database):
 def setupDepenencyInjection(email={}):
     """ Register all object implementations up front """
     if email == {}:
-        Services.register(Email, NullEmail)
+        Services.register(Email)#, NullEmail)
     else:
         Services.register(Email, SmtpEmail)
     Services.inject(Email).configure(email)
@@ -155,7 +155,7 @@ def shutdown_signal():
     reactor.stop()
 
 
-def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail=1, config="server"):
+def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail=1, config="server", firsttime=0):
     setupLogging()
     logVersion()
     from optparse import OptionParser
@@ -185,7 +185,8 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     try:
         signal.signal(signal.SIGHUP, SIGHUP_CustomEventHandler)
     except:
-        logging.warning("Failed to install SIGHUP handler")
+        pass
+        #logging.warning("Failed to install SIGHUP handler")
         # no signup in windows. just ignore any errors here
     try:
         signal.signal(signal.SIGTERM, SIGINT_CustomEventHandler)
@@ -196,6 +197,11 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
         signal.signal(signal.SIGABRT, SIGINT_CustomEventHandler)
     except:
         logging.warning("Failed to install SIGABRT handler")
+
+    # email all players if this is the first time game was created
+    if firsttime != None:
+        app.emailFirstTimePlayers(firsttime)
+        logging.critical("First Time Database Generated, players emailed")
 
     # Make a XML-RPC Server listening to port
     reactor.listenTCP(port, server.Site(app))
@@ -210,13 +216,14 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     if testemail:
         emailResult = Services.inject(Email).sendTestEmail()
         if emailResult == False:
-            logging.error("Email is enabled but is not working. Please check your configuration")
+            logging.warning("Email is enabled but is not working. Please check your configuration")
             logHelp()
             sys.exit(0)
 
     # Start reactor
     #reactorThread = Thread(target=reactor.run, args=(False,))
     #reactorThread.start()
+    logging.critical("Server Started - Version %s" % globals.currentVersion)
     shutdownwait = Thread(target=monitorThread, args=(queue,))
     shutdownwait.start()
     reactor.run()

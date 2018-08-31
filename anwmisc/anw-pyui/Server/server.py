@@ -62,30 +62,29 @@ class ANWServer(wx.App, xmlrpc.XMLRPC):
     
     def sendMail(self, to, subject, text, files=[],server="localhost"):
         try:
-            pass
-            ##assert type(to)==list
-            ##assert type(files)==list
-            ##fro = "ANW Server <server@armadanetwars.com>"
+            assert type(to)==list
+            assert type(files)==list
+            fro = "ANW Server <server@armadanetwars.com>"
         
-            ##msg = MIMEMultipart()
-            ##msg['From'] = fro
-            ##msg['To'] = COMMASPACE.join(to)
-            ##msg['Date'] = formatdate(localtime=True)
-            ##msg['Subject'] = subject
+            msg = MIMEMultipart()
+            msg['From'] = fro
+            msg['To'] = COMMASPACE.join(to)
+            msg['Date'] = formatdate(localtime=True)
+            msg['Subject'] = subject
         
-            ##msg.attach( MIMEText(text) )
+            msg.attach( MIMEText(text) )
         
-            ##for file in files:
-                ##part = MIMEBase('application', "octet-stream")
-                ##part.set_payload( open(file,"rb").read() )
-                ##Encoders.encode_base64(part)
-                ##part.add_header('Content-Disposition', 'attachment; filename="%s"'
-                               ##% os.path.basename(file))
-                ##msg.attach(part)
+            for file in files:
+                part = MIMEBase('application', "octet-stream")
+                part.set_payload( open(file,"rb").read() )
+                Encoders.encode_base64(part)
+                part.add_header('Content-Disposition', 'attachment; filename="%s"'
+                               % os.path.basename(file))
+                msg.attach(part)
         
-            ##smtp = smtplib.SMTP(server)
-            ##smtp.sendmail(fro, to, msg.as_string() )
-            ##smtp.close()
+            smtp = smtplib.SMTP(server)
+            smtp.sendmail(fro, to, msg.as_string() )
+            smtp.close()
         except:
             self._Log('Could not send mail to: %s' % to)
 

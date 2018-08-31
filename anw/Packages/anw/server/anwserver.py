@@ -47,6 +47,17 @@ class ANWServer(xmlrpc.XMLRPC):
         self._LoadGalaxies(galaxyName)
         self._Log('Server Running')
 
+    def emailFirstTimePlayers(self, galaxyName):
+        """Let the Players know the game has started and has been generated"""
+        myGalaxy = self.galaxies[galaxyName]
+        for empireID in myGalaxy.empires.keys():
+            myEmpire = myGalaxy.empires[empireID]
+            if myEmpire.password <> "":
+                subject = '%s - GAME HAS BEGUN' % galaxyName
+                login = "python run.py --galaxy %s --empireid %s --empirepass %s --remoteserver http://<SERVER IP ADDRESS>:<SERVER PORT NUMBER> --clientonly" % (galaxyName, empireID, myEmpire.password)
+                message = "Welcome to Armada Net Wars, your first game has begun. Please put the following line into your startclient.bat file to login, remember you have to manually add the server ip and port number:\n\n%s" % login
+                self.sendSMTPMail(galaxyName, myEmpire.player, subject, message)
+        
 
     def writeGameStatus(self):
         """Write All running Galaxy Status to file"""
@@ -1180,13 +1191,8 @@ class ANWServer(xmlrpc.XMLRPC):
     def sendSMTPMail(self, galaxy, toEmpireName, subject, message):
         if self.singleplayer == 0:
             try:
-                #TODO enable email
-                #addresses = Services.inject(GAE).getEmailAddressesForUsersInGalaxy(galaxy)
-                if addresses:
                     email = Services.inject(Email)
-                    email.send(addresses[toEmpireName], subject, message)
-                else:
-                    logging.warn("Could not get the email address lookup dictionary")
+                    email.send(toEmpireName, subject, message)
             except:
                 logging.error("Could not send mail to: %s, reason: %s"%(toEmpireName, str(sys.exc_info()[0])) )
     

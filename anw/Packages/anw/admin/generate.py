@@ -106,7 +106,8 @@ class GenerateGalaxy(object):
             pw = ''.join( random.choice(chars) for _ in range(8) )
             myEmpire.password = pw
             empireFile = open('%s.players' % self.galaxyName, 'a')
-            empireFile.write("%s: EmpireID %s: %s : %s\n" % (myEmpire.name, myEmpire.id, player, pw))
+            message = "%s: EmpireID %s: %s : password: %s\n" % (myEmpire.name, myEmpire.id, player, pw)
+            empireFile.write(message)
             empireFile.close()
     
     def genAIPlayer(self, myEmpire):

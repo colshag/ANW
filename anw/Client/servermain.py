@@ -199,7 +199,7 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
         logging.warning("Failed to install SIGABRT handler")
 
     # email all players if this is the first time game was created
-    if firsttime != None:
+    if firsttime != None and singleplayer == 0:
         app.emailFirstTimePlayers(firsttime)
         logging.critical("First Time Database Generated, players emailed")
 

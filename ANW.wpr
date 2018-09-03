@@ -16,5 +16,5 @@ proj.directory-list = [{'dirloc': loc('.'),
                         'watch_for_changes': True}]
 proj.file-type = 'shared'
 proj.launch-config = {loc('anw/Client/run.py'): ('project',
-        (u'--galaxy ANW3 --server 8989 --map quickstart-2man.map',
+        (u'--galaxy ANW1 --map quickstart-2man.map',
          ''))}

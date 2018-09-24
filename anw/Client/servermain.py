@@ -19,7 +19,7 @@ from twisted.web import xmlrpc, server
 import ConfigParser
 import datetime
 import hashlib
-import logging
+#import logging
 import os
 import errno
 import random
@@ -36,7 +36,7 @@ defaultprofilepath = os.path.expanduser(os.path.join("~", ".anw", "server.config
 def logHelp(profilepath=None):
     if profilepath == None:
         profilepath = defaultprofilepath 
-    logging.error("Create or modify the file in " 
+    print("Create or modify the file in " 
               + profilepath
               + " with contents like the following\n" 
               + "[ArmadaNetWarsServer]\n"
@@ -56,8 +56,8 @@ def logHelp(profilepath=None):
               + "fromaddress = your_server_email_address\n"
               )
 
-def logVersion():
-    logging.info("Server version: " + globals.currentVersion + globals.currentVersionTag)
+#def logVersion():
+    #logging.critical("Loading Server version: " + globals.currentVersion)
 
 def writeLocalAuthFile(port, database):
     """ this is currently only supported when running a single game on a server """
@@ -86,8 +86,8 @@ def setupDepenencyInjection(email={}):
         Services.register(Email, SmtpEmail)
     Services.inject(Email).configure(email)
 
-def setupLogging():
-    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
+#def setupLogging():
+    #logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
 
 
 def loadConfigFromProfile(profile="server", configSection="ArmadaNetWarsServer"):
@@ -131,7 +131,7 @@ def loadEmailSettingsIntoDictionary(dictionary, parser):
             if option in optionsAvailable:
                 dictionary[option] = parser.get(emailSection, option)
             else:
-                logging.fatal("Missing email option: " + option + " DISABLING email support!")
+                print("Missing email option: " + option + " DISABLING email support!")
                 logHelp()
 
     return dictionary
@@ -155,9 +155,9 @@ def shutdown_signal():
     reactor.stop()
 
 
-def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail=1, config="server", firsttime=0):
-    setupLogging()
-    logVersion()
+def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail=0, config="server", firsttime=0):
+    #setupLogging()
+    #logVersion()
     from optparse import OptionParser
     from optparse import Option
 
@@ -167,7 +167,7 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     globals.serverMode = 1
 
     if singleplayer == 1:
-        logging.info("Singleplayer mode activated")
+        print("Singleplayer mode activated")
         testemail = 0
     else:
         setupDepenencyInjection(email=config['email'])
@@ -181,7 +181,7 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     try:
         signal.signal(signal.SIGINT, SIGINT_CustomEventHandler)
     except:
-        logging.warning("Failed to install SIGINT handler")
+        app._Log("Failed to install SIGINT handler")
     try:
         signal.signal(signal.SIGHUP, SIGHUP_CustomEventHandler)
     except:
@@ -191,17 +191,17 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     try:
         signal.signal(signal.SIGTERM, SIGINT_CustomEventHandler)
     except:
-        logging.warning("Failed to install SIGTERM handler")
+        app._Log("Failed to install SIGTERM handler")
 
     try:
         signal.signal(signal.SIGABRT, SIGINT_CustomEventHandler)
     except:
-        logging.warning("Failed to install SIGABRT handler")
+        app._Log("Failed to install SIGABRT handler")
 
     # email all players if this is the first time game was created
     if firsttime != None and singleplayer == 0:
         app.emailFirstTimePlayers(firsttime)
-        logging.critical("First Time Database Generated, players emailed")
+        app._Log("First Time Database Generated, players emailed")
 
     # Make a XML-RPC Server listening to port
     reactor.listenTCP(port, server.Site(app))
@@ -216,14 +216,14 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     if testemail:
         emailResult = Services.inject(Email).sendTestEmail()
         if emailResult == False:
-            logging.warning("Email is enabled but is not working. Please check your configuration")
+            app._Log("Email is enabled but is not working. Please check your configuration")
             logHelp()
             sys.exit(0)
 
     # Start reactor
     #reactorThread = Thread(target=reactor.run, args=(False,))
     #reactorThread.start()
-    logging.critical("Server Started - Version %s" % globals.currentVersion)
+    app._Log("Server Started - Version %s" % globals.currentVersion)
     shutdownwait = Thread(target=monitorThread, args=(queue,))
     shutdownwait.start()
     reactor.run()

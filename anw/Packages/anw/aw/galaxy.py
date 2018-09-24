@@ -1257,8 +1257,9 @@ class Galaxy(root.Root):
             for empireID, myEmpire in self.empires.iteritems():
                 if empireID != '0' and self.currentRound > 0:
                     myEmpire.sendMyCredits()
-                    if myEmpire.roundComplete == 0:
-                        myEmpire.setAIinControl()
+                    # Don't turn a player into ai player if they are late to end their turn
+                    #if myEmpire.roundComplete == 0:
+                        #myEmpire.setAIinControl()
             
             # Process for Each Empire
             for empireID, myEmpire in self.empires.iteritems():

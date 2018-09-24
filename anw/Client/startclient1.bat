@@ -1,1 +1,1 @@
-python run.py --galaxy ANW3 --empireid 2 --empirepass nxelintc --remoteserver http://192.168.1.71:8989 --clientonly
+python run.py --galaxy ANW1 --empireid 1 --empirepass r8ukjcue --remoteserver http://localhost:8080 --clientonly

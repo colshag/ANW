@@ -5,16 +5,17 @@
 ##################################################################
 [project attributes]
 proj.directory-list = [{'dirloc': loc('.'),
-                        'excludes': [u'anw/build',
-                                     u'anw/Packages/anw/gae',
+                        'excludes': [u'anw/Packages/anw/gae',
                                      u'anw/pytest',
+                                     u'anwgae',
+                                     u'anw/build',
                                      u'anw/Admin',
-                                     u'anwgae'],
+                                     u'anwmisc'],
                         'filter': '*',
                         'include_hidden': False,
                         'recursive': True,
                         'watch_for_changes': True}]
 proj.file-type = 'shared'
 proj.launch-config = {loc('anw/Client/run.py'): ('project',
-        (u'--galaxy ANW1 --map quickstart-2man.map',
+        (u'--galaxy ANW1 --map quickstart-4man.map --server 8080',
          ''))}

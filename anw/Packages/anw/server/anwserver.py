@@ -29,9 +29,10 @@ class ANWServer(xmlrpc.XMLRPC):
         
         # setup game data
         xmlrpc.XMLRPC.__init__(self)
-        logging.basicConfig(level=logging.INFO, 
-            format='%(asctime)s %(levelname)s %(message)s',
-            filename='server.log',filemode='a') 
+        #logging.basicConfig(level=logging.INFO, 
+            #format='%(asctime)s %(levelname)s %(message)s',
+            #filename='server.log',filemode='a') 
+        logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
         self.log=logging.getLogger('anw.server')
         self.galaxies = {}
         self.path = '../Database/'
@@ -52,7 +53,7 @@ class ANWServer(xmlrpc.XMLRPC):
         myGalaxy = self.galaxies[galaxyName]
         for empireID in myGalaxy.empires.keys():
             myEmpire = myGalaxy.empires[empireID]
-            if myEmpire.password <> "":
+            if myEmpire.password <> "" and myEmpire.ai == 0:
                 subject = '%s - GAME HAS BEGUN' % galaxyName
                 login = "python run.py --galaxy %s --empireid %s --empirepass %s --remoteserver http://<SERVER IP ADDRESS>:<SERVER PORT NUMBER> --clientonly" % (galaxyName, empireID, myEmpire.password)
                 message = "Welcome to Armada Net Wars, your first game has begun. Please put the following line into your startclient.bat file to login, remember you have to manually add the server ip and port number:\n\n%s" % login
@@ -1394,7 +1395,7 @@ class ANWServer(xmlrpc.XMLRPC):
             myGalaxy = self.galaxies[galaxyName]
             myEmpire = myGalaxy.empires[myKey['empireID']]
             message = '[galaxy=%s, empireID=%s, userIP=%s, round=%d] %s\n' % (myKey['galaxyName'], myKey['empireID'], myKey['ip'], myKey['round'], message)
-        self.log.info(message)
+        self.log.critical(message)
     
     def _LoadGalaxies(self, galaxyName):
         """Load all Galaxy Data Files into object memory"""

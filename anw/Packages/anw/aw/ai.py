@@ -163,10 +163,10 @@ class AIPlayer(root.Root):
         self.assessSituation()
         self.updateRound()
         self.doMyTech()
-        #self.getClusterBuildOrders()
-        #self.doMySystemBuilds()
-        #self.updateCityFocus()
-        #self.depotOrders()
+        self.getClusterBuildOrders()
+        self.doMySystemBuilds()
+        self.updateCityFocus()
+        self.depotOrders()
     
     def reset(self):
         """Reset AI assessments from last round"""

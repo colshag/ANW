@@ -1,1 +1,1 @@
-python run.py --galaxy ANW8 --map quickstart-2man.map --server 8001
+python run.py --galaxy ANW3 --map triangle-3man.map --server 8001

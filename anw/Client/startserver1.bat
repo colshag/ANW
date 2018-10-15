@@ -1,1 +1,1 @@
-python run.py --galaxy ANW3 --map quickstart-2man.map --server 8000
+python run.py --galaxy ANW2 --map quickstart-4man.map --server 8000

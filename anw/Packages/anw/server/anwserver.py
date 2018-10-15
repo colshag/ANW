@@ -55,8 +55,8 @@ class ANWServer(xmlrpc.XMLRPC):
             myEmpire = myGalaxy.empires[empireID]
             if myEmpire.password <> "" and myEmpire.ai == 0:
                 subject = '%s - GAME HAS BEGUN' % galaxyName
-                login = "python run.py --galaxy %s --empireid %s --empirepass %s --remoteserver http://neurojump.hopto.org:8000 --clientonly" % (galaxyName, empireID, myEmpire.password)
-                message = "Welcome to Armada Net Wars, your first game has begun. Please put the following line into your startclient.bat file to login, remember you have to manually add the server ip and port number:\n\n%s" % login
+                login = "python run.py --galaxy %s --empireid %s --empirepass %s --remoteserver http://neurojump.hopto.org:%s --clientonly" % (galaxyName, empireID, myEmpire.password, myGalaxy.serverPort)
+                message = "Welcome to Armada Net Wars, your first game has begun. Please put the following line into your startclient.bat file to login, remember you might have to change the server ip and port if directed by your game administrator:\n\n%s" % login
                 self.sendSMTPMail(galaxyName, myEmpire.player, subject, message)
         
 
@@ -330,7 +330,7 @@ class ANWServer(xmlrpc.XMLRPC):
                 myGalaxy = self.galaxies[clientKey['galaxyName']]
                 mySystem = myGalaxy.systems[systemID]
                 d = mySystem.getSelectedAttr(listAttr)
-                self._Log('getSystemUpdate Success', clientKey)
+                #self._Log('getSystemUpdate Success', clientKey)
                 return d
             else:
                 s = 'invalid key: cannot get System Update'

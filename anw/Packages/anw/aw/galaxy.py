@@ -62,6 +62,7 @@ class Galaxy(root.Root):
         self.systemBuyMessages = {}#key=empireid, value = message buy body for turn
 
         self.prices = {}
+        self.serverPort = 0 # server port
         
     def __getstate__(self):
         """Cannot pickle __builtins__ that include ellipse type, 

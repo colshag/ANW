@@ -109,7 +109,7 @@ class ANWRunner(object):
         logging.info("Generate new Galaxy instance since none detected.")
         os.makedirs(os.path.join("..", "Database", self.galaxy))
         generateGalaxy = generate.GenerateGalaxy()
-        generateGalaxy.genGalaxy(dataPath = absDataPath + "/", starMapFile=self.mapfile, playerList = myPlayerList, doAI = 1, galaxyName = self.galaxy)
+        generateGalaxy.genGalaxy(dataPath = absDataPath + "/", starMapFile=self.mapfile, playerList = myPlayerList, doAI = 1, galaxyName = self.galaxy, serverPort=self.serverPort)
         workingGalaxy = generateGalaxy.getGalaxy()
 
         storedata.saveToFile(workingGalaxy, os.path.join("..", "Database", self.galaxy, self.galaxy + ".anw"))

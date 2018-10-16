@@ -177,7 +177,7 @@ def run():
     #createTradeButtons()
     #createDesignButtons()
     #createShipyardButtons()
-    createMapMoveButtons()
+    #createMapMoveButtons()
     #createBVButtons()
     #createMIButtons()
     #createLeverageButtons()
@@ -193,6 +193,7 @@ def run():
     #createMultiSimButtons()
     #createQuestionEndRound()
     #createQuestionSurrender()
+    createLoginButtons()
 
 def createMainButtons():
     myButtons = {'I':'CREDIT', 'E':'END', 'O':'MARKET', 'Q':'QUIT', 'R':'MAP',
@@ -418,6 +419,14 @@ def createQuestionSurrender():
                  }
     for key, action in myButtons.iteritems():
         myCreate = CreateTradeButtonImages(guiPath, 'questionsurrender', key, action)
+        myCreate.createButtons()
+        
+def createLoginButtons():
+    myButtons = {'Singleplayer':'SINGLEPLAYER', 
+                 'Mulitplayer':'MULTIPLAYER', 
+                 'Quit':'QUIT'}
+    for key, action in myButtons.iteritems():
+        myCreate = CreateTradeButtonImages(guiPath, 'login', key, action)
         myCreate.createButtons()
         
 if __name__ == '__main__':

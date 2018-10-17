@@ -529,7 +529,7 @@ def sendMail(to, subject, text):
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login("armadanetwars", "armada1319")
+        server.login("armadanetwars", "notapw")
         text = msg.as_string()
         server.sendmail(fromaddr, toaddr, text)            
     except:

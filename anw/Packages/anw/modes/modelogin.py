@@ -16,7 +16,7 @@ class ModeLogin(mode.Mode):
         # init the mode
         mode.Mode.__init__(self, game)
         self.name = 'LOGIN'
-        self.myLogo = self.loadObject(tex='jochititle', depth=300, glow=1)
+        self.myLogo = self.loadObject(tex='neurojump', depth=300, glow=1)
         self.sims.append(self.myLogo)
         self.count = wait
         taskMgr.add(self.login, 'loginTask')

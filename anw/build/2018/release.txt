@@ -1,5 +1,8 @@
+General Notes:
+=========================
+When installing the game do not choose Program Files or any other restricted area of windows as this game does build subdirectories 
+and files in the Database folder when you build new games.
+
 0.14.0 Release Notes:
 =========================
-
-- I have got the game working again without some of the fancier features we had previously (that now don't work because Google App Engine Died)
-
+Welcome to the game!

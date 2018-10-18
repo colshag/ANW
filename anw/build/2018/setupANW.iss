@@ -14,12 +14,11 @@
 AppId={{D66402ED-CA2B-4F6E-92F8-BF6F09296F56}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName=c:\neurojump\{#MyAppName}
 DefaultGroupName={#MyAppName}
 LicenseFile=C:\Users\colsh\Downloads\development\ANW\anw\build\2018\license.txt
 InfoBeforeFile=C:\Users\colsh\Downloads\development\ANW\anw\build\2018\release.txt
@@ -28,6 +27,7 @@ OutputBaseFilename=ArmadaWars-0.14.0
 SetupIconFile=C:\Users\colsh\Downloads\development\ANW\anw\build\2018\ANW.ico
 Compression=lzma
 SolidCompression=yes
+UsePreviousAppDir=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -37,11 +37,11 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; \
     GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#MyGameSourcePath}\Client\*"; DestDir: "{app}\Client"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
-Source: "{#MyGameSourcePath}\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
-Source: "{#MyGameSourcePath}\Database\*"; DestDir: "{app}\Database"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
-Source: "{#MyGameSourcePath}\Packages\*"; DestDir: "{app}\Packages"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
-Source: "{#MyGameSourcePath}\Server\*"; DestDir: "{app}\Server"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
+Source: "{#MyGameSourcePath}\Client\*"; DestDir: "{app}\Client"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-full
+Source: "{#MyGameSourcePath}\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-full
+Source: "{#MyGameSourcePath}\Database\*"; DestDir: "{app}\Database"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-full
+Source: "{#MyGameSourcePath}\Packages\*"; DestDir: "{app}\Packages"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-full
+Source: "{#MyGameSourcePath}\Server\*"; DestDir: "{app}\Server"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-full
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

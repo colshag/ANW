@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # server.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -56,7 +56,7 @@ class ANWServer(xmlrpc.XMLRPC):
             if myEmpire.password <> "" and myEmpire.ai == 0:
                 subject = '%s - GAME HAS BEGUN' % galaxyName
                 login = "python run.py --galaxy %s --empireid %s --empirepass %s --remoteserver http://neurojump.hopto.org:%s --clientonly" % (galaxyName, empireID, myEmpire.password, myGalaxy.serverPort)
-                message = "Welcome to Armada Net Wars, your first game has begun. Please put the following line into your startclient.bat file to login, remember you might have to change the server ip and port if directed by your game administrator:\n\n%s" % login
+                message = "Welcome to Cosmica, your first game has begun. Please put the following line into your startclient.bat file to login, remember you might have to change the server ip and port if directed by your game administrator:\n\n%s" % login
                 self.sendSMTPMail(galaxyName, myEmpire.player, subject, message)
         
 

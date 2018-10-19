@@ -1,1 +1,0 @@
-python py2exeSetup.py py2exe --packages encodings

@@ -1,1 +1,0 @@
-python serverwizard.py --serveruser user1 --serverpass pass1 -m small-4man.map -u user1 -l

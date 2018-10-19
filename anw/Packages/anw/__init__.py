@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # anw package
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
-# This is the main armada net wars package
+# This is the main package
 # ---------------------------------------------------------------------------

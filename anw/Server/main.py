@@ -1,16 +1,15 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
-# server.py
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
+# main.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
-# This is the main ANW Server: The Servers Job is to verify user
+# This is the main Server: The Servers Job is to verify user
 # requests, read the object database and ask those objects to 
 # return values.  The Server then converts these values into
 # XML for the client.
 # ---------------------------------------------------------------------------
 from anw.func import storedata, globals, funcs
-#from anw.gae.access import GAE, LocalGAE
-from anw.mail.sending import SmtpEmail, Email #, NullEmail
+from anw.mail.sending import SmtpEmail, Email
 from anw.server import anwserver
 from anw.util.Injection import Services
 from twisted.internet import reactor, task
@@ -37,7 +36,7 @@ def logHelp(profilepath=None):
     logging.error("Create or modify the file in " 
               + profilepath
               + " with contents like the following\n" 
-              + "[ArmadaNetWarsServer]\n"
+              + "[CosmicaServer]\n"
               + "serveruser = yourusername\n" 
               + "serverpass = yourpassword\n\n"
               + "[Email]\n" 
@@ -67,30 +66,12 @@ def writeLocalAuthFile(port, database):
     f.write("port=" + str(port) + "\n")
     f.write("pid=" + str(os.getpid()) + "\n")
     f.close()
-    
-#def setupDepenencyInjection(localgae=0, serveruser="required", serverpass="required", email={}):
-    #""" Register all object implementations up front """
-    #if localgae:
-        #Services.register(GAE, LocalGAE)
-    #else:
-        #Services.register(GAE)
-    #Services.inject(GAE).username = serveruser
-    #Services.inject(GAE).password = serverpass 
-
-    #if email == {}:
-        #Services.register(Email, NullEmail)
-    #else:
-        #Services.register(Email, SmtpEmail)
-    #Services.inject(Email).configure(email)
-
-#def testUserForGAEAccess():
-    #return Services.inject(GAE).isServerUserValid()
 
 def setupLogging():
     logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
 
 
-def loadConfigFromProfile(profile="server", configSection="ArmadaNetWarsServer"):
+def loadConfigFromProfile(profile="server", configSection="CosmicaServer"):
     """ 
     server profile name.  This will be in $HOME/.anw/server.config
     will work for both profile and /path/to/profile arguments
@@ -103,8 +84,6 @@ def loadConfigFromProfile(profile="server", configSection="ArmadaNetWarsServer")
     else:
         if not profile.endswith(".config"):
             profile += ".config"
-        # expand to full path, cross platform
-        # from http://ubuntuforums.org/showthread.php?t=820043&page=2
         profilepath = os.path.expanduser(os.path.join("~", ".anw", profile))
 
     # redudent if they passed the actual path to a config file, but check anyway since we expand the path if it was a profile name
@@ -191,40 +170,21 @@ if __name__ == '__main__':
             pass
     
     config = loadConfigFromProfile(profile=config)
-    
-    # Initiliaze MyApp
     globals.serverMode = 1
 
     if singleplayer == 1:
         logging.info("Singleplayer mode activated")
         testemail = 0
-    #else:
-        #setupDepenencyInjection(localgae=int(options.localgae), serveruser=config['serveruser'], serverpass=config['serverpass'], email=config['email'])
-        
-        #gaeResult = testUserForGAEAccess()
-    
-        #if gaeResult == False:
-            #logging.error("The configured server username does not have the permissions to administer a server")
-            #logHelp()
-            #sys.exit(0)
-        #elif gaeResult == None:
-            #logging.error("Could not contact Google App Engine")
-            #sys.exit(0)
-        #else:
-            ## ok to start server, but we aren't guaranteed to have permission to administer this specific game we are playing
-            #logging.info("GAE credentials OK to start server")
 
     app = anwserver.ANWServer()
     app.runServer(port, database, singleplayer)
     if database != None:
         writeLocalAuthFile(port, database)
     
-    #Set up signal handling
     signal.signal(signal.SIGINT, SIGINT_CustomEventHandler)
     try:
         signal.signal(signal.SIGHUP, SIGHUP_CustomEventHandler)
     except:
-        # no signup in windows. just ignore any errors here
         pass
     signal.signal(signal.SIGTERM, SIGINT_CustomEventHandler)
     signal.signal(signal.SIGABRT, SIGINT_CustomEventHandler)

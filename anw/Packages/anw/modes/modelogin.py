@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # modelogin.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -16,7 +16,7 @@ class ModeLogin(mode.Mode):
         # init the mode
         mode.Mode.__init__(self, game)
         self.name = 'LOGIN'
-        self.myLogo = self.loadObject(tex='neurojump', depth=300, glow=1)
+        self.myLogo = self.loadObject(tex='cosmica', depth=300, glow=1)
         self.sims.append(self.myLogo)
         self.count = wait
         taskMgr.add(self.login, 'loginTask')

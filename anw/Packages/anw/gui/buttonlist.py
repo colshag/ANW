@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # buttonlist.py
 # Written by ynjo from panada3d forums, Chris Lewis wrapper class
 # ---------------------------------------------------------------------------

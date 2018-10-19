@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # galaxy.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -7,7 +7,6 @@
 # running game of ANW.
 # ---------------------------------------------------------------------------
 from anw.func import root, storedata, funcs, globals, names
-from anw.gae.access import GAE
 from anw.util.Injection import Services
 from anw.war import regiment, shipbattle, captain, ship, shipdesign
 import marketstat

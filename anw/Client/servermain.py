@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # server.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -10,7 +10,7 @@
 # ---------------------------------------------------------------------------
 from anw.func import storedata, globals, funcs
 #from anw.gae.access import GAE, LocalGAE
-from anw.mail.sending import SmtpEmail, Email #,NullEmail
+#from anw.mail.sending import SmtpEmail, Email #,NullEmail
 from anw.server import anwserver
 from anw.util.Injection import Services
 from threading import Thread
@@ -39,7 +39,7 @@ def logHelp(profilepath=None):
     print("Create or modify the file in " 
               + profilepath
               + " with contents like the following\n" 
-              + "[ArmadaNetWarsServer]\n"
+              + "[CosmicaServer]\n"
               + "serveruser = yourusername\n" 
               + "serverpass = yourpassword\n\n"
               + "[Email]\n" 
@@ -78,19 +78,19 @@ def writeLocalAuthFile(port, database):
     f.write("pid=" + str(os.getpid()) + "\n")
     f.close()
     
-def setupDepenencyInjection(email={}):
-    """ Register all object implementations up front """
-    if email == {}:
-        Services.register(Email)#, NullEmail)
-    else:
-        Services.register(Email, SmtpEmail)
-    Services.inject(Email).configure(email)
+#def setupDepenencyInjection(email={}):
+    #""" Register all object implementations up front """
+    #if email == {}:
+        #Services.register(Email)#, NullEmail)
+    #else:
+        #Services.register(Email, SmtpEmail)
+    #Services.inject(Email).configure(email)
 
 #def setupLogging():
     #logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
 
 
-def loadConfigFromProfile(profile="server", configSection="ArmadaNetWarsServer"):
+def loadConfigFromProfile(profile="server", configSection="CServer"):
     """ 
     server profile name.  This will be in $HOME/.anw/server.config
     will work for both profile and /path/to/profile arguments
@@ -169,8 +169,8 @@ def serverMain(queue=None, singleplayer=0, database='ANW1', port=8000, testemail
     if singleplayer == 1:
         print("Singleplayer mode activated")
         testemail = 0
-    else:
-        setupDepenencyInjection(email=config['email'])
+    #else:
+        #setupDepenencyInjection(email=config['email'])
 
     app = anwserver.ANWServer()
     app.runServer(port, database, singleplayer)

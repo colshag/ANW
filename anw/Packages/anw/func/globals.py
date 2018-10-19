@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # globals.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -11,7 +11,7 @@ except:
     pass
 currentVersion = '0.14.0'
 currentVersionShort = 'master'
-currentVersionTag = '_BUILD_ID'
+currentVersionTag = '.1'
 serverMode = 0
 
 maxShipsPerBattle = 120

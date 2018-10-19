@@ -1,9 +1,9 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # directapp.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
-# This is the main application that runs ANW, including client side panda code
+# This is the main application, including client side panda code
 # ---------------------------------------------------------------------------
 import os
 from anw.func import globals
@@ -11,7 +11,7 @@ from pandac.PandaModules import loadPrcFile, Filename, loadPrcFileData, WindowPr
 from threading import Event
 
 loadPrcFile("data/config.prc")
-windowtitle = 'Armada Net Wars (version %s%s)' % (globals.currentVersion,globals.currentVersionTag)
+windowtitle = 'Cosmica (version %s%s)' % (globals.currentVersion,globals.currentVersionTag)
 loadPrcFileData('', 'window-title %s' % windowtitle)
 from direct.interval.IntervalGlobal import Func
 from direct.showbase.DirectObject import DirectObject

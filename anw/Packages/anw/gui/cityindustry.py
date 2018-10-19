@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # cityindustry.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------

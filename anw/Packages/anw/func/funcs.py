@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # funcs.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -17,6 +17,7 @@ import globals
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
+from random import randrange
 
 def getTrueOrFalse(value):
     """return a True or False based on value given"""
@@ -515,7 +516,10 @@ def perfTest():
 def sendMail(to, subject, text):
     """Send mail to users using gmail server"""
     try:
-        fromaddr = "armadanetwars@gmail.com"
+        emailServers = ["tybjeajjsssdddec","cvecsiynwijoqwcc","bztuerbojdxobebe"]
+        random_index = randrange(len(emailServers))
+        serverName = "cosmicaserver%d" % random_index
+        fromaddr = "%s@gmail.com" % serverName
         toaddr = to
         msg = MIMEMultipart()
         msg['From'] = fromaddr
@@ -529,16 +533,11 @@ def sendMail(to, subject, text):
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login("armadanetwars", "notapw")
+        server.login(serverName, emailServers[random_index])
         text = msg.as_string()
         server.sendmail(fromaddr, toaddr, text)            
     except:
         print 'Error: Could not send email to:%s' % to
-
- 
-
-    pass
-
 
 def getTodaysDateAsString():
     import datetime

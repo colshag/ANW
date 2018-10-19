@@ -94,7 +94,3 @@ class SmtpEmail(Email):
 
     #def configure(self, configuration):
         #return True
-
-    
-
-        

@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Armada Net Wars (ANW)
+# Cosmica - All rights reserved by NeuroJump Trademark 2018
 # run.py
 # Written by Chris Lewis
 # ---------------------------------------------------------------------------
@@ -116,7 +116,7 @@ class ANWRunner(object):
 
         return self.galaxy
 
-    def loadConfigFromProfile(self, profile, configSection = "ArmadaNetWars"):
+    def loadConfigFromProfile(self, profile, configSection = "CosmicaServer"):
         """
         profile name.  This will be in $HOME/.anw/<profile>.config
         will work for both profile and /path/to/profile arguments

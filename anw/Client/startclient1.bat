@@ -1,1 +1,1 @@
-python run.py --galaxy ANW2 --empireid 2 --empirepass 4vexeceo --remoteserver http://localhost:8000 --clientonly
+python run.py --galaxy ANW3 --empireid 3 --empirepass 5u4lzj5k --remoteserver http://localhost:8001 --clientonly

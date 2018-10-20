@@ -1,8 +1,9 @@
-General Notes:
-=========================
-When installing the game do not choose Program Files or any other restricted area of windows as this game does build subdirectories 
-and files in the Database folder when you build new games.
+Cosmica
+=======
+NeuroJump (2018) all rights reserved
+====================================
 
-0.14.0 Release Notes:
-=========================
-Welcome to the game!
+0.14.1 Release Notes:
+====================================
+- Cosmica branding
+- multiple email servers enabled

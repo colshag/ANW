@@ -2,10 +2,39 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Cosmica"
-#define MyAppVersion "0.15.0"
+#define MyAppVersion "0.14.1"
 #define MyAppPublisher "NeuroJump (2018) all rights reserved"
 #define MyAppURL "https://playcosmica.com"
 #define MyGameSourcePath "C:\Users\colsh\Downloads\development\ANW\anw"
+
+[Code]
+var
+  WelcomePageID: Integer;
+  BitmapImage: TBitmapImage;
+
+procedure InitializeWizard;
+var
+  WelcomePage: TWizardPage;  
+begin
+  WelcomePage := CreateCustomPage(wpWelcome, '', '');
+  WelcomePageID := WelcomePage.ID;
+  BitmapImage := TBitmapImage.Create(WizardForm);
+  BitmapImage.Bitmap.LoadFromFile('C:\Users\colsh\Downloads\development\ANW\anw\build\2018\cosmica.bmp');
+  BitmapImage.Top := 0;
+  BitmapImage.Left := 0;
+  BitmapImage.AutoSize := True;
+  BitmapImage.Cursor := crHand;
+  BitmapImage.Visible := False;
+  BitmapImage.Parent := WizardForm.InnerPage;
+end;
+
+procedure CurPageChanged(CurPageID: Integer);
+begin
+  BitmapImage.Visible := CurPageID = WelcomePageID;
+  WizardForm.Bevel1.Visible := CurPageID <> WelcomePageID;
+  WizardForm.MainPanel.Visible := CurPageID <> WelcomePageID;
+  WizardForm.InnerNotebook.Visible := CurPageID <> WelcomePageID;
+end;
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.

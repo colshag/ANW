@@ -3,6 +3,7 @@ from email.mime.text import MIMEText
 import smtplib
 import sys
 import logging
+from random import randrange
 
 
 class Email(object):
@@ -27,29 +28,30 @@ class Email(object):
         #self.ssl = configuration['smtpssl'] in ("True", "true", "1", "yes")
         return True
     
-    def send(self, toAddress, subject, text):
-        if toAddress == "":
+    def send(self, to, subject, text):
+        if to == "":
             return
         try:
-            fromaddr = "armadanetwars@gmail.com"
-            toaddr = toAddress
+            emailServers = ["oedzblbdwolqqnqr","tybjeajjsssdddec","cvecsiynwijoqwcc","bztuerbojdxobebe"]
+            random_index = randrange(len(emailServers))
+            serverName = "cosmicaserver%d" % random_index
+            fromaddr = "%s@gmail.com" % serverName
+            toaddr = to
             msg = MIMEMultipart()
             msg['From'] = fromaddr
             msg['To'] = toaddr
             msg['Subject'] = subject
-        
+    
             body = text
             msg.attach(MIMEText(body, 'plain'))
-        
+    
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.ehlo()
             server.starttls()
             server.ehlo()
-            #server.login("armadanetwars", "iloveanw")
-            server.login("armadanetwars","edyxjscrgbwqfvem")
+            server.login(serverName, emailServers[random_index])
             text = msg.as_string()
             server.sendmail(fromaddr, toaddr, text)
-            logging.info("Sent email successfully to " + toAddress)
         except:
             print 'Error: Could not send email to:%s' % toAddress    
     

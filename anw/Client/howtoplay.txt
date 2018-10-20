@@ -1,34 +1,24 @@
-welcome to ArmadaNetWars
-
-Over the years this game has tried different methods (some better than others) to allow for a turn based, indie, multiplayer, 4x type game.
-Our last iteration was using Google App Engine and an online website (www.armadanetwars.com) to play, and it worked well.
-Currently the website and GAE are both down, so I have reverted it to a simplier version for now:
-
-First:
-======================================================================================================================================
-Note: Before you can play you need to install a few things (one time) you can get them from ANW Dependency Setup.exe, essentially they are:
-Panda3d (this is a python game engine run by a university)
-Twisted and Zope (these help with communication between client and server)
+welcome to Cosmica!
 
 To Play as a Player:
 ======================================================================================================================================
-edit startclient.bat and run it. You need:
+edit startclient1.bat and run it. You need:
 
-a server to connect to (remoteserver), this is an ip address of where the server is including the port. Make sure your router allows that port through your firewall!
+a server to connect to (remoteserver), this is an ip address of where the server is including the port.
 a Galaxy Name (ANW1, ANW2, ANW3, etc)
 an Empire ID (1,2,3,4, etc)
 a password (when the game is created by your administrator a password will be randomly generated for you, your administrator will give you this password)
 
-In future games I will setup the email system and you can be emailed this information when the game starts.
-
-The administrator of your game will tell you these things, and once you setup your bat file you can play the game. 
+The administrator of your game will email you these things, and once you setup your bat file you can play the game. 
 
 From then on you can play the game using that bat file. To play in multiple games make multiple bat files with the appropriate information in each one.
 
+This system will be fixed with a launcher (stay tuned)
+
 To Host a Game for your Friends:
 ======================================================================================================================================
-First make sure you have the appropriate network permissions to host a server, and that your port is available. You can choose any port you like, but make sure the port
-is communicated to your players. If you are hosting ideally your ip address is static, there are services to do this, google it!
+First make sure you have the appropriate network permissions to host a server, and that your port is available. You can choose any port you like. 
+If you are hosting ideally your ip address is static, there are services to do this, google it!
 
 Run the same dependency exe's
 

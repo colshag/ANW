@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Cosmica"
-#define MyAppVersion "0.14.1"
+#define MyAppVersion "0.14.0.1"
 #define MyAppPublisher "NeuroJump (2018) all rights reserved"
 #define MyAppURL "https://playcosmica.com"
 #define MyGameSourcePath "C:\Users\colsh\Downloads\development\ANW\anw"

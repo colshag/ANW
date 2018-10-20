@@ -1517,7 +1517,7 @@ def endRound(server, galaxyName):
                 
                 # notify all players of new round
                 for empireID, myEmpire in myGalaxy.empires.iteritems():
-                    if myEmpire.alive == 1:
+                    if myEmpire.alive == 1 and myEmpire.ai == 0 and server.singleplayer == 0:
                         # build empire message
                         body = 'NEW ROUND OF PLAY, BELOW IS YOUR END ROUND MESSAGES:\n'
 

@@ -3,7 +3,7 @@ Cosmica
 NeuroJump (2018) all rights reserved
 ====================================
 
-0.14.1 Release Notes:
+0.14.0.1 Release Notes:
 ====================================
 - Cosmica branding
 - multiple email servers enabled

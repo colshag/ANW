@@ -1,13 +1,15 @@
-Armada Net Wars
-================
+Cosmica
+=======
+NeuroJump (2018) all rights reserved
+====================================
 
-In order to participate in Armada Net Wars I ask the following:
+License: Do not redistribute Cosmica for financial gain.
 
-1) Agree to keep up your turns in the game (we only go as fast as our slowest player)
+====================================
+Welcome to our community of space strategy enthusiasts! Please join our community at www.playcosmica.com!
+Remember to install the game in a non-protected folder structure (stay away from program files) as Cosmica does build sub directories and database files at times.
+Have Fun!
 
-2) Have Fun
-
-3) See #2
 
 	
 	

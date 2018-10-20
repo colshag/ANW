@@ -516,7 +516,7 @@ def perfTest():
 def sendMail(to, subject, text):
     """Send mail to users using gmail server"""
     try:
-        emailServers = ["tybjeajjsssdddec","cvecsiynwijoqwcc","bztuerbojdxobebe"]
+        emailServers = ["oedzblbdwolqqnqr","tybjeajjsssdddec","cvecsiynwijoqwcc","bztuerbojdxobebe"]
         random_index = randrange(len(emailServers))
         serverName = "cosmicaserver%d" % random_index
         fromaddr = "%s@gmail.com" % serverName

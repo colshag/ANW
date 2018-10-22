@@ -9,10 +9,10 @@ from random import randrange
 class Email(object):
     smtpserver = "smtp.gmail.com"
     smtpport = 537
-    username = "armadanetwars@gmail.com"
-    password = "iloveanw"
-    fromaddress = "armadanetwars@gmail.com"
-    fromname = "Armada Net Wars Server"
+    username = "cosmicaserver0@gmail.com"
+    password = "cosmica"
+    fromaddress = "cosmicaserver0@gmail.com"
+    fromname = "Cosmica Server"
 
     tls = True
     ssl = False
@@ -56,7 +56,7 @@ class Email(object):
             print 'Error: Could not send email to:%s' % toAddress    
     
     def sendTestEmail(self):
-        return self.send(self.fromaddress, "Armada Net Wars Server [%s] starting..."%self.fromname, "This is a test message indicating the server has started and the email system is working")
+        return self.send(self.fromaddress, "Cosmica Server [%s] starting..."%self.fromname, "This is a test message indicating the server has started and the email system is working")
 
 class SmtpEmail(Email):
     def send(self, toAddress, subject, text):

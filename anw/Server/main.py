@@ -33,25 +33,25 @@ defaultprofilepath = os.path.expanduser(os.path.join("~", ".anw", "server.config
 def logHelp(profilepath=None):
     if profilepath == None:
         profilepath = defaultprofilepath 
-    logging.error("Create or modify the file in " 
-              + profilepath
-              + " with contents like the following\n" 
-              + "[CosmicaServer]\n"
-              + "serveruser = yourusername\n" 
-              + "serverpass = yourpassword\n\n"
-              + "[Email]\n" 
-              + "#email section is optional. leave out to disable end of round updates and empire to empire message sending\n"
-              + "smtphost = your.smtp.hostname\n"
-              + "smtpuser = your_smtp_username\n"
-              + "smtppass = your_smtp_password\n"
-              + "smtpport = 587\n"
-              + "# Leave both tls and ssl as False if your smtp server has no encryption\n"
-              + "# you can only have one of tls or ssl, not both\n"
-              + "smtptls = True\n"
-              + "smtpssl = False\n"
-              + "fromname = your_game_server_name\n"
-              + "fromaddress = your_server_email_address\n"
-              )
+    #logging.error("Create or modify the file in " 
+              #+ profilepath
+              #+ " with contents like the following\n" 
+              #+ "[CosmicaServer]\n"
+              #+ "serveruser = yourusername\n" 
+              #+ "serverpass = yourpassword\n\n"
+              #+ "[Email]\n" 
+              #+ "#email section is optional. leave out to disable end of round updates and empire to empire message sending\n"
+              #+ "smtphost = your.smtp.hostname\n"
+              #+ "smtpuser = your_smtp_username\n"
+              #+ "smtppass = your_smtp_password\n"
+              #+ "smtpport = 587\n"
+              #+ "# Leave both tls and ssl as False if your smtp server has no encryption\n"
+              #+ "# you can only have one of tls or ssl, not both\n"
+              #+ "smtptls = True\n"
+              #+ "smtpssl = False\n"
+              #+ "fromname = your_game_server_name\n"
+              #+ "fromaddress = your_server_email_address\n"
+              #)
 
 def logVersion():
     logging.info("Server version: " + globals.currentVersion + globals.currentVersionTag)
@@ -87,10 +87,10 @@ def loadConfigFromProfile(profile="server", configSection="CosmicaServer"):
         profilepath = os.path.expanduser(os.path.join("~", ".anw", profile))
 
     # redudent if they passed the actual path to a config file, but check anyway since we expand the path if it was a profile name
-    if not os.path.isfile(profilepath):
-        print "Could not find profile", profile, "at path", profilepath
-        logHelp(profilepath=profilepath)
-        sys.exit()
+    #if not os.path.isfile(profilepath):
+        #print "Could not find profile", profile, "at path", profilepath
+        #logHelp(profilepath=profilepath)
+        #sys.exit()
 
     parser = ConfigParser.RawConfigParser()
     parser.read(profilepath)

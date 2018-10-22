@@ -133,9 +133,9 @@ class ANWRunner(object):
             profilepath = os.path.expanduser(os.path.join("~",".anw",profile))
 
         # redundant if they passed the actual path to a config file, but check anyway since we expand the path if it was a profile name
-        if not os.path.isfile(profilepath):
-            print "Could not find profile", profile, "at path", profilepath
-            sys.exit()
+        #if not os.path.isfile(profilepath):
+            #print "Could not find profile", profile, "at path", profilepath
+            #sys.exit()
 
         parser = ConfigParser.RawConfigParser()
         parser.read(profilepath)

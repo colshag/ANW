@@ -45,7 +45,7 @@ class MainMenuButtons(RootButton):
     
     def writeTextTitle(self):
         """Write the Game Title"""
-        text = 'Armada Net Wars'
+        text = 'C O S M I C A'
         self.textTitle = textonscreen.TextOnScreen(self.path, text,
                                                    scale=0.03, font=5, parent=aspect2d)
         self.textTitle.writeTextToScreen(-1.0, 0, 0.95, 30)

@@ -1,0 +1,1 @@
+python run.py --galaxy ANW1 --map triangle-3man.map

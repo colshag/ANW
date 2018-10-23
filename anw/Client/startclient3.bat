@@ -1,1 +1,0 @@
-python run.py --galaxy ANW5 --empireid 5 --empirepass yk1n5lxb --remoteserver http://http://neurojump.hopto.org:8000 --clientonly

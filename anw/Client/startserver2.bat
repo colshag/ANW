@@ -1,1 +1,0 @@
-python run.py --galaxy ANW3 --map triangle-3man.map --server 8001

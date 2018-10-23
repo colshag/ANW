@@ -1,0 +1,1 @@
+python run.py --galaxy ANW3 --map quickstart-4man.map --server 8001
